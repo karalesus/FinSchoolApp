@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <style name="TextViewBaseVariant" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/secondary</item>
+    </style>
+
+    <style name="TextViewBaseVariant.MainHeader">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/secondary</item>
+    </style>
+    
+
+
 </resources>

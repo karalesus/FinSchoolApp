@@ -7,4 +7,6 @@
     <color name="third_light">#E0E0C6</color>
     <color name="third">#A9A969</color>
     <color name="main_background">#C3C8BB</color>
+    <color name="error_container">#FFDAD6</color>
+    <color name="error_stroke">#CE5E5E</color>
 </resources>

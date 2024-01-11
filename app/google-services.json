@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "527562099022",
+    "project_id": "finschool-d0293",
+    "storage_bucket": "finschool-d0293.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527562099022:android:a27039d9125e2b0314761f",
+        "android_client_info": {
+          "package_name": "com.example.finschoolapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz4MmjcvrbjQzTytxibW8O1BzKBspv4A8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
