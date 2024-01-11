@@ -3,37 +3,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background"
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="112dp"
         android:text="Вход"
-        android:textSize="36sp"
+        android:textColor="@color/secondary"
+        android:textSize="28sp"
         tools:text="Вход" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
         android:layout_marginHorizontal="16dp"
-        android:orientation="vertical">
+        android:layout_marginTop="184dp"
+        android:orientation="vertical"
+        android:layout_margin="21dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="68dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
-            
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Логин">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Логин"
+                android:textColor="@color/secondary"
+                android:textSize="14sp">
 
             </TextView>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/shape_rounded_field"
+                android:inputType="text">
+
+            </EditText>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Пароль"
+                android:textColor="@color/secondary"
+                android:textSize="14sp">
+
+            </TextView>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/shape_rounded_field"
+                android:inputType="textPassword">
+
+            </EditText>
+
+            <android.widget.Button
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/transparent"
+                android:gravity="end"
+                android:text="Забыли пароль?"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:textSize="14sp">
+
+            </android.widget.Button>
+
+            <android.widget.Button
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_rounded_field"
+                android:text="Войти"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:textSize="14sp">
+
+            </android.widget.Button>
+
+            <android.widget.Button
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:text="Еще нет аккаунта? Зарегистрироваться"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:textSize="14sp">
+
+            </android.widget.Button>
         </LinearLayout>
     </LinearLayout>
 
