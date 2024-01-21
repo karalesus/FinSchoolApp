@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/TextViewBaseVariant.MainHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/shape_rounded_field"
+        android:padding="16dp"
+        android:text="@string/rules"
+        android:textSize="24sp"/>
+
+    <android.widget.Button
+        style="@style/TextViewBaseVariant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_rounded_field"
+        android:text="@string/button_help"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

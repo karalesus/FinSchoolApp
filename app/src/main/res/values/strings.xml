@@ -5,5 +5,12 @@
     <string name="label_password">Пароль</string>
     <string name="button_forgot_password">Забыли пароль?</string>
     <string name="button_sign_in">Войти</string>
-    <string name="button_sign_up">Еще нет аккаунта? Зарегистрироваться</string>
+    <string name="welcome_text">
+        Привет, я Том! Совсем недавно я оказался на улице из-за того, что задолжал много денег местному банку. Поможешь мне снова стать богаче?
+    </string>
+    <string name="button_what_to_do">Что мне делать?</string>
+    <string name="rules">
+        Я становлюсь богаче, когда ты становишься более финансово грамотным и рассказываешь мне интересные вещи. Поэтому тебе надо читать статьи, проходить тесты и копить деньги на мечту! А я научусь на твоем примере!
+    </string>
+    <string name="button_help">Хорошо, я тебе помогу!</string>
 </resources>
