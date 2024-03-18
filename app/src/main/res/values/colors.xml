@@ -9,4 +9,5 @@
     <color name="main_background">#C3C8BB</color>
     <color name="error_container">#FFDAD6</color>
     <color name="error_stroke">#CE5E5E</color>
+    <color name="class_background">#FAFAF3</color>
 </resources>
