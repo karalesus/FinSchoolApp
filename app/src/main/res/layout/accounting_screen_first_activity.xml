@@ -24,8 +24,9 @@
         <ImageView
             android:layout_width="272dp"
             android:layout_height="237dp"
-            android:layout_marginHorizontal="54dp"
-            android:src="@mipmap/image_plug"/>
+            android:layout_marginHorizontal="54dp"/>
+<!--            android:src=""-->
+
 
         <TextView
             style="@style/TextViewBaseVariant.SmallHeader"
