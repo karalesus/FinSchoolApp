@@ -367,7 +367,7 @@
             app:srcCompat="@drawable/saved" />
 
         <TextView
-            android:id="@+id/achievement_4_text"
+            android:id="@+id/saved_topics"
             android:layout_width="253dp"
             android:layout_height="19dp"
             android:layout_marginStart="15dp"
