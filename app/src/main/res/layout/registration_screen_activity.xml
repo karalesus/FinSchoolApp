@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/TextViewBaseVariant.MainHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="90dp"
+        android:gravity="center_horizontal"
+        android:text="@string/label_registration">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_margin="21dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="186dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_name">
+
+            </TextView>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/shape_rounded_field"
+                android:hint="Иван Иванов"
+                android:inputType="text">
+
+            </EditText>
+
+            <TextView
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/label_login">
+
+            </TextView>
+
+            <EditText
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/shape_rounded_field"
+                android:inputType="text">
+
+            </EditText>
+
+            <TextView
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/label_email">
+
+            </TextView>
+
+            <EditText
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/shape_rounded_field"
+                android:inputType="text">
+            </EditText>
+
+            <TextView
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/label_password">
+
+            </TextView>
+
+            <EditText
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/shape_rounded_field"
+                android:inputType="text">
+            </EditText>
+
+            <TextView
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/label_password_again">
+
+            </TextView>
+
+            <EditText
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/shape_rounded_field"
+                android:inputType="text">
+            </EditText>
+
+            <android.widget.Button
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_rounded_field"
+                android:text="@string/button_next"
+                android:textAllCaps="false">
+
+            </android.widget.Button>
+
+            <android.widget.Button
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:text="@string/button_sign_in_from_reg"
+                android:textAllCaps="false">
+            </android.widget.Button>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
