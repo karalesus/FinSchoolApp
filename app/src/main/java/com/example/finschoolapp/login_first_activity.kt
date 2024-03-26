@@ -23,7 +23,13 @@ class login_first_activity : Fragment() {
         loginButton.setOnClickListener {
             val username = "УЖЕ СМЕШАРИК"
             if (username.equals("УЖЕ СМЕШАРИК")){
-                Navigation.findNavController(view).navigate(R.id.action_login_first_activity_to_progress_screen)
+                val navController = Navigation.findNavController(view)
+
+                // переходим к другому графу
+                navController.setGraph(R.navigation.navigation_main_menu)
+
+                // переходим к экрану progress_screen
+                navController.navigate(R.id.progress_screen)
             }
             else{
                 Navigation.findNavController(view).navigate(R.id.action_login_first_activity_to_welcome_screen_first_activity)

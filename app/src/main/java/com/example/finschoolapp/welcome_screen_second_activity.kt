@@ -18,7 +18,15 @@ class welcome_screen_second_activity : Fragment() {
         val view = inflater.inflate(R.layout.fragment_welcome_screen_second_activity, container, false)
 
         val iWillHelpYouButton = view.findViewById<Button>(R.id.i_will_help_you_button)
-        iWillHelpYouButton.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_welcome_screen_second_activity_to_progress_screen) }
+        iWillHelpYouButton.setOnClickListener {
+            val navController = Navigation.findNavController(view)
+
+            // переходим к другому графу
+            navController.setGraph(R.navigation.navigation_main_menu)
+
+            // переходим к экрану progress_screen
+            navController.navigate(R.id.progress_screen)
+        }
         return view
     }
 

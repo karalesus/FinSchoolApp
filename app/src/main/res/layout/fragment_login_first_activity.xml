@@ -41,6 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginTop="3dp"
+                android:paddingStart="16sp"
                 android:background="@drawable/shape_rounded_field"
                 android:inputType="text">
 
@@ -59,6 +60,7 @@
                 style="@style/TextViewBaseVariant"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
+                android:paddingStart="16sp"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/shape_rounded_field"
                 android:inputType="textPassword">

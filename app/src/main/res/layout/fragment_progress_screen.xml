@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/main_background"
     android:orientation="vertical">
 
@@ -13,7 +13,7 @@
         style="@style/TextViewBaseVariant.SmallHeader"
         android:layout_width="match_parent"
 
-        android:layout_height="52dp"
+        android:layout_height="52sp"
         android:background="@color/third_light"
         android:gravity="center_vertical"
         android:orientation="vertical"
@@ -24,8 +24,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="56sp"
         android:background="@color/third_light"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,7 +55,8 @@
             android:layout_marginEnd="8dp"
             android:background="@color/third_light"
             android:contentDescription="accounting"
-            android:src="@drawable/ic_accounting" />
+            android:src="@drawable/ic_accounting"
+            android:id="@+id/from_progress_to_accounting_main_menu"/>
 
     </LinearLayout>
 
@@ -125,6 +126,7 @@
         android:layout_width="328dp"
         android:layout_height="276dp"
         android:layout_marginStart="55dp"
+        android:layout_marginTop="190dp"
         android:layout_marginEnd="55dp"
         android:layout_marginBottom="116dp"
         android:background="@drawable/cadre_green"
@@ -132,7 +134,8 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_text">
 
         <TextView
             android:id="@+id/textView"
