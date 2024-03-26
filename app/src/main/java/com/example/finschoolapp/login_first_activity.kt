@@ -16,12 +16,23 @@ class login_first_activity : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_login_first_activity, container, false)
 
-        val register_button = view.findViewById<Button>(R.id.register_button_first_activity)
-        register_button.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_login_first_activity_to_registration_screen_activity) }
+        val registerButton = view.findViewById<Button>(R.id.register_button_first_activity)
+        registerButton.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_login_first_activity_to_registration_screen_activity) }
 
-        val login_button = view.findViewById<Button>(R.id.login_button_first_activity)
-        login_button.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_login_first_activity_to_welcome_screen_first_activity) }
+        val loginButton = view.findViewById<Button>(R.id.login_button_first_activity)
+        loginButton.setOnClickListener {
+            val username = "УЖЕ СМЕШАРИК"
+            if (username.equals("УЖЕ СМЕШАРИК")){
+                Navigation.findNavController(view).navigate(R.id.action_login_first_activity_to_progress_screen)
+            }
+            else{
+                Navigation.findNavController(view).navigate(R.id.action_login_first_activity_to_welcome_screen_first_activity)
+            }
 
+        }
+
+        val recoverPasswordButton = view.findViewById<Button>(R.id.recover_password_button)
+        recoverPasswordButton.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_login_first_activity_to_recover_password) }
         return view
     }
 

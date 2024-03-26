@@ -16,11 +16,11 @@ class registration_screen_activity : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_registration_screen_activity, container, false)
 
-        val return_to_login_activity_button = view.findViewById<Button>(R.id.i_have_account)
-        return_to_login_activity_button.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_registration_screen_activity_to_login_first_activity) }
+        val retutnToLoginActivityButton = view.findViewById<Button>(R.id.i_have_account_button)
+        retutnToLoginActivityButton.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_registration_screen_activity_to_login_first_activity) }
 
-        val register_button = view.findViewById<Button>(R.id.register_button)
-        register_button.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_registration_screen_activity_to_welcome_screen_first_activity) }
+        val registerButton = view.findViewById<Button>(R.id.register_button)
+        registerButton.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_registration_screen_activity_to_welcome_screen_first_activity) }
         return view
     }
 
