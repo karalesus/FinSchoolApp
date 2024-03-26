@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_authorization"
+    app:startDestination="@id/login_first_activity">
+    <fragment
+        android:id="@+id/login_first_activity"
+        android:name="com.example.finschoolapp.login_first_activity"
+        android:label="fragment_login_first_activity"
+        tools:layout="@layout/fragment_login_first_activity" >
+        <action
+            android:id="@+id/action_login_first_activity_to_registration_screen_activity"
+            app:destination="@id/registration_screen_activity" />
+        <action
+            android:id="@+id/action_login_first_activity_to_welcome_screen_first_activity"
+            app:destination="@id/welcome_screen_first_activity" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration_screen_activity"
+        android:name="com.example.finschoolapp.registration_screen_activity"
+        android:label="fragment_registration_screen_activity"
+        tools:layout="@layout/fragment_registration_screen_activity" >
+        <action
+            android:id="@+id/action_registration_screen_activity_to_login_first_activity"
+            app:destination="@id/login_first_activity" />
+        <action
+            android:id="@+id/action_registration_screen_activity_to_welcome_screen_first_activity"
+            app:destination="@id/welcome_screen_first_activity" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcome_screen_first_activity"
+        android:name="com.example.finschoolapp.welcome_screen_first_activity"
+        android:label="fragment_welcome_screen_first_activity"
+        tools:layout="@layout/fragment_welcome_screen_first_activity" />
+</navigation>

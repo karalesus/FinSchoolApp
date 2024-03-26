@@ -11,17 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="112dp"
         android:gravity="center_horizontal"
-        android:text="@string/label_registration">
-    </TextView>
+        android:text="@string/label_sign_in"
+        tools:text="Вход" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="wrap_content"
         android:layout_margin="21dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="186dp"
+        android:layout_marginTop="184dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -33,55 +33,17 @@
                 style="@style/TextViewBaseVariant"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/label_name">
-
-            </TextView>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="3dp"
-                android:background="@drawable/shape_rounded_field"
-                android:hint="Иван Иванов"
-                android:inputType="text">
-
-            </EditText>
-
-            <TextView
-                style="@style/TextViewBaseVariant"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:text="@string/label_login">
 
             </TextView>
 
             <EditText
-                style="@style/TextViewBaseVariant"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/shape_rounded_field"
                 android:inputType="text">
 
-            </EditText>
-
-            <TextView
-                style="@style/TextViewBaseVariant"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/label_email">
-
-            </TextView>
-
-            <EditText
-                style="@style/TextViewBaseVariant"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="3dp"
-                android:background="@drawable/shape_rounded_field"
-                android:inputType="text">
             </EditText>
 
             <TextView
@@ -99,26 +61,21 @@
                 android:layout_height="36dp"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/shape_rounded_field"
-                android:inputType="text">
+                android:inputType="textPassword">
+
             </EditText>
 
-            <TextView
+            <android.widget.Button
                 style="@style/TextViewBaseVariant"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/label_password_again">
+                android:background="@android:color/transparent"
+                android:gravity="end"
+                android:text="@string/button_forgot_password"
+                android:textAllCaps="false">
 
-            </TextView>
-
-            <EditText
-                style="@style/TextViewBaseVariant"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="3dp"
-                android:background="@drawable/shape_rounded_field"
-                android:inputType="text">
-            </EditText>
+            </android.widget.Button>
 
             <android.widget.Button
                 style="@style/TextViewBaseVariant"
@@ -126,8 +83,9 @@
                 android:layout_height="36dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/shape_rounded_field"
-                android:text="@string/button_next"
-                android:textAllCaps="false">
+                android:text="@string/button_sign_in"
+                android:textAllCaps="false"
+                android:id="@+id/login_button_first_activity">
 
             </android.widget.Button>
 
@@ -138,14 +96,12 @@
                 android:layout_marginTop="16dp"
                 android:background="@android:color/transparent"
                 android:gravity="center_horizontal"
-                android:text="@string/button_sign_in_from_reg"
-                android:textAllCaps="false">
+                android:text="@string/button_sign_up"
+                android:textAllCaps="false"
+                android:id="@+id/register_button_first_activity">
+
             </android.widget.Button>
-
-
         </LinearLayout>
     </LinearLayout>
-
-
 
 </LinearLayout>
