@@ -33,4 +33,9 @@
     <string name="button_next">Далее</string>
     <string name="button_sign_in_from_reg">Уже есть аккаунт? Войти</string>
 
+    <string name="label_confirm">Подтверждение</string>
+    <string name="label_code">Код из письма</string>
+    <string name="label_send_code_again">Отправить письмо повторно</string>
+    <string name="label_check_email">Проверьте почту. Сообщение придет в течение нескольких минут</string>
+
 </resources>

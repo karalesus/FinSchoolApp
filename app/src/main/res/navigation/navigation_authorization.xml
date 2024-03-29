@@ -28,8 +28,8 @@
             android:id="@+id/action_registration_screen_activity_to_login_first_activity"
             app:destination="@id/login_first_activity" />
         <action
-            android:id="@+id/action_registration_screen_activity_to_welcome_screen_first_activity"
-            app:destination="@id/welcome_screen_first_activity" />
+            android:id="@+id/action_registration_screen_activity_to_email_code_entry"
+            app:destination="@id/email_code_entry" />
     </fragment>
     <fragment
         android:id="@+id/welcome_screen_first_activity"
@@ -50,4 +50,9 @@
         android:name="com.example.finschoolapp.welcome_screen_second_activity"
         android:label="fragment_welcome_screen_second_activity"
         tools:layout="@layout/fragment_welcome_screen_second_activity" />
+    <fragment
+        android:id="@+id/email_code_entry"
+        android:name="com.example.finschoolapp.email_code_entry"
+        android:label="fragment_email_code_entry"
+        tools:layout="@layout/fragment_email_code_entry" />
 </navigation>

@@ -20,7 +20,7 @@ class registration_screen_activity : Fragment() {
         retutnToLoginActivityButton.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_registration_screen_activity_to_login_first_activity) }
 
         val registerButton = view.findViewById<Button>(R.id.register_button)
-        registerButton.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_registration_screen_activity_to_welcome_screen_first_activity) }
+        registerButton.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_registration_screen_activity_to_email_code_entry) }
         return view
     }
 
