@@ -10,4 +10,7 @@
     <color name="error_container">#FFDAD6</color>
     <color name="error_stroke">#CE5E5E</color>
     <color name="class_background">#FAFAF3</color>
+    <color name="background_error">#FFDAD6</color>
+    <color name="background_bound">#CE5E5E</color>
+    <color name="text_error">#CE5E5E</color>
 </resources>

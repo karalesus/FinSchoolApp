@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="65dp"
         android:gravity="center_horizontal">
 
         <TextView
@@ -63,7 +63,7 @@
                 android:layout_marginTop="3dp"
                 android:paddingStart="16sp"
                 android:background="@drawable/shape_rounded_field"
-                android:inputType="text"
+                android:inputType="number"
                 android:id="@+id/input_code_field">
 
             </EditText>

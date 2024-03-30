@@ -18,7 +18,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="450sp"
+        android:layout_height="470sp"
         android:layout_margin="21sp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="186dp"
@@ -44,7 +44,8 @@
                 android:paddingStart="16sp"
                 android:background="@drawable/shape_rounded_field"
                 android:hint="Иван Иванов"
-                android:inputType="text">
+                android:inputType="text"
+                android:id="@+id/user_name">
 
             </EditText>
 
@@ -62,8 +63,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginTop="3dp"
+                android:paddingStart="16sp"
                 android:background="@drawable/shape_rounded_field"
-                android:inputType="text">
+                android:inputType="text"
+                android:id="@+id/user_login">
 
             </EditText>
 
@@ -82,7 +85,9 @@
                 android:layout_height="36dp"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/shape_rounded_field"
-                android:inputType="text">
+                android:inputType="text"
+                android:paddingStart="16sp"
+                android:id="@+id/user_mail">
             </EditText>
 
             <TextView
@@ -100,7 +105,9 @@
                 android:layout_height="36dp"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/shape_rounded_field"
-                android:inputType="text">
+                android:inputType="text"
+                android:paddingStart="16sp"
+                android:id="@+id/user_password1">
             </EditText>
 
             <TextView
@@ -118,8 +125,22 @@
                 android:layout_height="36dp"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/shape_rounded_field"
-                android:inputType="text">
+                android:inputType="text"
+                android:paddingStart="16sp"
+                android:id="@+id/user_password2">
             </EditText>
+
+            <TextView
+                android:id="@+id/error_message_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="12dp"
+                android:textSize="12sp"
+                android:textColor="@color/text_error"
+                android:textStyle="bold"
+                android:visibility="gone"
+                />
 
             <android.widget.Button
                 style="@style/TextViewBaseVariant"

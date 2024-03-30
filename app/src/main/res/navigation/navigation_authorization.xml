@@ -54,5 +54,16 @@
         android:id="@+id/email_code_entry"
         android:name="com.example.finschoolapp.email_code_entry"
         android:label="fragment_email_code_entry"
-        tools:layout="@layout/fragment_email_code_entry" />
+        tools:layout="@layout/fragment_email_code_entry" >
+        <argument
+            android:name="user_name"
+            app:argType="string" />
+        <argument
+            android:name="user_login"
+            app:argType="string" />
+        <argument android:name="user_mail"
+            app:argType="string" />
+        <argument android:name="user_password"
+            app:argType="string" />
+    </fragment>
 </navigation>
