@@ -85,7 +85,7 @@
                 android:layout_height="36dp"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/shape_rounded_field"
-                android:inputType="text"
+                android:inputType="textEmailAddress"
                 android:paddingStart="16sp"
                 android:id="@+id/user_mail">
             </EditText>

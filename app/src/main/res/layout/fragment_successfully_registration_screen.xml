@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:gravity="center_vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="156dp"
+        android:layout_gravity="center"
+        android:layout_margin="21sp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="186dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextViewBaseVariant.MainHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_horizontal"
+                android:text="@string/label_successfully" />
+
+            <TextView
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/label_lets_study"
+                android:textSize="15sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/error_message_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/text_error"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <android.widget.Button
+                android:id="@+id/button_okey_lets_stdudy"
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_rounded_field"
+                android:text="@string/button_okey_lets_stduy"
+                android:textAllCaps="false">
+
+            </android.widget.Button>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

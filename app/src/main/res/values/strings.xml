@@ -37,5 +37,7 @@
     <string name="label_code">Код из письма</string>
     <string name="label_send_code_again">Отправить письмо повторно</string>
     <string name="label_check_email">Проверьте почту. Сообщение придет в течение нескольких минут</string>
-
+    <string name="label_successfully">Успешно!</string>
+    <string name="label_lets_study">Теперь можно приступить к учебе</string>
+    <string name="button_okey_lets_stduy">Поехали</string>
 </resources>
