@@ -19,6 +19,12 @@
         <item name="android:textColor">@color/secondary</item>
     </style>
 
+    <style name="TextViewBaseVariant.Light" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/third</item>
+    </style>
+
 
 
 
