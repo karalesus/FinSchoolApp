@@ -16,6 +16,6 @@ private val regularNunitoStyle = TextStyle(
     fontWeight = FontWeight.Medium
 )
 
-val textViewBaseVariant = regularNunitoStyle.copy(fontSize = 14.sp)
+val textViewBaseVariant = regularNunitoStyle.copy(fontSize = 16.sp)
 val mainHeader = regularNunitoStyle.copy(fontSize = 28.sp)
 val smallHeader = regularNunitoStyle.copy(fontSize = 24.sp)
