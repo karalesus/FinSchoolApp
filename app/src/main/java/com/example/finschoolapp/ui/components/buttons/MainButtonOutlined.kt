@@ -9,6 +9,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.unit.dp
 import com.example.finschoolapp.ui.theme.LocalDimensions
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
@@ -29,7 +31,7 @@ fun MainButtonOutlined(
             width = dimensions.borderNormal,
             shape = roundedShape,
             color = palette.third
-        ),
+        ).shadow(5.dp),
         shape = roundedShape,
         colors = ButtonDefaults.buttonColors(containerColor = palette.thirdLight)
     ) {
