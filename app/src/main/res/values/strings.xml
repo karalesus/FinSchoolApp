@@ -39,4 +39,15 @@
     <string name="label_send_code_again">Отправить письмо повторно</string>
     <string name="label_check_email">Проверьте почту. Сообщение придет в течение нескольких минут</string>
 
+    <string name="label_successfully">Успешно!</string>
+    <string name="label_lets_study">Теперь можно приступить к учебе</string>
+    <string name="button_okey_lets_stduy">Поехали</string>
+
+    <string name="label_profile_settings">Настройки профиля</string>
+    <string name="label_old_password">Старый пароль</string>
+    <string name="label_new_password">Новый пароль</string>
+    <string name="button_save_changes">Сохранить изменения</string>
+    <string name="button_log_out">Выйти из аккаунта</string>
+    <string name="button_delete_account">Удалить аккаунт</string>
+
 </resources>
