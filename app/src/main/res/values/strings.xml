@@ -50,4 +50,6 @@
     <string name="button_log_out">Выйти из аккаунта</string>
     <string name="button_delete_account">Удалить аккаунт</string>
 
+    <string name="button_continue">Продолжить</string>
+
 </resources>

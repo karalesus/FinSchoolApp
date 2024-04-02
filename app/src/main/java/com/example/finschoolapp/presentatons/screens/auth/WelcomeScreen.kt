@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.R
-import com.example.finschoolapp.ui.components.buttons.HelpButton
+import com.example.finschoolapp.ui.components.buttons.MainButtonOutlined
 import com.example.finschoolapp.ui.theme.LocalDimensions
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.smallHeader
@@ -40,7 +40,7 @@ fun Welcome(
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
 
-    val palette = ThemeColors.Theme
+    val palette = ThemeColors.LightTheme
 
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
     Column (
@@ -70,7 +70,7 @@ fun Welcome(
                 style = smallHeader.copy(color = palette.secondary))
         }
         Spacer(modifier = modifier.height(dimensions.verticalSLarge))
-        HelpButton(
+        MainButtonOutlined(
             modifier = modifier
                 .fillMaxHeight(0.1f)
                 .fillMaxWidth(0.85f),

@@ -2,6 +2,7 @@ package com.example.finschoolapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
+
 val mainBackground: Color = Color(0xFFC3C8BB)
 val thirdLight: Color = Color(0xFFE0E0C6)
 val third: Color = Color(0xFFA9A969)

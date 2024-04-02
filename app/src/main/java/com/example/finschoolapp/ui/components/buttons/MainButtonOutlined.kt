@@ -14,7 +14,7 @@ import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 @Composable
-fun HelpButton(
+fun MainButtonOutlined(
     modifier: Modifier,
     palette: ThemeColors,
     text: String,
