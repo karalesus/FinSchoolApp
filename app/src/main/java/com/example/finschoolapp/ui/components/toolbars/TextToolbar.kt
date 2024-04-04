@@ -10,7 +10,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.finschoolapp.ui.theme.ThemeColors
@@ -20,23 +19,24 @@ import com.example.finschoolapp.ui.theme.mainHeader
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun TextToolbar(
-    text : String,
-    titleColor : Color,
-    backgroundColor : Color
+    text: String,
+    titleColor: Color,
+    backgroundColor: Color
 ) {
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
                 modifier = Modifier.shadow(7.dp),
                 title = {
-                Text(
-                    text = text,
-                    style = mainHeader,
-                    textAlign = TextAlign.Center)
-            },
+                    Text(
+                        text = text,
+                        style = mainHeader,
+                    )
+                },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = backgroundColor,
-                    titleContentColor = titleColor)
+                    titleContentColor = titleColor
+                )
             )
         })
     {
@@ -50,5 +50,6 @@ fun TextToolbarPreview() {
     TextToolbar(
         text = "Ура!",
         titleColor = palette.secondary,
-        backgroundColor = palette.thirdLight)
+        backgroundColor = palette.thirdLight
+    )
 }
