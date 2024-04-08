@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentatons.screens.auth
+package com.example.finschoolapp.presentations.screens.auth
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

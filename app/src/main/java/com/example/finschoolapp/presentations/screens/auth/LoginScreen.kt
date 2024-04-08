@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentatons.screens.auth
+package com.example.finschoolapp.presentations.screens.auth
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -11,9 +11,10 @@ import androidx.compose.ui.Modifier
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 @Composable
-fun SignUpScreen(
-    name: String,
+fun LoginScreen(
     onClick: () -> Unit,
+    onSignUpClick: () -> Unit,
+    onForgotClick: () -> Unit
 ) {
     Column (
         modifier = Modifier.fillMaxSize(),
@@ -21,9 +22,20 @@ fun SignUpScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ){
         Text (
+           modifier = Modifier.clickable { onClick() } ,
+            text = "ЛОГИН",
+            style = textViewBaseVariant
+        )
+        Text (
             modifier = Modifier.clickable { onClick() } ,
-            text = "Регистрация",
+            text = "Зарегистрироваться",
+            style = textViewBaseVariant
+        )
+        Text (
+            modifier = Modifier.clickable { onClick() } ,
+            text = "Забыл пароль",
             style = textViewBaseVariant
         )
     }
 }
+

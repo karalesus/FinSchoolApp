@@ -6,9 +6,9 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.finschoolapp.navigation.RootScreen
-import com.example.finschoolapp.presentatons.screens.auth.ForgotPasswordScreen
-import com.example.finschoolapp.presentatons.screens.auth.LoginScreen
-import com.example.finschoolapp.presentatons.screens.auth.SignUpScreen
+import com.example.finschoolapp.presentations.screens.auth.ForgotPasswordScreen
+import com.example.finschoolapp.presentations.screens.auth.LoginScreen
+import com.example.finschoolapp.presentations.screens.auth.SignUpScreen
 
 fun NavGraphBuilder.authNavGraph(
     navController: NavHostController,

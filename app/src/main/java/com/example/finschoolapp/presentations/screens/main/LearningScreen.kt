@@ -1,22 +1,17 @@
-package com.example.finschoolapp.presentatons.screens.main
+package com.example.finschoolapp.presentations.screens.main
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavController
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.ui.theme.ThemeColors
 
 @Composable
-fun ProgressScreen(
+fun LearningScreen (
     modifier: Modifier = Modifier,
 ) {
     Box(
@@ -24,8 +19,8 @@ fun ProgressScreen(
         contentAlignment = Alignment.Center
     ){
         Text (
-            text = "Прогресс",
-            color = ThemeColors.Theme.secondary,
+            text = "Обучение",
+            color = ThemeColors.LightTheme.secondary,
             fontWeight = FontWeight.Bold
         )
     }
@@ -33,6 +28,6 @@ fun ProgressScreen(
 
 @Composable
 @Preview
-fun ProgressScreenPreview() {
-    ProgressScreen()
+fun LearningScreenPreview() {
+    LearningScreen()
 }

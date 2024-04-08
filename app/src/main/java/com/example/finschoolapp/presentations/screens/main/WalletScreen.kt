@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentatons.screens.main
+package com.example.finschoolapp.presentations.screens.main
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,7 +18,7 @@ fun WalletScreen() {
     ){
         Text (
             text = "Учёт",
-            color = ThemeColors.Theme.secondary,
+            color = ThemeColors.LightTheme.secondary,
             fontWeight = FontWeight.Bold
         )
     }

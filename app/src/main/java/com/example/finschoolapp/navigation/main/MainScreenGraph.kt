@@ -6,9 +6,9 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.finschoolapp.navigation.RootScreen
-import com.example.finschoolapp.presentatons.screens.main.LearningScreen
-import com.example.finschoolapp.presentatons.screens.main.ProgressScreen
-import com.example.finschoolapp.presentatons.screens.main.WalletScreen
+import com.example.finschoolapp.presentations.screens.main.LearningScreen
+import com.example.finschoolapp.presentations.screens.main.ProgressScreen
+import com.example.finschoolapp.presentations.screens.main.WalletScreen
 
 fun NavGraphBuilder.mainScreenGraph(screenName: (String) -> Unit) {
     navigation(
