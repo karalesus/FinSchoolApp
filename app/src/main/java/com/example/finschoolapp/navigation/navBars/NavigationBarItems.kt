@@ -2,37 +2,35 @@ package com.example.finschoolapp.navigation.navBars
 
 import androidx.annotation.DrawableRes
 import com.example.finschoolapp.R
+import com.example.finschoolapp.navigation.main.MainScreen
 
 
-sealed class NavigationBarItems(
+sealed class NavigationBarItem(
     val title: String,
     val route: String,
     @DrawableRes val icon: Int
 ) {
-    object Progress : NavigationBarItems(
+    object Progress : NavigationBarItem(
         title = "Прогресс",
-        // TODO: route
-        route = " ",
+        route = MainScreen.Progress.route,
         icon = R.drawable.progress
     )
 
-    object Learning : NavigationBarItems(
+    object Learning : NavigationBarItem(
         title = "Обучение",
-        // TODO: route
-        route = " ",
+        route = MainScreen.Learning.route,
         icon = R.drawable.learning
     )
 
-    object Wallet : NavigationBarItems(
+    object Wallet : NavigationBarItem(
         title = "Учет",
-        // TODO: wallet
-        route = " ",
+        route = MainScreen.Wallet.route,
         icon = R.drawable.wallet
     )
 }
 
 val navigationBarItems = listOf(
-    NavigationBarItems.Progress,
-    NavigationBarItems.Learning,
-    NavigationBarItems.Wallet
+    NavigationBarItem.Progress,
+    NavigationBarItem.Learning,
+    NavigationBarItem.Wallet
 )
