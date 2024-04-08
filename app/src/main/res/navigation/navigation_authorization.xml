@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_authorization"
+    app:startDestination="@id/login_first_activity">
+    <fragment
+        android:id="@+id/login_first_activity"
+        android:name="com.example.finschoolapp.login_first_activity"
+        android:label="fragment_login_first_activity"
+        tools:layout="@layout/fragment_login_first_activity" >
+        <action
+            android:id="@+id/action_login_first_activity_to_registration_screen_activity"
+            app:destination="@id/registration_screen_activity" />
+        <action
+            android:id="@+id/action_login_first_activity_to_welcome_screen_first_activity"
+            app:destination="@id/welcome_screen_first_activity" />
+        <action
+            android:id="@+id/action_login_first_activity_to_recover_password"
+            app:destination="@id/recover_password" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration_screen_activity"
+        android:name="com.example.finschoolapp.registration_screen_activity"
+        android:label="fragment_registration_screen_activity"
+        tools:layout="@layout/fragment_registration_screen_activity" >
+        <action
+            android:id="@+id/action_registration_screen_activity_to_login_first_activity"
+            app:destination="@id/login_first_activity" />
+        <action
+            android:id="@+id/action_registration_screen_activity_to_email_code_entry"
+            app:destination="@id/email_code_entry" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcome_screen_first_activity"
+        android:name="com.example.finschoolapp.welcome_screen_first_activity"
+        android:label="fragment_welcome_screen_first_activity"
+        tools:layout="@layout/fragment_welcome_screen_first_activity" >
+        <action
+            android:id="@+id/action_welcome_screen_first_activity_to_welcome_screen_second_activity"
+            app:destination="@id/welcome_screen_second_activity" />
+    </fragment>
+    <fragment
+        android:id="@+id/recover_password"
+        android:name="com.example.finschoolapp.recover_password"
+        android:label="fragment_recover_password"
+        tools:layout="@layout/fragment_recover_password" />
+    <fragment
+        android:id="@+id/welcome_screen_second_activity"
+        android:name="com.example.finschoolapp.welcome_screen_second_activity"
+        android:label="fragment_welcome_screen_second_activity"
+        tools:layout="@layout/fragment_welcome_screen_second_activity" />
+    <fragment
+        android:id="@+id/email_code_entry"
+        android:name="com.example.finschoolapp.email_code_entry"
+        android:label="fragment_email_code_entry"
+        tools:layout="@layout/fragment_email_code_entry" >
+        <argument
+            android:name="user_name"
+            app:argType="string" />
+        <argument
+            android:name="user_login"
+            app:argType="string" />
+        <argument android:name="user_mail"
+            app:argType="string" />
+        <argument android:name="user_password"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_email_code_entry_to_successfully_registration_screen"
+            app:destination="@id/successfully_registration_screen" />
+    </fragment>
+    <fragment
+        android:id="@+id/successfully_registration_screen"
+        android:name="com.example.finschoolapp.successfully_registration_screen"
+        android:label="fragment_successfully_registration_screen"
+        tools:layout="@layout/fragment_successfully_registration_screen" >
+        <action
+            android:id="@+id/action_successfully_registration_screen_to_welcome_screen_first_activity"
+            app:destination="@id/welcome_screen_first_activity" />
+    </fragment>
+</navigation>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:orientation="vertical">
+    
+    <TextView
+        style="@style/TextViewBaseVariant.SmallHeader"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/third_light"
+        android:orientation="vertical"
+        android:text="Учёт"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="272dp"
+            android:layout_height="237dp"
+            android:layout_marginHorizontal="54dp"/>
+<!--            android:src=""-->
+
+
+        <TextView
+            style="@style/TextViewBaseVariant.SmallHeader"
+            android:layout_width="269dp"
+            android:layout_height="75dp"
+            android:layout_marginHorizontal="55dp"
+            android:layout_marginTop="12dp"
+            android:text="У тебя ещё нет финансовой цели!"
+            android:gravity="center"/>
+
+        <android.widget.Button
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/shape_rounded_dark_field"
+            android:text="Добавить цель"
+            android:textColor="@color/third_light"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/third_light"
+        android:orientation="horizontal"
+        android:layout_marginTop="78dp">
+
+        <ImageButton
+            android:layout_width="129dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="8dp"
+            android:background="@color/third_light"
+            android:src="@drawable/ic_progress"
+            android:contentDescription="progress"/>
+
+        <ImageButton
+            android:layout_width="129dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="4dp"
+            android:background="@color/third_light"
+            android:src="@drawable/ic_learning"
+            android:contentDescription="learning"/>
+
+        <ImageButton
+            android:layout_width="129dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/third_light"
+            android:src="@drawable/ic_accounting"
+            android:contentDescription="accounting"/>
+
+    </LinearLayout>
+
+</LinearLayout>

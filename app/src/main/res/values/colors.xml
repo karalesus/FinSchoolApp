@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="secondary">#545A21</color>
+    <color name="main_color">#1E4E4F</color>
+    <color name="third_light">#E0E0C6</color>
+    <color name="third">#A9A969</color>
+    <color name="main_background">#C3C8BB</color>
+    <color name="error_container">#FFDAD6</color>
+    <color name="error_stroke">#CE5E5E</color>
+    <color name="class_background">#FAFAF3</color>
+    <color name="background_error">#FFDAD6</color>
+    <color name="background_bound">#CE5E5E</color>
+    <color name="text_error">#CE5E5E</color>
 </resources>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/settings_text"
+        style="@style/TextViewBaseVariant.SmallHeader"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/third_light"
+        android:orientation="vertical"
+        android:text="@string/label_profile_settings"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="56sp"
+        android:background="@color/third_light"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:layout_width="129dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="8dp"
+            android:background="@color/third_light"
+            android:contentDescription="progress"
+            android:src="@drawable/ic_progress" />
+
+        <ImageButton
+            android:layout_width="129dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="4dp"
+            android:background="@color/third_light"
+            android:contentDescription="learning"
+            android:src="@drawable/ic_learning" />
+
+        <ImageButton
+            android:id="@+id/from_progress_to_accounting_main_menu"
+            android:layout_width="129dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/third_light"
+            android:contentDescription="accounting"
+            android:src="@drawable/ic_accounting" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/returnButton"
+        android:layout_width="83dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="330dp"
+        android:background="@color/third_light"
+        android:contentDescription="return"
+        app:layout_constraintBottom_toBottomOf="@+id/settings_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_return" />
+
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="100dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_text"
+        app:srcCompat="@drawable/image_character_lvl1_1" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView1"
+        app:srcCompat="@drawable/line_green" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="470sp"
+        android:layout_margin="21sp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="186dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+
+            <TextView
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_name">
+
+            </TextView>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="3dp"
+                android:paddingStart="16sp"
+                android:background="@drawable/shape_rounded_field"
+                android:hint="Иван Иванов"
+                android:inputType="text"
+                android:id="@+id/user_name">
+
+            </EditText>
+
+            <TextView
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/label_old_password">
+
+            </TextView>
+
+            <EditText
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="3dp"
+                android:paddingStart="16sp"
+                android:background="@drawable/shape_rounded_field"
+                android:inputType="text"
+                android:id="@+id/user_old_password">
+
+            </EditText>
+
+            <TextView
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/label_new_password">
+
+            </TextView>
+
+            <EditText
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/shape_rounded_field"
+                android:inputType="textEmailAddress"
+                android:paddingStart="16sp"
+                android:id="@+id/user_new_password">
+            </EditText>
+
+
+            <TextView
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/label_password_again">
+
+            </TextView>
+
+            <EditText
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/shape_rounded_field"
+                android:inputType="text"
+                android:paddingStart="16sp"
+                android:id="@+id/user_new_password_again">
+            </EditText>
+
+
+            <android.widget.Button
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_rounded_field"
+                android:text="@string/button_save_changes"
+                android:textAllCaps="false"
+                android:id="@+id/save_changes_button">
+
+            </android.widget.Button>
+
+            <android.widget.Button
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_rounded_field"
+                android:text="@string/button_log_out"
+                android:textAllCaps="false"
+                android:id="@+id/log_out_button">
+
+            </android.widget.Button>
+
+            <android.widget.Button
+                style="@style/TextViewBaseVariant.Light"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:text="@string/button_delete_account"
+                android:textAllCaps="false"
+                android:id="@+id/delete_account_button">
+            </android.widget.Button>
+
+
+        </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

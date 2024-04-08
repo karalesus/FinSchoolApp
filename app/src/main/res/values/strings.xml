@@ -1,3 +1,55 @@
 <resources>
     <string name="app_name">FinSchoolApp</string>
+    <string name="label_login">Логин</string>
+    <string name="label_sign_in">Вход</string>
+    <string name="label_password">Пароль</string>
+    <string name="button_forgot_password">Забыли пароль?</string>
+    <string name="button_sign_in">Войти</string>
+    <string name="button_sign_up">Зарегистрироваться</string>
+    <string name="welcome_text">
+        Привет, я Том! Совсем недавно я оказался на улице из-за того, что задолжал много денег местному банку. Поможешь мне снова стать богаче?
+    </string>
+    <string name="button_what_to_do">Что мне делать?</string>
+    <string name="rules">
+        Я становлюсь богаче, когда ты становишься более финансово грамотным и рассказываешь мне интересные вещи. Поэтому тебе надо читать статьи, проходить тесты и копить деньги на мечту! А я научусь на твоем примере!
+    </string>
+    <string name="button_help">Хорошо, я тебе помогу!</string>
+    <string name="button_next_theme">Следующая тема</string>
+    <string name="incomes_ans_expenses_first">Доход – это те средства, которые мы с вами получаем за какую-то деятельность. К этой категории относится заработная плата, любые социальные выплаты, деньги, полученные в наследство.\n\nЗаработная плата – это деньги, которые работник получает в обмен за свой труд. Это один из основных направлений дохода. \n\nПо большому счету, любой приток денежных средств можно назвать доходом в широком смысле этого слова. Даже если вы продали старое неиспользуемое пианино, то деньги, вырученные за него, будут вашим доходом. В идеале, все такие доходы нужно декларировать в налоговой инспекции, но ее представители следят лишь за тем, чтобы граждане не утаивали крупные суммы средств. На предприятиях виды доходов регламентируются более строго. \n\nВиды дохода: \n– Активный и пассивный \nАктивный доход – это доход, получаемый от собственных ежедневных усилий. Делаете вы усилия – доход есть. Решили вы сделать паузу и немного отойти от дел – дохода нет. \n\nПассивный доход - это вид заработка, для получения которого не требуется активных действий. Вместо этого источником заработка становится актив (деньги, недвижимость и др.), находящийся в собственности человека.\n\n– Первичный и вторичный \nПервичные доходы - это доходы, которые получают собственники фактора производства. \n\nПример. Работники получают заработную плату, акционер получает дивиденды по акциям. Вторичные доходы – это доходы, которые образуются и перераспределяются в основном по государственным каналам. \n\nПример. Установление государством минимального размера оплаты труда (МРОТ) \n\n– Основной и дополнительный \nОсновной доход – это доход, который получает человек в своей основной деятельности или профессиональной области.\n\nДополнительный доход – это доход от дополнительной работы или инвестиций. \n\n– Денежный и неденежный \nДенежный – привычный нам вид дохода, обмен услуг или товаров на денежную валюту. \n\nНеденежный – это доход в котором мы на прямую не получаем деньги, а к примеру в обмен на услугу взаимообмен (или бартер).</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="user_name_text">Иван Иванов</string>
+    <string name="user_level_text">Уровень: 1</string>
+    <string name="user_coins_text">Монеты: 100</string>
+    <string name="saved_topics">Сохраненные темы</string>
+    <string name="progress">Достижения</string>
+    <string name="achievement_1">Пройти первый модуль</string>
+    <string name="achievement_2">Пройти 3 теста подряд без ошибок</string>
+    <string name="achievement_3">Получить 5 уровень персонажа</string>
+    <string name="achievement_4">Накопить на цель</string>
+    <string name="label_registration">Регистрация</string>
+    <string name="label_name">Имя</string>
+    <string name="label_email">Электронная почта</string>
+    <string name="label_password_again">Повторите пароль</string>
+    <string name="button_next">Далее</string>
+    <string name="button_sign_in_from_reg">Уже есть аккаунт? Войти</string>
+
+    <string name="label_confirm">Подтверждение</string>
+    <string name="label_code">Код из письма</string>
+    <string name="label_send_code_again">Отправить письмо повторно</string>
+    <string name="label_check_email">Проверьте почту. Сообщение придет в течение нескольких минут</string>
+
+    <string name="label_successfully">Успешно!</string>
+    <string name="label_lets_study">Теперь можно приступить к учебе</string>
+    <string name="button_okey_lets_stduy">Поехали</string>
+
+    <string name="label_profile_settings">Настройки профиля</string>
+    <string name="label_old_password">Старый пароль</string>
+    <string name="label_new_password">Новый пароль</string>
+    <string name="button_save_changes">Сохранить изменения</string>
+    <string name="button_log_out">Выйти из аккаунта</string>
+    <string name="button_delete_account">Удалить аккаунт</string>
+
+    <string name="button_continue">Продолжить</string>
+
 </resources>

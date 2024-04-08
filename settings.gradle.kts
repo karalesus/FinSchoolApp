@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "FinSchoolApp"
-include ':app'
+include(":app")

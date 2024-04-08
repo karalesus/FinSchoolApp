@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="98.5dp"
+        android:layout_marginTop="110dp"
+        android:background="@color/main_background"
+        android:src="@drawable/image_character_lvl1_1" />
+
+    <TextView
+        style="@style/TextViewBaseVariant.MainHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_rounded_field"
+        android:padding="16dp"
+        android:text="@string/welcome_text"
+        android:textSize="24sp" />
+
+    <android.widget.Button
+        style="@style/TextViewBaseVariant"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_rounded_field"
+        android:text="@string/button_what_to_do"
+        android:textAllCaps="false"
+        android:id="@+id/what_to_do_button"/>
+</LinearLayout>
+

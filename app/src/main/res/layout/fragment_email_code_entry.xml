@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="65dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            style="@style/TextViewBaseVariant.MainHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/label_confirm"
+            android:layout_marginBottom="16dp"
+/>
+
+        <TextView
+            style="@style/TextViewBaseVariant.SmallHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_check_email"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="450sp"
+        android:layout_margin="21sp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="186dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_code"
+                android:textStyle="bold"
+                android:textSize="15sp">
+
+            </TextView>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="3dp"
+                android:paddingStart="16sp"
+                android:background="@drawable/shape_rounded_field"
+                android:inputType="number"
+                android:id="@+id/input_code_field">
+
+            </EditText>
+
+            <TextView
+                android:id="@+id/error_message_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="12dp"
+                android:textSize="12sp"
+                android:textColor="@color/text_error"
+                android:textStyle="bold"
+                android:visibility="gone"
+                />
+
+            <android.widget.Button
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_rounded_field"
+                android:text="@string/button_next"
+                android:textAllCaps="false"
+                android:id="@+id/send_code_button">
+
+            </android.widget.Button>
+
+            <android.widget.Button
+                style="@style/TextViewBaseVariant"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/transparent"
+                android:gravity="end|center_vertical"
+                android:text="@string/label_send_code_again"
+                android:textAllCaps="false"
+                android:id="@+id/i_have_account_button"
+                android:textStyle="bold"
+                android:textSize="13sp">
+            </android.widget.Button>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
