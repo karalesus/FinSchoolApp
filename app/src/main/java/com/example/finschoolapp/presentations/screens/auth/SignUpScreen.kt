@@ -76,8 +76,6 @@ fun SignUpScreen(
             val password = remember { mutableStateOf(TextFieldValue()) }
 
 
-
-            Spacer(modifier = Modifier.height(20.dp))
             Text(text = "Логин", style = textViewBaseVariant.copy(color = palette.secondary), textAlign = TextAlign.End,)
             OutlinedTextField(
                 modifier = modifier.background(palette.thirdLight)
