@@ -23,7 +23,7 @@ import com.example.finschoolapp.ui.theme.secondary
 fun BottomNavigationBar(
     modifier: Modifier = Modifier,
     navController: NavHostController,
-    palette: ThemeColors = ThemeColors.Theme
+    palette: ThemeColors = ThemeColors.LightTheme
 ) {
     //notify if it is changes
     val navigationBackStackEntry by navController.currentBackStackEntryAsState()
