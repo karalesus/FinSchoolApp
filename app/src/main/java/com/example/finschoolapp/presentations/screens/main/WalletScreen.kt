@@ -35,38 +35,51 @@ fun WalletScreen(modifier: Modifier = Modifier) {
 
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
 
-    Column (modifier = modifier
-        .fillMaxSize()
-        .background(color = palette.background),
-        horizontalAlignment = Alignment.CenterHorizontally,){
-        TextToolbar(text = "Учёт", titleColor = palette.secondary, backgroundColor = palette.thirdLight)
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .background(color = palette.background),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        TextToolbar(
+            text = "Учёт",
+            titleColor = palette.secondary,
+            backgroundColor = palette.thirdLight
+        )
 
         Spacer(modifier = modifier.height(dimensions.verticalXLarge))
 
-        Box(modifier = modifier
-            .background(color = palette.background)
-            .size(height = 237.dp, width = 237.dp)
-            .clip(roundedShape))
+        Box(
+            modifier = modifier
+                .background(color = palette.background)
+                .size(height = 237.dp, width = 237.dp)
+                .clip(roundedShape)
+        )
 
         Spacer(modifier = modifier.height(dimensions.verticalNormal))
 
-        Box(contentAlignment = Alignment.Center,
+        Box(
+            contentAlignment = Alignment.Center,
             modifier = modifier
-            .background(color = palette.background)
-            .size(height = 67.dp, width = 237.dp)
-            .clip(roundedShape)
+                .background(color = palette.background)
+                .size(height = 67.dp, width = 237.dp)
+                .clip(roundedShape)
         ) {
-            Text(text = stringResource(id = R.string.label_no_goal),
-            style = smallHeader.copy(color = palette.secondary),
-            textAlign = TextAlign.Center)
+            Text(
+                text = stringResource(id = R.string.label_no_goal),
+                style = smallHeader.copy(color = palette.secondary),
+                textAlign = TextAlign.Center
+            )
         }
 
         Spacer(modifier = modifier.height(dimensions.verticalNormal))
 
-        PrimaryButton(modifier = modifier.size
-            (width = 296.dp, height = 46.dp),
+        PrimaryButton(
+            modifier = modifier.size
+                (width = 296.dp, height = 46.dp),
             palette = ThemeColors.LightTheme,
-            text = stringResource(id = R.string.button_add_goal))
+            text = stringResource(id = R.string.button_add_goal)
+        )
 
         Spacer(modifier = modifier.weight(1f))
 

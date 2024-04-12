@@ -1,10 +1,8 @@
 package com.example.finschoolapp.navigation.navBars
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
-import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -41,7 +39,9 @@ fun BottomNavigationBar(
                 onClick = {
                     if (currentRoute != item.route) {
                         navController.navigate(item.route) {
-                            if (currentRoute != null) { popUpTo(route = currentRoute) }
+                            if (currentRoute != null) {
+                                popUpTo(route = currentRoute)
+                            }
                         }
                     }
                 },

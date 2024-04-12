@@ -43,7 +43,7 @@ fun Welcome(
     val palette = ThemeColors.LightTheme
 
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
-    Column (
+    Column(
         modifier = modifier
             .fillMaxSize()
             .background(color = palette.background),
@@ -67,7 +67,8 @@ fun Welcome(
             Text(
                 modifier = modifier.padding(10.dp),
                 text = stringResource(id = R.string.rules),
-                style = smallHeader.copy(color = palette.secondary))
+                style = smallHeader.copy(color = palette.secondary)
+            )
         }
         Spacer(modifier = modifier.height(dimensions.verticalSLarge))
         MainButtonOutlined(
