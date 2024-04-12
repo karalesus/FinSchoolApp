@@ -34,7 +34,7 @@ import com.example.finschoolapp.ui.theme.smallHeader
 @Composable
 fun Welcome(
     modifier: Modifier = Modifier,
-    navController: NavHostController,
+    navController: NavHostController
 ) {
     val dimensions = LocalDimensions.current
     val keyboardController = LocalSoftwareKeyboardController.current

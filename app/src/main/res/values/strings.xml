@@ -52,4 +52,7 @@
 
     <string name="button_continue">Продолжить</string>
 
+    <string name="label_no_goal">У тебя ещё нет финансовой цели!</string>
+    <string name="button_add_goal">Добавить цель</string>
+
 </resources>
