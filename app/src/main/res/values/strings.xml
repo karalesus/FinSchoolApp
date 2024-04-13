@@ -34,10 +34,13 @@
     <string name="button_next">Далее</string>
     <string name="button_sign_in_from_reg">Уже есть аккаунт? Войти</string>
 
+    <string name="label_password_recovery">Восстановление пароля</string>
+    <string name="label_we_send_code">Мы отправим код подтверждения на электронную почту, указанную при регистрации</string>
     <string name="label_confirm">Подтверждение</string>
     <string name="label_code">Код из письма</string>
     <string name="label_send_code_again">Отправить письмо повторно</string>
     <string name="label_check_email">Проверьте почту. Сообщение придет в течение нескольких минут</string>
+    <string name="button_send">Отправить</string>
 
     <string name="label_successfully">Успешно!</string>
     <string name="label_lets_study">Теперь можно приступить к учебе</string>
