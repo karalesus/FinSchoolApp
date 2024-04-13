@@ -38,7 +38,7 @@ fun NavGraphBuilder.authNavGraph(
             screenName("Sign Up")
         }
         composable(route = AuthScreen.Forgot.route) {
-            ForgotPasswordScreen(name = AuthScreen.Forgot.route) {}
+            ForgotPasswordScreen(navController = navController)
             screenName("Forgot password")
         }
     }
