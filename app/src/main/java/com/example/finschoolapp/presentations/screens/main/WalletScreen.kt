@@ -80,10 +80,6 @@ fun WalletScreen(modifier: Modifier = Modifier) {
             palette = ThemeColors.LightTheme,
             text = stringResource(id = R.string.button_add_goal)
         )
-
-        Spacer(modifier = modifier.weight(1f))
-
-        BottomNavigationBar(navController = rememberNavController())
     }
 }
 
