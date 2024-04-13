@@ -29,6 +29,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -38,6 +42,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.finschoolapp.R
+import com.example.finschoolapp.ui.components.buttons.MainButtonOutlined
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.mainHeader
 import com.example.finschoolapp.ui.theme.smallHeader
@@ -49,6 +55,8 @@ fun SignUpScreen(
     modifier: Modifier = Modifier,
     navController: NavHostController
 ) {
+    val keyboardController = LocalSoftwareKeyboardController.current
+    val focusManager = LocalFocusManager.current
     val palette = ThemeColors.LightTheme
 
     Column(
@@ -60,13 +68,13 @@ fun SignUpScreen(
     ) {
         Row () {
             Text(
-                text = "Вход",
+                text = stringResource(id = R.string.label_sign_in),
                 style = mainHeader.copy(color = palette.secondary),
                 modifier = Modifier.align(alignment = Alignment.CenterVertically)
             )
         }
         Column(
-            modifier = Modifier.padding(20.dp),
+            modifier = Modifier.padding(10.dp),
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Top
 
@@ -76,28 +84,35 @@ fun SignUpScreen(
             val password = remember { mutableStateOf(TextFieldValue()) }
 
 
-            Text(text = "Логин", style = textViewBaseVariant.copy(color = palette.secondary), textAlign = TextAlign.End,)
+            Text(text = stringResource(id = R.string.label_login), style = textViewBaseVariant.copy(color = palette.secondary), textAlign = TextAlign.End,)
             OutlinedTextField(
-                modifier = modifier.background(palette.thirdLight)
-                    .height(30.dp)
+                modifier = modifier
+                    .background(palette.thirdLight)
+                    .height(35.dp)
                     .fillMaxWidth(0.9f)
-                    .border( width = 2.dp,
-                        color = palette.third,
-                        shape = RoundedCornerShape(20)),
+                    .shadow(2.dp, shape = RoundedCornerShape(30))
+                    .border(
+                        width = 3.dp,
+                        color = palette.third
+                    ),
                 value = username.value,
                 onValueChange = { username.value = it },
 
             )
 
             Spacer(modifier = Modifier.height(20.dp))
-            Text(text = "Пароль", style = textViewBaseVariant.copy(color = palette.secondary), textAlign = TextAlign.End,)
+            Text(text = stringResource(id = R.string.label_password), style = textViewBaseVariant.copy(color = palette.secondary), textAlign = TextAlign.End,)
             OutlinedTextField(
-                modifier = modifier.background(palette.thirdLight)
-                    .height(30.dp)
+                modifier = modifier
+                    .background(palette.thirdLight)
+                    .height(35.dp)
                     .fillMaxWidth(0.9f)
-                    .border( width = 2.dp,
+                    .shadow(3.dp)
+                    .border(
+                        width = 3.dp,
                         color = palette.third,
-                        shape = RoundedCornerShape(20)),
+                        shape = RoundedCornerShape(30)
+                    ),
                 value = password.value,
                 visualTransformation = PasswordVisualTransformation(),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
@@ -121,20 +136,18 @@ fun SignUpScreen(
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            OutlinedButton(
-                    modifier = modifier
-                        .fillMaxHeight(0.07f)
-                        .fillMaxWidth(0.9f),
-                    onClick = { },
-                    border = BorderStroke( width = 2.dp,
-                        color = palette.third) ,
-                    shape = RoundedCornerShape(20.dp),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = palette.thirdLight
-                    )
-                ) {
-                    Text(text = "Войти", style = textViewBaseVariant.copy(color = palette.secondary))
-                }
+            MainButtonOutlined(
+                modifier = modifier
+                    .height(35.dp)
+                    .shadow(3.dp)
+                    .fillMaxWidth(0.9f),
+                palette = palette,
+                text = stringResource(id = R.string.button_sign_in),
+                onButtonClick = {
+                    focusManager.clearFocus()
+                    keyboardController?.hide()
+                })
+
             }
 
             Box(modifier = modifier.fillMaxWidth())
