@@ -88,7 +88,7 @@ fun ForgotPasswordScreen(
 
             ) {
 
-                val username = remember { mutableStateOf(TextFieldValue()) }
+                val email = remember { mutableStateOf(TextFieldValue()) }
 
                 Text(
                     text = stringResource(id = R.string.label_email),
@@ -100,15 +100,15 @@ fun ForgotPasswordScreen(
                     modifier = modifier
                         .background(palette.thirdLight)
                         .height(35.dp)
-                        .fillMaxWidth(0.9f)
+                        .fillMaxWidth(1f)
                         .shadow(3.dp)
                         .border(
                             width = 3.dp,
                             color = palette.third,
                             shape = RoundedCornerShape(30)
                         ),
-                    value = username.value,
-                    onValueChange = { username.value = it },
+                    value = email.value,
+                    onValueChange = { email.value = it },
 
                     )
 
@@ -131,7 +131,7 @@ fun ForgotPasswordScreen(
                     modifier = modifier
                         .height(35.dp)
                         .shadow(3.dp)
-                        .fillMaxWidth(0.9f),
+                        .fillMaxWidth(1f),
                     palette = palette,
                     text = stringResource(id = R.string.button_send),
                     onButtonClick = {

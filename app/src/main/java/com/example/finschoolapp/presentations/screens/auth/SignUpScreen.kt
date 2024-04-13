@@ -93,7 +93,7 @@ fun SignUpScreen(
                     modifier = modifier
                         .background(palette.thirdLight)
                         .height(35.dp)
-                        .fillMaxWidth(0.9f)
+                        .fillMaxWidth(1f)
                         .shadow(2.dp, shape = RoundedCornerShape(30))
                         .border(
                             width = 3.dp,
@@ -114,7 +114,7 @@ fun SignUpScreen(
                     modifier = modifier
                         .background(palette.thirdLight)
                         .height(35.dp)
-                        .fillMaxWidth(0.9f)
+                        .fillMaxWidth(1f)
                         .shadow(3.dp)
                         .border(
                             width = 3.dp,
@@ -145,7 +145,7 @@ fun SignUpScreen(
                     modifier = modifier
                         .height(35.dp)
                         .shadow(3.dp)
-                        .fillMaxWidth(0.9f),
+                        .fillMaxWidth(1f),
                     palette = palette,
                     text = stringResource(id = R.string.button_sign_in),
                     onButtonClick = {
