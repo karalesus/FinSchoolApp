@@ -43,6 +43,10 @@
     <string name="button_send">Отправить</string>
     <string name="button_confirmation">Подтвердить</string>
 
+    <string name="label_hooray">УРА!</string>
+    <string name="label_change_your_password">Теперь осталось поменять пароль</string>
+    <string name="button_save_and_log_in">Сохранить и войти</string>
+
     <string name="label_successfully">Успешно!</string>
     <string name="label_lets_study">Теперь можно приступить к учебе</string>
     <string name="button_okey_lets_stduy">Поехали</string>
