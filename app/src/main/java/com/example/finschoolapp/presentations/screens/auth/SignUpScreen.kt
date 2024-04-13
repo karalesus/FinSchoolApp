@@ -62,91 +62,105 @@ fun SignUpScreen(
     Column(
         modifier = modifier
             .fillMaxSize()
-            .background(color = palette.background),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+            .background(color = palette.background)
     ) {
-        Row () {
-            Text(
-                text = stringResource(id = R.string.label_sign_in),
-                style = mainHeader.copy(color = palette.secondary),
-                modifier = Modifier.align(alignment = Alignment.CenterVertically)
-            )
-        }
+        Spacer(modifier = Modifier.height(150.dp))
+
+
         Column(
-            modifier = Modifier.padding(10.dp),
-            horizontalAlignment = Alignment.Start,
+            modifier = modifier
+                .fillMaxWidth()
+                .height(400.dp)
+                .background(color = palette.background),
+            horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top
-
         ) {
+            Row() {
+                Text(
+                    text = stringResource(id = R.string.label_sign_in),
+                    style = mainHeader.copy(color = palette.secondary),
+                    modifier = Modifier.align(alignment = Alignment.CenterVertically)
+                )
+            }
+            Column(
+                modifier = Modifier.padding(10.dp),
+                horizontalAlignment = Alignment.Start,
+                verticalArrangement = Arrangement.Top
 
-            val username = remember { mutableStateOf(TextFieldValue()) }
-            val password = remember { mutableStateOf(TextFieldValue()) }
+            ) {
 
-
-            Text(text = stringResource(id = R.string.label_login), style = textViewBaseVariant.copy(color = palette.secondary), textAlign = TextAlign.End,)
-            OutlinedTextField(
-                modifier = modifier
-                    .background(palette.thirdLight)
-                    .height(35.dp)
-                    .fillMaxWidth(0.9f)
-                    .shadow(2.dp, shape = RoundedCornerShape(30))
-                    .border(
-                        width = 3.dp,
-                        color = palette.third
-                    ),
-                value = username.value,
-                onValueChange = { username.value = it },
-
-            )
-
-            Spacer(modifier = Modifier.height(20.dp))
-            Text(text = stringResource(id = R.string.label_password), style = textViewBaseVariant.copy(color = palette.secondary), textAlign = TextAlign.End,)
-            OutlinedTextField(
-                modifier = modifier
-                    .background(palette.thirdLight)
-                    .height(35.dp)
-                    .fillMaxWidth(0.9f)
-                    .shadow(3.dp)
-                    .border(
-                        width = 3.dp,
-                        color = palette.third,
-                        shape = RoundedCornerShape(30)
-                    ),
-                value = password.value,
-                visualTransformation = PasswordVisualTransformation(),
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-                onValueChange = { password.value = it })
+                val username = remember { mutableStateOf(TextFieldValue()) }
+                val password = remember { mutableStateOf(TextFieldValue()) }
 
 
-            Spacer(modifier = modifier
-                .height(20.dp)
-                .width(200.dp)
-            )
-            ClickableText(
-                modifier = modifier.align(Alignment.End),
-                text = AnnotatedString("Забыли пароль?"),
-                onClick = { },
-                style = textforSignUp.copy(
-                    textAlign = TextAlign.Start,
-                    color = palette.secondary,
+                Text(
+                    text = stringResource(id = R.string.label_login),
+                    style = textViewBaseVariant.copy(color = palette.secondary),
+                    textAlign = TextAlign.End,
+                )
+                OutlinedTextField(
+                    modifier = modifier
+                        .background(palette.thirdLight)
+                        .height(35.dp)
+                        .fillMaxWidth(0.9f)
+                        .shadow(2.dp, shape = RoundedCornerShape(30))
+                        .border(
+                            width = 3.dp,
+                            color = palette.third
+                        ),
+                    value = username.value,
+                    onValueChange = { username.value = it },
+
+                    )
+
+                Spacer(modifier = Modifier.height(20.dp))
+                Text(
+                    text = stringResource(id = R.string.label_password),
+                    style = textViewBaseVariant.copy(color = palette.secondary),
+                    textAlign = TextAlign.End,
+                )
+                OutlinedTextField(
+                    modifier = modifier
+                        .background(palette.thirdLight)
+                        .height(35.dp)
+                        .fillMaxWidth(0.9f)
+                        .shadow(3.dp)
+                        .border(
+                            width = 3.dp,
+                            color = palette.third,
+                            shape = RoundedCornerShape(30)
+                        ),
+                    value = password.value,
+                    visualTransformation = PasswordVisualTransformation(),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    onValueChange = { password.value = it })
+
+
+                Spacer(modifier = Modifier.height(20.dp))
+                ClickableText(
+                    modifier = modifier.align(Alignment.End),
+                    text = AnnotatedString("Забыли пароль?"),
+                    onClick = { },
+                    style = textforSignUp.copy(
+                        textAlign = TextAlign.Start,
+                        color = palette.secondary,
+                    )
+
                 )
 
-            )
+                Spacer(modifier = Modifier.height(20.dp))
 
-            Spacer(modifier = Modifier.height(20.dp))
-
-            MainButtonOutlined(
-                modifier = modifier
-                    .height(35.dp)
-                    .shadow(3.dp)
-                    .fillMaxWidth(0.9f),
-                palette = palette,
-                text = stringResource(id = R.string.button_sign_in),
-                onButtonClick = {
-                    focusManager.clearFocus()
-                    keyboardController?.hide()
-                })
+                MainButtonOutlined(
+                    modifier = modifier
+                        .height(35.dp)
+                        .shadow(3.dp)
+                        .fillMaxWidth(0.9f),
+                    palette = palette,
+                    text = stringResource(id = R.string.button_sign_in),
+                    onButtonClick = {
+                        focusManager.clearFocus()
+                        keyboardController?.hide()
+                    })
 
             }
 
@@ -163,9 +177,10 @@ fun SignUpScreen(
             }
         }
     }
+}
 
 @Preview
 @Composable
-fun SignUpPreview(){
+fun SignUpPreview() {
     SignUpScreen(navController = rememberNavController())
 }
