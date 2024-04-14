@@ -16,8 +16,14 @@ private val regularNunitoStyle = TextStyle(
     fontWeight = FontWeight.Medium
 )
 
+private val boldNunitoStyle = TextStyle(
+    fontFamily = NunitoFontFamily,
+    fontWeight = FontWeight.ExtraBold,
+)
+
 val textViewBaseVariant = regularNunitoStyle.copy(fontSize = 16.sp)
 val mainHeader = regularNunitoStyle.copy(fontSize = 28.sp)
 val smallHeader = regularNunitoStyle.copy(fontSize = 24.sp)
 val smallDescription = regularNunitoStyle.copy(fontSize = 11.sp)
 val textforSignUp = regularNunitoStyle.copy(fontSize = 14.sp)
+val LargeHeader = boldNunitoStyle.copy(fontSize = 50.sp)
