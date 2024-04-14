@@ -62,5 +62,7 @@
 
     <string name="label_no_goal">У тебя ещё нет финансовой цели!</string>
     <string name="button_add_goal">Добавить цель</string>
+    <string name="button_add_photo">Добавить фото</string>
+    <string name="button_create_goal">Создать цель</string>
 
 </resources>
