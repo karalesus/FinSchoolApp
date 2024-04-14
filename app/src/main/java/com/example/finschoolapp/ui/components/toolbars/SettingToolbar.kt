@@ -14,7 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.R
+import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.mainHeader
 
@@ -24,6 +27,7 @@ import com.example.finschoolapp.ui.theme.mainHeader
 fun SettingToolbar(
     text: String,
     palette: ThemeColors,
+    navController: NavHostController,
 ) {
     TopAppBar(
         title = {
@@ -38,7 +42,9 @@ fun SettingToolbar(
         ),
         actions = {
             IconButton(
-                onClick = { /*TODO*/ },
+                onClick = {
+                    navController.navigate(MainScreen.Settings.route)
+                },
                 modifier = Modifier
                     .padding(end = 16.dp)
                     .size(55.dp)
@@ -56,5 +62,9 @@ fun SettingToolbar(
 @Preview
 @Composable
 fun SettingToolbarPreview() {
-    SettingToolbar(text = "Прогресс", palette = ThemeColors.LightTheme)
+    SettingToolbar(
+        text = "Прогресс",
+        palette = ThemeColors.LightTheme,
+        navController = rememberNavController()
+    )
 }
