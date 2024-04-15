@@ -9,9 +9,11 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.mainHeader
 
@@ -23,6 +25,8 @@ fun TextToolbar(
     backgroundColor: Color
 ) {
     TopAppBar(
+        modifier = Modifier
+            .shadow(elevation = 10.dp),
         title = {
             Text(
                 text = text,
