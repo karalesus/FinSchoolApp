@@ -23,11 +23,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.R
 import com.example.finschoolapp.ui.components.buttons.PrimaryButton
 import com.example.finschoolapp.ui.components.toolbars.TextToolbar
@@ -53,22 +55,25 @@ fun OutlinedField(string: String){
                 ),
             value = value,
             onValueChange = { value = it },
-            textStyle = smallHeader.copy(color = Color.Black),
+            textStyle = smallHeader.copy(color = palette.secondary, fontSize = 14.sp ),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = palette.third,
                 unfocusedBorderColor = palette.secondary
             ),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+
         )
         AnimatedVisibility(visible = value.isEmpty()) {
-            Text(string, style = textViewBaseVariant.copy(color = Color.Black))
+            Text(string, style = textViewBaseVariant.copy(color = palette.secondary))
         }
     }
 
 }
 
 @Composable
-fun AddGoalScreen(modifier: Modifier = Modifier) {
+fun AddGoalScreen(modifier: Modifier = Modifier,
+                  navController: NavHostController
+) {
 
     val dimensions = LocalDimensions.current
 
@@ -103,7 +108,9 @@ fun AddGoalScreen(modifier: Modifier = Modifier) {
             modifier = modifier.size
                 (width = 155.dp, height = 36.dp),
             palette = ThemeColors.LightTheme,
-            text = stringResource(id = R.string.button_add_photo)
+            text = stringResource(id = R.string.button_add_photo),
+            navController = rememberNavController(),
+            route = ""
         )
 
         Spacer(modifier = modifier.height(29.dp))
@@ -121,7 +128,9 @@ fun AddGoalScreen(modifier: Modifier = Modifier) {
                 height = 40.dp, width = 328.dp
             ),
             palette = ThemeColors.LightTheme,
-            text = stringResource(id = R.string.button_create_goal)
+            text = stringResource(id = R.string.button_create_goal),
+            navController = rememberNavController(),
+            route = ""
         )
 
     }
@@ -130,5 +139,5 @@ fun AddGoalScreen(modifier: Modifier = Modifier) {
 @Composable
 @Preview
 fun AddGoalScreenPreview() {
-    AddGoalScreen()
+    AddGoalScreen(navController = rememberNavController())
 }

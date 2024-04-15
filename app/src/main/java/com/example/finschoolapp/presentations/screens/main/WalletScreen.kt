@@ -17,7 +17,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.R
+import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.ui.components.buttons.PrimaryButton
 import com.example.finschoolapp.ui.components.toolbars.TextToolbar
 import com.example.finschoolapp.ui.theme.LocalDimensions
@@ -25,7 +28,9 @@ import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.smallHeader
 
 @Composable
-fun WalletScreen(modifier: Modifier = Modifier) {
+fun WalletScreen(modifier: Modifier = Modifier,
+                 navController: NavHostController
+) {
 
     val dimensions = LocalDimensions.current
 
@@ -76,7 +81,9 @@ fun WalletScreen(modifier: Modifier = Modifier) {
             modifier = modifier.size
                 (width = 296.dp, height = 46.dp),
             palette = ThemeColors.LightTheme,
-            text = stringResource(id = R.string.button_add_goal)
+            text = stringResource(id = R.string.button_add_goal),
+            navController = navController,
+            route = MainScreen.AddGoal.route
         )
     }
 }
@@ -85,5 +92,5 @@ fun WalletScreen(modifier: Modifier = Modifier) {
 @Composable
 @Preview
 fun WalletScreenPreview() {
-    WalletScreen()
+    WalletScreen(navController = rememberNavController())
 }

@@ -23,7 +23,7 @@ fun RootNavigationGraph(
         authNavGraph(navController = navController) {
             isNavigationBarVisible(false)
         }
-        mainScreenGraph {
+        mainScreenGraph(navController = navController) {
             isNavigationBarVisible(true)
         }
 

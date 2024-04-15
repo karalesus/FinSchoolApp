@@ -8,4 +8,5 @@ sealed class MainScreen (val route: String) {
     object Learning: MainScreen("Learning")
     object Wallet: MainScreen("Wallet")
     object Settings: MainScreen("Settings")
+    object AddGoal: MainScreen("AddGoal")
 }

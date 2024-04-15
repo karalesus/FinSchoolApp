@@ -11,6 +11,7 @@ import com.example.finschoolapp.presentations.screens.main.LearningScreen
 import com.example.finschoolapp.presentations.screens.main.ProgressScreen
 import com.example.finschoolapp.presentations.screens.main.SettingScreen
 import com.example.finschoolapp.presentations.screens.main.WalletScreen
+import com.example.finschoolapp.presentations.screens.wallet.AddGoalScreen
 
 fun NavGraphBuilder.mainScreenGraph(
     navController: NavHostController,
@@ -42,7 +43,7 @@ fun NavGraphBuilder.mainScreenGraph(
             enterTransition = { fadeIn() },
             exitTransition = { fadeOut() }
         ) {
-            WalletScreen()
+            WalletScreen(navController = navController)
             screenName("Wallet")
         }
 
@@ -53,6 +54,14 @@ fun NavGraphBuilder.mainScreenGraph(
         ) {
             SettingScreen(navController = navController)
             screenName("Settings")
+        }
+        composable(
+            route = MainScreen.AddGoal.route,
+            enterTransition = { fadeIn() },
+            exitTransition = { fadeOut() }
+        ) {
+            AddGoalScreen(navController = navController)
+            screenName("AddGoal")
         }
     }
 }
