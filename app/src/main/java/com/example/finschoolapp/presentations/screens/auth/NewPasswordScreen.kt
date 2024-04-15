@@ -37,7 +37,7 @@ import com.example.finschoolapp.ui.components.buttons.MainButtonOutlined
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.mainHeader
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
-import com.example.finschoolapp.ui.theme.textforSignUp
+import com.example.finschoolapp.ui.theme.textForSignUp
 
 @Composable
 fun NewPasswordScreen(
@@ -76,7 +76,7 @@ fun NewPasswordScreen(
             Row(modifier = modifier.padding(horizontal = 5.dp)) {
                 Text(
                     text = stringResource(id = R.string.label_change_your_password),
-                    style = textforSignUp.copy(color = palette.secondary),
+                    style = textForSignUp.copy(color = palette.secondary),
                     textAlign = TextAlign.Center
                 )
 
@@ -163,7 +163,7 @@ fun NewPasswordScreen(
                         .align(Alignment.BottomCenter)
                         .padding(1.dp),
                     onClick = { },
-                    style = textforSignUp.copy(color = palette.secondary)
+                    style = textForSignUp.copy(color = palette.secondary)
                 )
             }
         }

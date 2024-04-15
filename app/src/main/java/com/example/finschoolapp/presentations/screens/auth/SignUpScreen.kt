@@ -38,8 +38,8 @@ import com.example.finschoolapp.R
 import com.example.finschoolapp.ui.components.buttons.MainButtonOutlined
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.mainHeader
+import com.example.finschoolapp.ui.theme.textForSignUp
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
-import com.example.finschoolapp.ui.theme.textforSignUp
 
 @Composable
 fun SignUpScreen(
@@ -119,7 +119,7 @@ fun SignUpScreen(
                         .border(
                             width = 3.dp,
                             color = palette.third,
-                            shape = RoundedCornerShape(30)
+                            shape = RoundedCornerShape(10)
                         ),
                     value = password.value,
                     visualTransformation = PasswordVisualTransformation(),
@@ -132,7 +132,7 @@ fun SignUpScreen(
                     modifier = modifier.align(Alignment.End),
                     text = AnnotatedString("Забыли пароль?"),
                     onClick = { },
-                    style = textforSignUp.copy(
+                    style = textForSignUp.copy(
                         textAlign = TextAlign.Start,
                         color = palette.secondary,
                     )
@@ -163,7 +163,7 @@ fun SignUpScreen(
                         .align(Alignment.BottomCenter)
                         .padding(1.dp),
                     onClick = { },
-                    style = textforSignUp.copy(color = palette.secondary)
+                    style = textForSignUp.copy(color = palette.secondary)
                 )
             }
         }

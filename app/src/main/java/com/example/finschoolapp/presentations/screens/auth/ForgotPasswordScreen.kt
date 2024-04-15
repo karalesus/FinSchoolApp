@@ -36,7 +36,7 @@ import com.example.finschoolapp.ui.components.buttons.MainButtonOutlined
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.mainHeader
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
-import com.example.finschoolapp.ui.theme.textforSignUp
+import com.example.finschoolapp.ui.theme.textForSignUp
 
 @Composable
 fun ForgotPasswordScreen(
@@ -75,7 +75,7 @@ fun ForgotPasswordScreen(
             Row(modifier = modifier.padding(horizontal = 5.dp)) {
                 Text(
                     text = stringResource(id = R.string.label_we_send_code),
-                    style = textforSignUp.copy(color = palette.secondary),
+                    style = textForSignUp.copy(color = palette.secondary),
                     textAlign = TextAlign.Center
                 )
 
@@ -118,7 +118,7 @@ fun ForgotPasswordScreen(
                     modifier = modifier.align(Alignment.End),
                     text = AnnotatedString("Вернуться на главный экран"),
                     onClick = { },
-                    style = textforSignUp.copy(
+                    style = textForSignUp.copy(
                         textAlign = TextAlign.Start,
                         color = palette.secondary,
                     )
@@ -149,7 +149,7 @@ fun ForgotPasswordScreen(
                         .align(Alignment.BottomCenter)
                         .padding(1.dp),
                     onClick = { },
-                    style = textforSignUp.copy(color = palette.secondary)
+                    style = textForSignUp.copy(color = palette.secondary)
                 )
             }
         }
