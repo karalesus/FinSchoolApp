@@ -1,6 +1,5 @@
 package com.example.finschoolapp.ui.components.toolbars
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -17,14 +16,12 @@ import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.mainHeader
 
 @OptIn(ExperimentalMaterial3Api::class)
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun TextToolbar(
     text: String,
     titleColor: Color,
     backgroundColor: Color
 ) {
-
     TopAppBar(
         title = {
             Text(
