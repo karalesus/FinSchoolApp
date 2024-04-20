@@ -2,6 +2,7 @@ package com.example.finschoolapp.presentations.screens.auth
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -12,11 +13,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.ClickableText
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -27,14 +27,14 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
+import androidx.compose.ui.unit.sp
 import com.example.finschoolapp.R
 import com.example.finschoolapp.ui.components.buttons.MainButtonOutlined
 import com.example.finschoolapp.ui.theme.ThemeColors
@@ -44,8 +44,9 @@ import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 @Composable
 fun LoginScreen(
-    modifier: Modifier = Modifier,
-    navController: NavHostController
+    onSignUpClick: () -> Unit,
+    onForgotClick: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
@@ -56,7 +57,7 @@ fun LoginScreen(
             .fillMaxSize()
             .background(color = palette.background)
     ) {
-        Spacer(modifier = Modifier.height(150.dp))
+        Spacer(modifier = modifier.height(150.dp))
 
 
         Column(
@@ -75,7 +76,7 @@ fun LoginScreen(
                 )
             }
             Column(
-                modifier = Modifier.padding(10.dp),
+                modifier = modifier.padding(10.dp),
                 horizontalAlignment = Alignment.Start,
                 verticalArrangement = Arrangement.Top
 
@@ -90,37 +91,39 @@ fun LoginScreen(
                     style = textViewBaseVariant.copy(color = palette.secondary),
                     textAlign = TextAlign.End,
                 )
-                OutlinedTextField(
+                BasicTextField(
                     modifier = modifier
                         .background(palette.thirdLight)
                         .height(35.dp)
-                        .fillMaxWidth(1f)
+                        .fillMaxWidth()
                         .shadow(2.dp, shape = RoundedCornerShape(30))
                         .border(
-                            width = 3.dp,
+                            width = 2.dp,
                             color = palette.third
                         ),
+                    textStyle = TextStyle(fontSize = 10.sp),
+
                     value = username.value,
                     onValueChange = { username.value = it }
 
                     )
 
-                Spacer(modifier = Modifier.height(20.dp))
+                Spacer(modifier = modifier.height(20.dp))
                 Text(
                     text = stringResource(id = R.string.label_password),
                     style = textViewBaseVariant.copy(color = palette.secondary),
                     textAlign = TextAlign.End,
                 )
-                OutlinedTextField(
+                BasicTextField(
                     modifier = modifier
                         .background(palette.thirdLight)
                         .height(35.dp)
                         .fillMaxWidth(1f)
-                        .shadow(3.dp)
+                        .shadow(2.dp)
                         .border(
-                            width = 3.dp,
+                            width = 2.dp,
                             color = palette.third,
-                            shape = RoundedCornerShape(10)
+                            shape = RoundedCornerShape(30)
                         ),
                     value = password.value,
                     visualTransformation = PasswordVisualTransformation(),
@@ -128,11 +131,11 @@ fun LoginScreen(
                     onValueChange = { password.value = it })
 
 
-                Spacer(modifier = Modifier.height(20.dp))
-                ClickableText(
-                    modifier = modifier.align(Alignment.End),
+                Spacer(modifier = modifier.height(20.dp))
+                Text(
+                    modifier = modifier.align(Alignment.End)
+                        .clickable {onForgotClick() },
                     text = AnnotatedString("Забыли пароль?"),
-                    onClick = { },
                     style = textForSignUp.copy(
                         textAlign = TextAlign.Start,
                         color = palette.secondary,
@@ -140,7 +143,7 @@ fun LoginScreen(
 
                 )
 
-                Spacer(modifier = Modifier.height(20.dp))
+                Spacer(modifier = modifier.height(20.dp))
 
                 MainButtonOutlined(
                     modifier = modifier
@@ -158,12 +161,12 @@ fun LoginScreen(
 
             Box(modifier = modifier.fillMaxWidth())
             {
-                ClickableText(
+                Text(
                     text = AnnotatedString("Еще нет аккаунта? Зарегистрироваться"),
                     modifier = modifier
                         .align(Alignment.BottomCenter)
+                        .clickable { onSignUpClick() }
                         .padding(1.dp),
-                    onClick = { },
                     style = textForSignUp.copy(color = palette.secondary)
                 )
             }
@@ -174,5 +177,8 @@ fun LoginScreen(
 @Preview
 @Composable
 fun LoginPreview() {
-    LoginScreen(navController = rememberNavController())
+    LoginScreen(
+        onSignUpClick = {},
+        onForgotClick = {}
+    )
 }
