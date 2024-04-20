@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">FinSchoolApp</string>
     <string name="label_login">Логин</string>
-    <string name="label_sign_in">Вход</string>
+    <string name="label_entry">Вход</string>
     <string name="label_password">Пароль</string>
     <string name="button_forgot_password">Забыли пароль?</string>
     <string name="button_sign_in">Войти</string>
