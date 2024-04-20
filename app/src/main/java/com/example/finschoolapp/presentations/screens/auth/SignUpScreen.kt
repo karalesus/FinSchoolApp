@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
@@ -55,24 +56,25 @@ fun SignUpScreen(
             .fillMaxSize()
             .background(color = palette.background)
     ) {
-        Spacer(modifier = Modifier.height(150.dp))
+        Spacer(modifier = Modifier.height(100.dp))
 
 
         Column(
             modifier = modifier
                 .fillMaxWidth()
-                .height(400.dp)
+                .height(800.dp)
                 .background(color = palette.background),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top
         ) {
             Row() {
                 Text(
-                    text = stringResource(id = R.string.label_sign_in),
+                    text = stringResource(id = R.string.label_registration),
                     style = mainHeader.copy(color = palette.secondary),
                     modifier = Modifier.align(alignment = Alignment.CenterVertically)
                 )
             }
+            Spacer(modifier = Modifier.height(20.dp))
             Column(
                 modifier = Modifier.padding(10.dp),
                 horizontalAlignment = Alignment.Start,
@@ -80,16 +82,19 @@ fun SignUpScreen(
 
             ) {
 
+                val name = remember { mutableStateOf(TextFieldValue()) }
                 val username = remember { mutableStateOf(TextFieldValue()) }
+                val email = remember { mutableStateOf(TextFieldValue()) }
                 val password = remember { mutableStateOf(TextFieldValue()) }
+                val password_again = remember { mutableStateOf(TextFieldValue()) }
 
 
                 Text(
-                    text = stringResource(id = R.string.label_login),
+                    text = stringResource(id = R.string.label_name),
                     style = textViewBaseVariant.copy(color = palette.secondary),
                     textAlign = TextAlign.End,
                 )
-                OutlinedTextField(
+               BasicTextField(
                     modifier = modifier
                         .background(palette.thirdLight)
                         .height(35.dp)
@@ -99,47 +104,97 @@ fun SignUpScreen(
                             width = 3.dp,
                             color = palette.third
                         ),
-                    value = username.value,
-                    onValueChange = { username.value = it },
+                    value = name.value,
+                    onValueChange = { name.value = it },
 
                     )
 
-                Spacer(modifier = Modifier.height(20.dp))
+                Spacer(modifier = Modifier.height(25.dp))
+
+                Text(
+                    text = stringResource(id = R.string.label_login),
+                    style = textViewBaseVariant.copy(color = palette.secondary),
+                    textAlign = TextAlign.End,
+                )
+                BasicTextField(
+                    modifier = modifier
+                        .background(palette.thirdLight)
+                        .height(35.dp)
+                        .fillMaxWidth(1f)
+                        .shadow(2.dp)
+                        .border(
+                            width = 3.dp,
+                            color = palette.third,
+                            shape = RoundedCornerShape(30)
+                        ),
+                    value = username.value,
+                    onValueChange = { username.value = it })
+
+
+                Spacer(modifier = Modifier.height(25.dp))
+                Text(
+                    text = stringResource(id = R.string.label_email),
+                    style = textViewBaseVariant.copy(color = palette.secondary),
+                    textAlign = TextAlign.End,
+                )
+                BasicTextField(
+                    modifier = modifier
+                        .background(palette.thirdLight)
+                        .height(35.dp)
+                        .fillMaxWidth(1f)
+                        .shadow(2.dp)
+                        .border(
+                            width = 3.dp,
+                            color = palette.third,
+                            shape = RoundedCornerShape(30)
+                        ),
+                    value = email.value,
+                    onValueChange = { email.value = it })
+
+                Spacer(modifier = Modifier.height(25.dp))
                 Text(
                     text = stringResource(id = R.string.label_password),
                     style = textViewBaseVariant.copy(color = palette.secondary),
                     textAlign = TextAlign.End,
                 )
-                OutlinedTextField(
+                BasicTextField(
                     modifier = modifier
                         .background(palette.thirdLight)
                         .height(35.dp)
                         .fillMaxWidth(1f)
-                        .shadow(3.dp)
+                        .shadow(2.dp)
                         .border(
                             width = 3.dp,
                             color = palette.third,
-                            shape = RoundedCornerShape(10)
+                            shape = RoundedCornerShape(30)
                         ),
                     value = password.value,
-                    visualTransformation = PasswordVisualTransformation(),
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
                     onValueChange = { password.value = it })
 
+                Spacer(modifier = Modifier.height(25.dp))
 
-                Spacer(modifier = Modifier.height(20.dp))
-                ClickableText(
-                    modifier = modifier.align(Alignment.End),
-                    text = AnnotatedString("Забыли пароль?"),
-                    onClick = { },
-                    style = textForSignUp.copy(
-                        textAlign = TextAlign.Start,
-                        color = palette.secondary,
-                    )
-
+                Text(
+                    text = stringResource(id = R.string.label_password_again),
+                    style = textViewBaseVariant.copy(color = palette.secondary),
+                    textAlign = TextAlign.End,
                 )
+                BasicTextField(
+                    modifier = modifier
+                        .background(palette.thirdLight)
+                        .height(35.dp)
+                        .fillMaxWidth(1f)
+                        .shadow(2.dp)
+                        .border(
+                            width = 3.dp,
+                            color = palette.third,
+                            shape = RoundedCornerShape(30)
+                        ),
+                    value = password_again.value,
+                    onValueChange = { password_again.value = it })
 
                 Spacer(modifier = Modifier.height(20.dp))
+
+
 
                 MainButtonOutlined(
                     modifier = modifier
@@ -147,7 +202,7 @@ fun SignUpScreen(
                         .shadow(3.dp)
                         .fillMaxWidth(1f),
                     palette = palette,
-                    text = stringResource(id = R.string.button_sign_in),
+                    text = stringResource(id = R.string.button_next),
                     onButtonClick = {
                         focusManager.clearFocus()
                         keyboardController?.hide()
@@ -158,7 +213,7 @@ fun SignUpScreen(
             Box(modifier = modifier.fillMaxWidth())
             {
                 ClickableText(
-                    text = AnnotatedString("Еще нет аккаунта? Зарегистрироваться"),
+                    text = AnnotatedString("Уже есть аккаунт? Войти"),
                     modifier = modifier
                         .align(Alignment.BottomCenter)
                         .padding(1.dp),
