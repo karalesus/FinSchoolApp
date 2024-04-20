@@ -71,7 +71,7 @@ fun LoginScreen(
         ) {
             Row() {
                 Text(
-                    text = stringResource(id = R.string.label_sign_in),
+                    text = stringResource(id = R.string.label_entry),
                     style = mainHeader.copy(color = palette.secondary),
                     modifier = Modifier.align(alignment = Alignment.CenterVertically)
                 )

@@ -13,7 +13,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="112dp"
         android:gravity="center_horizontal"
-        android:text="@string/label_sign_in"
+        android:text="@string/label_entry"
         tools:text="Вход" />
 
     <LinearLayout
