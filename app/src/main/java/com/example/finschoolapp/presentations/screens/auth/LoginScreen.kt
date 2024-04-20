@@ -46,6 +46,7 @@ import com.example.finschoolapp.ui.theme.textViewBaseVariant
 fun LoginScreen(
     onSignUpClick: () -> Unit,
     onForgotClick: () -> Unit,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
@@ -98,7 +99,7 @@ fun LoginScreen(
                         .fillMaxWidth()
                         .shadow(2.dp, shape = RoundedCornerShape(30))
                         .border(
-                            width = 2.dp,
+                            width = 3.dp,
                             color = palette.third
                         ),
 
@@ -120,7 +121,7 @@ fun LoginScreen(
                         .fillMaxWidth(1f)
                         .shadow(2.dp)
                         .border(
-                            width = 2.dp,
+                            width = 3.dp,
                             color = palette.third,
                             shape = RoundedCornerShape(30)
                         ),
@@ -178,6 +179,7 @@ fun LoginScreen(
 fun LoginPreview() {
     LoginScreen(
         onSignUpClick = {},
-        onForgotClick = {}
+        onForgotClick = {},
+        onClick = {}
     )
 }
