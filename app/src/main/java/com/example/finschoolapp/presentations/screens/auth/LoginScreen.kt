@@ -101,7 +101,6 @@ fun LoginScreen(
                             width = 2.dp,
                             color = palette.third
                         ),
-                    textStyle = TextStyle(fontSize = 10.sp),
 
                     value = username.value,
                     onValueChange = { username.value = it }
