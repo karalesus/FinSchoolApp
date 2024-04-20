@@ -115,7 +115,7 @@ fun NewPasswordScreen(
 
                     )
 
-                Spacer(modifier = Modifier.height(15.dp))
+                Spacer(modifier = Modifier.height(20.dp))
 
                 Text(
                     text = stringResource(id = R.string.label_password_again),

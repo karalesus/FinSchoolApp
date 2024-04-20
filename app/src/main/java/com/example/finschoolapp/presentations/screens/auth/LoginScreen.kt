@@ -108,7 +108,8 @@ fun LoginScreen(
 
                     )
 
-                Spacer(modifier = modifier.height(20.dp))
+                Spacer(modifier = modifier.height(25.dp))
+
                 Text(
                     text = stringResource(id = R.string.label_password),
                     style = textViewBaseVariant.copy(color = palette.secondary),
