@@ -19,14 +19,16 @@ import com.example.finschoolapp.ui.theme.ThemeColors
 fun SettingScreen(
     navController: NavHostController
 ) {
-    Scaffold (
+    Scaffold(
         topBar = {
             BackToolbar(
                 text = "Настройки профиля",
-                palette = ThemeColors.LightTheme)
+                palette = ThemeColors.LightTheme,
+                navController = navController
+            )
         }
     ) {
-        Box (
+        Box(
             modifier = Modifier.fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {

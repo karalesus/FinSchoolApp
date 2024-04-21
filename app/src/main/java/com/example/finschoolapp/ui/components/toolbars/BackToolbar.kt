@@ -9,7 +9,10 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.R
+import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.mainHeader
 
@@ -17,7 +20,8 @@ import com.example.finschoolapp.ui.theme.mainHeader
 @Composable
 fun BackToolbar(
     text: String,
-    palette: ThemeColors
+    palette: ThemeColors,
+    navController: NavHostController
 ) {
     TopAppBar(
         title = {
@@ -31,7 +35,10 @@ fun BackToolbar(
             titleContentColor = palette.secondary
         ),
         navigationIcon = {
-            IconButton(onClick = { /*TODO*/ }) {
+            IconButton(
+                onClick = {
+                    navController.navigate(MainScreen.Progress.route)
+                }) {
                 Icon(
                     painter = painterResource(id = R.drawable.back_btn),
                     contentDescription = "Возвращение назад",
@@ -48,6 +55,7 @@ fun BackToolbar(
 fun BackToolbarPreview() {
     BackToolbar(
         text = "Виды доходов",
-        palette = ThemeColors.LightTheme
+        palette = ThemeColors.LightTheme,
+        navController = rememberNavController()
     )
 }
