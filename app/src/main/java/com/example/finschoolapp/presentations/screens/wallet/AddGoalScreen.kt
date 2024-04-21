@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
@@ -23,7 +24,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -42,6 +45,7 @@ import com.example.finschoolapp.ui.theme.textViewBaseVariant
 fun OutlinedField(string: String){
     val palette = ThemeColors.LightTheme
     var value by remember { mutableStateOf("") }
+    val keyboardController = LocalSoftwareKeyboardController.current
     Box(contentAlignment = Alignment.Center){
         OutlinedTextField(
             modifier = Modifier
@@ -60,7 +64,9 @@ fun OutlinedField(string: String){
                 focusedBorderColor = palette.third,
                 unfocusedBorderColor = palette.secondary
             ),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
+            keyboardActions = KeyboardActions(
+                onDone = {keyboardController?.hide()})
 
         )
         AnimatedVisibility(visible = value.isEmpty()) {
