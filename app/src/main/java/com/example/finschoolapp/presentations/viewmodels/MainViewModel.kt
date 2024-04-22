@@ -9,7 +9,7 @@ class MainViewModel : ViewModel() {
     private val privateMainState = MutableLiveData<String>()
     val mainState: LiveData<String> get() = privateMainState
 
-    fun updateState(newState: String) {
+    fun updateMainState(newState: String) {
         privateMainState.value = newState
     }
 }

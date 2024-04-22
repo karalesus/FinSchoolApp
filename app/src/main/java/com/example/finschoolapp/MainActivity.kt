@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
         }
-        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         viewModel.mainState.observe(this, Observer{newState ->})
     }
 }
