@@ -65,4 +65,8 @@
     <string name="button_add_photo">Добавить фото</string>
     <string name="button_create_goal">Создать цель</string>
 
+    <string name="label_learning">Обучение</string>
+    <string name="label_progress">Прогресс</string>
+    <string name="label_wallet">Учёт</string>
+
 </resources>
