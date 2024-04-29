@@ -36,9 +36,8 @@ fun BackToolbar(
         ),
         navigationIcon = {
             IconButton(
-                onClick = {
-                    navController.navigate(MainScreen.Progress.route)
-                }) {
+                onClick = { navController.navigate(MainScreen.Progress.route) }
+            ) {
                 Icon(
                     painter = painterResource(id = R.drawable.back_btn),
                     contentDescription = "Возвращение назад",
