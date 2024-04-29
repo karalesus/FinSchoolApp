@@ -45,7 +45,7 @@ fun WalletScreen(modifier: Modifier = Modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         TextToolbar(
-            text = "Учёт",
+            text = stringResource(id = R.string.label_wallet),
             titleColor = palette.secondary,
             backgroundColor = palette.thirdLight
         )

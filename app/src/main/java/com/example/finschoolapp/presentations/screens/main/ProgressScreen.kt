@@ -8,10 +8,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.finschoolapp.R
 import com.example.finschoolapp.ui.components.toolbars.SettingToolbar
 import com.example.finschoolapp.ui.theme.ThemeColors
 
@@ -23,7 +25,7 @@ fun ProgressScreen(
     Scaffold (
         topBar = {
             SettingToolbar(
-                text = "Прогресс",
+                text = stringResource(id = R.string.label_progress),
                 palette = ThemeColors.LightTheme,
                 navController = navController
             )
