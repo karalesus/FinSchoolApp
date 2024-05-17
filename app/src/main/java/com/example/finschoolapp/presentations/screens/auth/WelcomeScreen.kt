@@ -34,8 +34,8 @@ import com.example.finschoolapp.ui.theme.smallHeader
 
 @Composable
 fun Welcome(
-    modifier: Modifier = Modifier,
-    navController: NavHostController
+    onIHelpYouClick:() ->Unit,
+    modifier: Modifier = Modifier
 ) {
     val dimensions = LocalDimensions.current
     val keyboardController = LocalSoftwareKeyboardController.current
@@ -51,6 +51,7 @@ fun Welcome(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        Spacer(modifier = modifier.height(50.dp))
         Box(
             contentAlignment = Alignment.Center,
             modifier = modifier
@@ -85,6 +86,7 @@ fun Welcome(
             onButtonClick = {
                 focusManager.clearFocus()
                 keyboardController?.hide()
+                onIHelpYouClick()
             },
         )
     }
@@ -93,5 +95,5 @@ fun Welcome(
 @Preview
 @Composable
 fun WelcomePreview() {
-    Welcome(navController = rememberNavController())
+    Welcome(onIHelpYouClick = {})
 }

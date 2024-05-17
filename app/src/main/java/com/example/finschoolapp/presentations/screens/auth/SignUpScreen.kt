@@ -2,6 +2,7 @@ package com.example.finschoolapp.presentations.screens.auth
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -44,8 +45,9 @@ import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 @Composable
 fun SignUpScreen(
-    modifier: Modifier = Modifier,
-    navController: NavHostController
+    onNextClick:()->Unit,
+    onLoginClick:() ->Unit,
+    modifier: Modifier = Modifier
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
@@ -267,18 +269,19 @@ fun SignUpScreen(
                     onButtonClick = {
                         focusManager.clearFocus()
                         keyboardController?.hide()
+                        onNextClick()
                     })
 
             }
 
             Box(modifier = modifier.fillMaxWidth())
             {
-                ClickableText(
+                Text(
                     text = AnnotatedString("Уже есть аккаунт? Войти"),
                     modifier = modifier
                         .align(Alignment.BottomCenter)
+                        .clickable { onLoginClick() }
                         .padding(1.dp),
-                    onClick = { },
                     style = textForSignUp.copy(color = palette.secondary)
                 )
             }
@@ -289,5 +292,7 @@ fun SignUpScreen(
 @Preview
 @Composable
 fun SignUpPreview() {
-    SignUpScreen(navController = rememberNavController())
+    SignUpScreen(
+        onNextClick = {},
+        onLoginClick = {})
 }

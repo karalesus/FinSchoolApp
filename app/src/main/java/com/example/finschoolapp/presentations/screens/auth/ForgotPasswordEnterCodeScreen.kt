@@ -2,6 +2,7 @@ package com.example.finschoolapp.presentations.screens.auth
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -44,8 +45,9 @@ import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 @Composable
 fun ForgotPasswordEnterCodeScreen(
-    modifier: Modifier = Modifier,
-    navController: NavHostController
+    onConfirmClick: () -> Unit,
+    onSignUpClick: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
@@ -156,18 +158,20 @@ fun ForgotPasswordEnterCodeScreen(
                     onButtonClick = {
                         focusManager.clearFocus()
                         keyboardController?.hide()
+                        onConfirmClick()
                     })
 
             }
 
             Box(modifier = modifier.fillMaxWidth())
             {
-                ClickableText(
+                Text(
                     text = AnnotatedString("Еще нет аккаунта? Зарегистрироваться"),
                     modifier = modifier
                         .align(Alignment.BottomCenter)
+                        .clickable { onSignUpClick()  }
                         .padding(1.dp),
-                    onClick = { },
+
                     style = textForSignUp.copy(color = palette.secondary)
                 )
             }
@@ -178,5 +182,8 @@ fun ForgotPasswordEnterCodeScreen(
 @Preview
 @Composable
 fun ForgotPasswordEnterCodeScreenPreview(){
-    ForgotPasswordEnterCodeScreen(navController = rememberNavController())
+    ForgotPasswordEnterCodeScreen(
+        onConfirmClick = {},
+        onSignUpClick = {})
+
 }

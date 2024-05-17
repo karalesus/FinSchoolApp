@@ -44,8 +44,9 @@ import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 @Composable
 fun SuccessfulRegistrationScreen(
+    onLetsStudy:() -> Unit,
     modifier: Modifier = Modifier,
-    navController: NavHostController
+
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
@@ -85,16 +86,18 @@ fun SuccessfulRegistrationScreen(
             Spacer(modifier = Modifier.height(10.dp))
             MainButtonOutlined(
                 modifier = modifier
-                    .padding(10.dp)
+                    .padding(20.dp)
+                    .height(40.dp)
                     .shadow(
                         elevation = 7.dp,
                         shape = RoundedCornerShape(30)
                     ),
                 palette = palette,
-                text = stringResource(id = R.string.button_confirmation),
+                text = stringResource(id = R.string.button_okey_lets_stduy),
                 onButtonClick = {
                     focusManager.clearFocus()
                     keyboardController?.hide()
+                    onLetsStudy()
                 })
 
             }
@@ -105,5 +108,5 @@ fun SuccessfulRegistrationScreen(
 @Preview
 @Composable
 fun SuccessfulRegistrationScreenPreview(){
-    SuccessfulRegistrationScreen(navController = rememberNavController())
+    SuccessfulRegistrationScreen(onLetsStudy = {})
 }

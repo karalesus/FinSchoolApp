@@ -41,8 +41,8 @@ import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 @Composable
 fun ConfirmationScreen(
-    modifier: Modifier = Modifier,
-    navController: NavHostController
+    onConfirmClick: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
@@ -141,6 +141,7 @@ fun ConfirmationScreen(
                     onButtonClick = {
                         focusManager.clearFocus()
                         keyboardController?.hide()
+                        onConfirmClick()
                     })
 
                 Spacer(modifier = Modifier.height(10.dp))
@@ -163,5 +164,6 @@ fun ConfirmationScreen(
 @Preview
 @Composable
 fun ConfirmationScreenPreview(){
-    ConfirmationScreen(navController = rememberNavController())
+    ConfirmationScreen(
+        onConfirmClick = {})
 }

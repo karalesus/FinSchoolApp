@@ -3,6 +3,7 @@ package com.example.finschoolapp.presentations.screens.auth
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -45,8 +46,9 @@ import com.example.finschoolapp.ui.theme.textForSignUp
 
 @Composable
 fun NewPasswordScreen(
-    modifier: Modifier = Modifier,
-    navController: NavHostController
+    onSaveAndEnterOn: () -> Unit,
+    onReturnToMainClick: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
@@ -175,18 +177,19 @@ fun NewPasswordScreen(
                     onButtonClick = {
                         focusManager.clearFocus()
                         keyboardController?.hide()
+                        onSaveAndEnterOn()
                     })
 
             }
 
             Box(modifier = modifier.fillMaxWidth())
             {
-                ClickableText(
+                Text(
                     text = AnnotatedString("Вернуться на главный экран"),
                     modifier = modifier
                         .align(Alignment.BottomCenter)
+                        .clickable { onReturnToMainClick() }
                         .padding(1.dp),
-                    onClick = { },
                     style = textForSignUp.copy(color = palette.secondary)
                 )
             }
@@ -197,5 +200,7 @@ fun NewPasswordScreen(
 @Preview
 @Composable
 fun NewPasswordScreenPreview() {
-    NewPasswordScreen(navController = rememberNavController())
+    NewPasswordScreen(
+        onSaveAndEnterOn = {},
+        onReturnToMainClick = {})
 }
