@@ -5,11 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
+    private val _isNavigationBarVisible = MutableLiveData(false)
+    val isNavigationBarVisible: LiveData<Boolean> get() = _isNavigationBarVisible
 
-    private val privateMainState = MutableLiveData<String>()
-    val mainState: LiveData<String> get() = privateMainState
-
-    fun updateMainState(newState: String) {
-        privateMainState.value = newState
+    fun setNavigationBarVisibility(isVisible: Boolean) {
+        _isNavigationBarVisible.value = isVisible
     }
 }

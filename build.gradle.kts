@@ -11,5 +11,8 @@ buildscript {
     }
     dependencies {
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.7.7")
+        classpath("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0")
+        classpath("androidx.lifecycle:lifecycle-livedata-ktx:2.8.0")
+        classpath("androidx.compose.runtime:runtime-livedata:1.6.7")
     }
 }
