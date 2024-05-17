@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -17,11 +18,13 @@ import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
@@ -92,21 +95,34 @@ fun LoginScreen(
                     style = textViewBaseVariant.copy(color = palette.secondary),
                     textAlign = TextAlign.End,
                 )
-                BasicTextField(
-                    modifier = modifier
-                        .background(palette.thirdLight)
+                Row(
+                    modifier = Modifier
+                        .shadow(
+                            elevation = 7.dp,
+                            shape = RoundedCornerShape(30)
+                        )
+                        .background(
+                            color = palette.thirdLight,
+                            shape = RoundedCornerShape(30))
                         .height(35.dp)
                         .fillMaxWidth()
-                        .shadow(2.dp, shape = RoundedCornerShape(30))
                         .border(
                             width = 3.dp,
-                            color = palette.third
+                            color = palette.third,
+                            shape = RoundedCornerShape(30)
                         ),
-
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ){
+                BasicTextField(
+                    modifier = modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
                     value = username.value,
                     onValueChange = { username.value = it }
 
-                    )
+                    )}
+
 
                 Spacer(modifier = modifier.height(25.dp))
 
@@ -115,21 +131,34 @@ fun LoginScreen(
                     style = textViewBaseVariant.copy(color = palette.secondary),
                     textAlign = TextAlign.End,
                 )
-                BasicTextField(
-                    modifier = modifier
-                        .background(palette.thirdLight)
+                Row(
+                    modifier = Modifier
+                        .shadow(
+                            elevation = 7.dp,
+                            shape = RoundedCornerShape(30)
+                        )
+                        .background(
+                            color = palette.thirdLight,
+                            shape = RoundedCornerShape(30.dp))
                         .height(35.dp)
-                        .fillMaxWidth(1f)
-                        .shadow(2.dp)
+                        .fillMaxWidth()
                         .border(
                             width = 3.dp,
                             color = palette.third,
                             shape = RoundedCornerShape(30)
                         ),
-                    value = password.value,
-                    visualTransformation = PasswordVisualTransformation(),
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-                    onValueChange = { password.value = it })
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    BasicTextField(
+                        modifier = modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        value = password.value,
+                        visualTransformation = PasswordVisualTransformation(),
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                        onValueChange = { password.value = it })
+                }
 
 
                 Spacer(modifier = modifier.height(20.dp))
@@ -148,14 +177,16 @@ fun LoginScreen(
 
                 MainButtonOutlined(
                     modifier = modifier
-                        .height(35.dp)
-                        .shadow(3.dp)
-                        .fillMaxWidth(1f),
+                        .shadow(
+                            elevation = 7.dp,
+                            shape = RoundedCornerShape(30)
+                        ),
                     palette = palette,
                     text = stringResource(id = R.string.button_sign_in),
                     onButtonClick = {
                         focusManager.clearFocus()
                         keyboardController?.hide()
+                        onClick()
                     })
 
             }
