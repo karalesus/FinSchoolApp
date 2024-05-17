@@ -86,9 +86,10 @@ fun SuccessfulRegistrationScreen(
             MainButtonOutlined(
                 modifier = modifier
                     .padding(10.dp)
-                    .height(35.dp)
-                    .shadow(3.dp)
-                    .fillMaxWidth(1f),
+                    .shadow(
+                        elevation = 7.dp,
+                        shape = RoundedCornerShape(30)
+                    ),
                 palette = palette,
                 text = stringResource(id = R.string.button_confirmation),
                 onButtonClick = {

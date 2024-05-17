@@ -17,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
@@ -73,6 +74,10 @@ fun Welcome(
         Spacer(modifier = modifier.height(dimensions.verticalSLarge))
         MainButtonOutlined(
             modifier = modifier
+                .shadow(
+                    elevation = 7.dp,
+                    shape = RoundedCornerShape(30)
+                )
                 .fillMaxHeight(0.1f)
                 .fillMaxWidth(0.85f),
             palette = palette,

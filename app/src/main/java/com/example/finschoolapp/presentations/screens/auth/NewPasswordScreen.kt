@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.ClickableText
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,6 +28,8 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -98,22 +101,32 @@ fun NewPasswordScreen(
                     style = textViewBaseVariant.copy(color = palette.secondary),
                     textAlign = TextAlign.End
                 )
-
-                BasicTextField(
-                    modifier = modifier
-                        .background(palette.thirdLight)
+                Row(
+                    modifier = Modifier
+                        .shadow(
+                            elevation = 7.dp,
+                            shape = RoundedCornerShape(30)
+                        )
+                        .background(
+                            color = palette.thirdLight,
+                            shape = RoundedCornerShape(30.dp))
                         .height(35.dp)
-                        .fillMaxWidth(1f)
-                        .shadow(2.dp)
+                        .fillMaxWidth()
                         .border(
                             width = 3.dp,
                             color = palette.third,
                             shape = RoundedCornerShape(30)
                         ),
-                    value = new_password.value,
-                    onValueChange = { new_password.value = it },
-
-                    )
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    BasicTextField(
+                        modifier = modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        value = new_password.value,
+                        onValueChange = { new_password.value = it })
+                }
 
                 Spacer(modifier = Modifier.height(20.dp))
 
@@ -122,31 +135,41 @@ fun NewPasswordScreen(
                     style = textViewBaseVariant.copy(color = palette.secondary),
                     textAlign = TextAlign.End
                 )
-
-                BasicTextField(
-                    modifier = modifier
-                        .background(palette.thirdLight)
+                Row(
+                    modifier = Modifier
+                        .shadow(
+                            elevation = 7.dp,
+                            shape = RoundedCornerShape(30)
+                        )
+                        .background(
+                            color = palette.thirdLight,
+                            shape = RoundedCornerShape(30.dp))
                         .height(35.dp)
-                        .fillMaxWidth(1f)
-                        .shadow(2.dp)
+                        .fillMaxWidth()
                         .border(
                             width = 3.dp,
                             color = palette.third,
                             shape = RoundedCornerShape(30)
                         ),
-                    value = new_password_again.value,
-                    onValueChange = { new_password_again.value = it },
-
-                    )
-
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    BasicTextField(
+                        modifier = modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        value = new_password_again.value,
+                        onValueChange = { new_password_again.value = it })
+                }
 
                 Spacer(modifier = Modifier.height(30.dp))
 
                 MainButtonOutlined(
                     modifier = modifier
-                        .height(35.dp)
-                        .shadow(3.dp)
-                        .fillMaxWidth(1f),
+                        .shadow(
+                            elevation = 7.dp,
+                            shape = RoundedCornerShape(30)
+                        ),
                     palette = palette,
                     text = stringResource(id = R.string.button_save_and_log_in),
                     onButtonClick = {

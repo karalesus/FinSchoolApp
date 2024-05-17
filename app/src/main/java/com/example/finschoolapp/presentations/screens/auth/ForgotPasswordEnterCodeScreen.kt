@@ -28,6 +28,7 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -98,23 +99,36 @@ fun ForgotPasswordEnterCodeScreen(
                     style = textViewBaseVariant.copy(color = palette.secondary),
                     textAlign = TextAlign.End
                 )
-
-                BasicTextField(
-                    modifier = modifier
-                        .background(palette.thirdLight)
+                Row(
+                    modifier = Modifier
+                        .shadow(
+                            elevation = 7.dp,
+                            shape = RoundedCornerShape(30)
+                        )
+                        .background(
+                            color = palette.thirdLight,
+                            shape = RoundedCornerShape(30.dp))
                         .height(35.dp)
-                        .fillMaxWidth(1f)
-                        .shadow(2.dp)
+                        .fillMaxWidth()
                         .border(
                             width = 3.dp,
                             color = palette.third,
                             shape = RoundedCornerShape(30)
                         ),
-                    value = code.value,
-                    onValueChange = { code.value = it },
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
-
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    BasicTextField(
+                        modifier = modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        value = code.value,
+                        onValueChange = { code.value = it },
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                     )
+
+                }
+
 
                 Spacer(modifier = Modifier.height(10.dp))
 
@@ -133,9 +147,10 @@ fun ForgotPasswordEnterCodeScreen(
 
                 MainButtonOutlined(
                     modifier = modifier
-                        .height(35.dp)
-                        .shadow(3.dp)
-                        .fillMaxWidth(1f),
+                        .shadow(
+                            elevation = 7.dp,
+                            shape = RoundedCornerShape(30)
+                        ),
                     palette = palette,
                     text = stringResource(id = R.string.button_confirmation),
                     onButtonClick = {

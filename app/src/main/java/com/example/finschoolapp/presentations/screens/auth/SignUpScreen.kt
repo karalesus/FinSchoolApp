@@ -94,21 +94,33 @@ fun SignUpScreen(
                     style = textViewBaseVariant.copy(color = palette.secondary),
                     textAlign = TextAlign.End,
                 )
-               BasicTextField(
-                    modifier = modifier
-                        .background(palette.thirdLight)
+                Row(
+                    modifier = Modifier
+                        .shadow(
+                            elevation = 7.dp,
+                            shape = RoundedCornerShape(30)
+                        )
+                        .background(
+                            color = palette.thirdLight,
+                            shape = RoundedCornerShape(30))
                         .height(35.dp)
-                        .fillMaxWidth(1f)
-                        .shadow(2.dp, shape = RoundedCornerShape(30))
+                        .fillMaxWidth()
                         .border(
                             width = 3.dp,
-                            color = palette.third
+                            color = palette.third,
+                            shape = RoundedCornerShape(30)
                         ),
-                    value = name.value,
-                    onValueChange = { name.value = it },
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ){
+                    BasicTextField(
+                        modifier = modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        value = name.value,
+                        onValueChange = { name.value = it }
 
-                    )
-
+                    )}
                 Spacer(modifier = Modifier.height(25.dp))
 
                 Text(
@@ -116,40 +128,65 @@ fun SignUpScreen(
                     style = textViewBaseVariant.copy(color = palette.secondary),
                     textAlign = TextAlign.End,
                 )
-                BasicTextField(
-                    modifier = modifier
-                        .background(palette.thirdLight)
+                Row(
+                    modifier = Modifier
+                        .shadow(
+                            elevation = 7.dp,
+                            shape = RoundedCornerShape(30)
+                        )
+                        .background(
+                            color = palette.thirdLight,
+                            shape = RoundedCornerShape(30))
                         .height(35.dp)
-                        .fillMaxWidth(1f)
-                        .shadow(2.dp)
+                        .fillMaxWidth()
                         .border(
                             width = 3.dp,
                             color = palette.third,
                             shape = RoundedCornerShape(30)
                         ),
-                    value = username.value,
-                    onValueChange = { username.value = it })
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ){
+                    BasicTextField(
+                        modifier = modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        value = username.value,
+                        onValueChange = { username.value = it}
 
-
+                    )}
                 Spacer(modifier = Modifier.height(25.dp))
                 Text(
                     text = stringResource(id = R.string.label_email),
                     style = textViewBaseVariant.copy(color = palette.secondary),
                     textAlign = TextAlign.End,
                 )
-                BasicTextField(
-                    modifier = modifier
-                        .background(palette.thirdLight)
+                Row(
+                    modifier = Modifier
+                        .shadow(
+                            elevation = 7.dp,
+                            shape = RoundedCornerShape(30)
+                        )
+                        .background(
+                            color = palette.thirdLight,
+                            shape = RoundedCornerShape(30))
                         .height(35.dp)
-                        .fillMaxWidth(1f)
-                        .shadow(2.dp)
+                        .fillMaxWidth()
                         .border(
                             width = 3.dp,
                             color = palette.third,
                             shape = RoundedCornerShape(30)
                         ),
-                    value = email.value,
-                    onValueChange = { email.value = it })
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    BasicTextField(
+                        modifier = modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        value = email.value,
+                        onValueChange = { email.value = it })
+                }
 
                 Spacer(modifier = Modifier.height(25.dp))
                 Text(
@@ -157,19 +194,32 @@ fun SignUpScreen(
                     style = textViewBaseVariant.copy(color = palette.secondary),
                     textAlign = TextAlign.End,
                 )
-                BasicTextField(
-                    modifier = modifier
-                        .background(palette.thirdLight)
+                Row(
+                    modifier = Modifier
+                        .shadow(
+                            elevation = 7.dp,
+                            shape = RoundedCornerShape(30)
+                        )
+                        .background(
+                            color = palette.thirdLight,
+                            shape = RoundedCornerShape(30))
                         .height(35.dp)
-                        .fillMaxWidth(1f)
-                        .shadow(2.dp)
+                        .fillMaxWidth()
                         .border(
                             width = 3.dp,
                             color = palette.third,
                             shape = RoundedCornerShape(30)
                         ),
-                    value = password.value,
-                    onValueChange = { password.value = it })
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    BasicTextField(
+                        modifier = modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        value = password.value,
+                        onValueChange = { password.value = it })
+                }
 
                 Spacer(modifier = Modifier.height(25.dp))
 
@@ -178,29 +228,40 @@ fun SignUpScreen(
                     style = textViewBaseVariant.copy(color = palette.secondary),
                     textAlign = TextAlign.End,
                 )
-                BasicTextField(
-                    modifier = modifier
-                        .background(palette.thirdLight)
+                Row(
+                    modifier = Modifier
+                        .shadow(
+                            elevation = 7.dp,
+                            shape = RoundedCornerShape(30)
+                        )
+                        .background(
+                            color = palette.thirdLight,
+                            shape = RoundedCornerShape(30))
                         .height(35.dp)
-                        .fillMaxWidth(1f)
-                        .shadow(2.dp)
+                        .fillMaxWidth()
                         .border(
                             width = 3.dp,
                             color = palette.third,
                             shape = RoundedCornerShape(30)
                         ),
-                    value = password_again.value,
-                    onValueChange = { password_again.value = it })
-
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    BasicTextField(
+                        modifier = modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        value = password_again.value,
+                        onValueChange = { password_again.value = it })
+                }
                 Spacer(modifier = Modifier.height(20.dp))
-
-
 
                 MainButtonOutlined(
                     modifier = modifier
-                        .height(35.dp)
-                        .shadow(3.dp)
-                        .fillMaxWidth(1f),
+                        .shadow(
+                            elevation = 7.dp,
+                            shape = RoundedCornerShape(30),
+                        ),
                     palette = palette,
                     text = stringResource(id = R.string.button_next),
                     onButtonClick = {
