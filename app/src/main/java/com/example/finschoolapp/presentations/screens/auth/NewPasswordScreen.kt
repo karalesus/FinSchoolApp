@@ -65,6 +65,7 @@ fun NewPasswordScreen(
             modifier = modifier
                 .fillMaxWidth()
                 .height(400.dp)
+                .padding(5.dp)
                 .background(color = palette.background),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top
@@ -112,7 +113,7 @@ fun NewPasswordScreen(
                         .background(
                             color = palette.thirdLight,
                             shape = RoundedCornerShape(30.dp))
-                        .height(35.dp)
+                        .height(40.dp)
                         .fillMaxWidth()
                         .border(
                             width = 3.dp,
@@ -146,7 +147,7 @@ fun NewPasswordScreen(
                         .background(
                             color = palette.thirdLight,
                             shape = RoundedCornerShape(30.dp))
-                        .height(35.dp)
+                        .height(40.dp)
                         .fillMaxWidth()
                         .border(
                             width = 3.dp,

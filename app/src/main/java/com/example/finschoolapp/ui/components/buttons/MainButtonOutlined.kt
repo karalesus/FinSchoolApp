@@ -34,7 +34,7 @@ fun MainButtonOutlined(
             shape = roundedShape,
             color = palette.third
         )
-            .height(35.dp)
+            .height(40.dp)
             .fillMaxWidth(1f),
         shape = roundedShape,
         colors = ButtonDefaults.buttonColors(containerColor = palette.thirdLight)
