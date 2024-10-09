@@ -72,5 +72,7 @@
     <string name="label_username">Бомж Толик</string>
     <string name="label_level">Уровень:</string>
 
+    <string name="saved_module">Модуль 1. Тема 1.1</string>
+
 
 </resources>
