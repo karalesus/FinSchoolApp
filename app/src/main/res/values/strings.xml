@@ -69,4 +69,8 @@
     <string name="label_progress">Прогресс</string>
     <string name="label_wallet">Учёт</string>
 
+    <string name="label_username">Бомж Толик</string>
+    <string name="label_level">Уровень:</string>
+
+
 </resources>
