@@ -26,7 +26,7 @@ private val regularNunitoStyleLight = TextStyle(
 val textViewBaseVariant = regularNunitoStyle.copy(fontSize = 16.sp)
 val mainHeader = regularNunitoStyle.copy(fontSize = 28.sp)
 val smallHeader = regularNunitoStyle.copy(fontSize = 24.sp)
-val smallDescription = regularNunitoStyle.copy(fontSize = 11.sp)
+val smallDescription = regularNunitoStyle.copy(fontSize = 12.sp)
 val textForSignUp = regularNunitoStyle.copy(fontSize = 14.sp)
 val smallHeaderLight = regularNunitoStyleLight.copy(fontSize = 24.sp)
 val smallDescriptionLight = regularNunitoStyleLight.copy(fontSize = 11.sp)
