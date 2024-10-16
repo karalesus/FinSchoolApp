@@ -69,4 +69,15 @@
     <string name="label_progress">Прогресс</string>
     <string name="label_wallet">Учёт</string>
 
+
+    <string name="first_game_start">У Толика получается заработать за день 50 рублей. Обед в столовой обходится в 30 рублей, он ест каждый день. Оставшиеся 20 рублей он использует на свое усмотрение.\n\nЧасто получается так, что Том бездумно тратит все и остается без еды и денег.\n\nПокажи ему, как надо!</string>
+    <string name="tom_need_help">Толику нужна помощь</string>
+    <string name="monday">Понедельник</string>
+    <string name="tuesday">Вторник</string>
+    <string name="wednesday">Среда</string>
+    <string name="thursday">Четверг</string>
+    <string name="friday">Пятница</string>
+    <string name="saturday">Суббота</string>
+    <string name="sunday">Воскресенье</string>
+
 </resources>
