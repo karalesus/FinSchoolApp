@@ -49,7 +49,7 @@
 
     <string name="label_successfully">Успешно!</string>
     <string name="label_lets_study">Теперь можно приступить к учебе</string>
-    <string name="button_okey_lets_stduy">Поехали</string>
+    <string name="button_okay_lets_study">Поехали</string>
 
     <string name="label_profile_settings">Настройки профиля</string>
     <string name="label_old_password">Старый пароль</string>
@@ -68,5 +68,4 @@
     <string name="label_learning">Обучение</string>
     <string name="label_progress">Прогресс</string>
     <string name="label_wallet">Учёт</string>
-
 </resources>
