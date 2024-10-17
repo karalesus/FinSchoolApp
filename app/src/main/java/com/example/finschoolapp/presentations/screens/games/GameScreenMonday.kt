@@ -42,13 +42,18 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.ui.components.buttons.PrimaryButton
+import com.example.finschoolapp.ui.components.buttons.RightAnswerSmallButtonForGame
 import com.example.finschoolapp.ui.components.toolbars.BackToolbar
 import com.example.finschoolapp.ui.components.toolbars.TextToolbar
+import com.example.finschoolapp.ui.theme.textForSignUp
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 
@@ -58,9 +63,6 @@ fun MondayFun(modifier: Modifier = Modifier,navController: NavHostController
 ) {
 
     val dimensions = LocalDimensions.current
-    val keyboardController = LocalSoftwareKeyboardController.current
-    val focusManager = LocalFocusManager.current
-
     val palette = ThemeColors.LightTheme
 
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
@@ -97,7 +99,7 @@ fun MondayFun(modifier: Modifier = Modifier,navController: NavHostController
                 contentAlignment = Alignment.Center,
                 modifier = modifier
                     .fillMaxWidth(0.85f)
-                    .fillMaxHeight(0.40f)
+                    .fillMaxHeight(0.26f)
                     .clip(roundedShape)
                     .background(color = palette.thirdLight)
                     .padding(vertical = dimensions.verticalNormalPadding)
@@ -105,11 +107,19 @@ fun MondayFun(modifier: Modifier = Modifier,navController: NavHostController
 
                 Text(
                     modifier = modifier.padding(10.dp),
-                    text = stringResource(id = R.string.first_game_start),
+                    text = stringResource(id = R.string.task_text),
                     style = textViewBaseVariant.copy(color = palette.secondary)
                 )
             }
 
+
+            Spacer(modifier = modifier.height(dimensions.verticalSLarge))
+
+            Text(
+                text = stringResource(id = R.string.game_question_text),
+                style = textViewBaseVariant.copy(color = palette.secondary, fontWeight = FontWeight.Bold),
+                textAlign = TextAlign.Center
+            )
 
             Spacer(modifier = modifier.height(dimensions.verticalSLarge))
 
@@ -124,14 +134,16 @@ fun MondayFun(modifier: Modifier = Modifier,navController: NavHostController
 
 
 
-               PrimaryButton(
+               RightAnswerSmallButtonForGame(
                    modifier = modifier
-//                       .size(width = 118.dp, height = 44.dp),
-                       .fillMaxHeight(0.13f)
-                       .fillMaxWidth(0.3f),
+                       .shadow(elevation = 7.dp,
+                           shape = RoundedCornerShape(30))
+//                       .size(width = 110.dp, height = 44.dp),
+                       .fillMaxHeight(0.12f)
+                       .fillMaxWidth(0.41f),
 
                    palette = palette,
-                   text = stringResource(id = R.string.button_continue),
+                   text = stringResource(id = R.string.to_work),
 
                    navController = navController,
 
@@ -141,14 +153,16 @@ fun MondayFun(modifier: Modifier = Modifier,navController: NavHostController
 
                Spacer(modifier = modifier.width(dimensions.verticalNormal)  )
 
-               PrimaryButton(
+               RightAnswerSmallButtonForGame(
                    modifier = modifier
-//                       .size(width = 118.dp, height = 44.dp),
-                       .fillMaxHeight(0.13f)
-                       .fillMaxWidth(0.5f),
+                       .shadow(elevation = 7.dp,
+                           shape = RoundedCornerShape(30))
+//                       .size(width = 110.dp, height = 44.dp),
+                       .fillMaxHeight(0.12f)
+                       .fillMaxWidth(0.74f),
 
                    palette = palette,
-                   text = stringResource(id = R.string.button_continue),
+                   text = stringResource(id = R.string.refuse),
 
                    navController = navController,
 

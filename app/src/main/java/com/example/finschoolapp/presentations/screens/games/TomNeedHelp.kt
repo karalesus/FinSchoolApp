@@ -54,13 +54,8 @@ import com.example.finschoolapp.ui.theme.textViewBaseVariant
 @Composable
 fun NeedHelp(modifier: Modifier = Modifier,navController: NavHostController
 ) {
-
     val dimensions = LocalDimensions.current
-    val keyboardController = LocalSoftwareKeyboardController.current
-    val focusManager = LocalFocusManager.current
-
     val palette = ThemeColors.LightTheme
-
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
 
     Scaffold(
