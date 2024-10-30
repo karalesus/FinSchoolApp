@@ -90,4 +90,6 @@
     <string name="to_work">Поработать</string>
     <string name="refuse">Отказаться</string>
     <string name="game_question_text">Как поступить Тому?</string>
+
+    <string name="end_seventh_module">Молодец! Том приобретает новые знания и умения по теме “Финансовая безопасность”. Приготовься, в следующем модуле тебя ждет заключительная игра!</string>
 </resources>
