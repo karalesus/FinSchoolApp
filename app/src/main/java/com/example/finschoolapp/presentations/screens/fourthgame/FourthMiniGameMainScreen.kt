@@ -1,4 +1,4 @@
-package com.example.finschoolapp
+package com.example.finschoolapp.presentations.screens.fourthgame
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,7 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.example.finschoolapp.navigation.main.MainScreen
+import com.example.finschoolapp.R
 import com.example.finschoolapp.ui.components.buttons.PrimaryButton
 import com.example.finschoolapp.ui.components.toolbars.TextToolbar
 import com.example.finschoolapp.ui.theme.LocalDimensions
@@ -28,7 +29,8 @@ import com.example.finschoolapp.ui.theme.smallHeader
 @Composable
 fun FourthMiniGameMainScreen(
     modifier: Modifier = Modifier,
-    navController: NavHostController
+    navController: NavHostController,
+    buttonRoute: String
 ) {
     val dimensions = LocalDimensions.current
     val palette = ThemeColors.LightTheme
@@ -66,12 +68,13 @@ fun FourthMiniGameMainScreen(
         Spacer(modifier = modifier.height(dimensions.verticalSLarge))
 
         PrimaryButton(
-            modifier = modifier.size
-                (width = 300.dp, height = 35.dp),
-            palette = ThemeColors.LightTheme,
+            modifier = modifier
+                .width(300.dp)
+                .height(35.dp),
+            palette = palette,
             text = stringResource(id = R.string.button_continue),
             navController = navController,
-            route = MainScreen.AddGoal.route
+            route = buttonRoute
         )
     }
 }
@@ -79,5 +82,8 @@ fun FourthMiniGameMainScreen(
 @Preview
 @Composable
 fun FourthMiniGameMainScreenPreview() {
-    FourthMiniGameMainScreen(navController = rememberNavController())
+    FourthMiniGameMainScreen(
+        navController = rememberNavController(),
+        buttonRoute = ""
+    )
 }
