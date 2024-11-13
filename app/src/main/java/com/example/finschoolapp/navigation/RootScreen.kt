@@ -7,4 +7,6 @@ sealed class RootScreen
     (val route: String) {
     object AuthNavGraph : RootScreen("Auth")
     object MainScreenGraph : RootScreen("Main")
+
+    object GameNavGraph: RootScreen("Game")
 }

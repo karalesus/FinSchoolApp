@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.finschoolapp.ui.theme.LocalDimensions
 import com.example.finschoolapp.ui.theme.ThemeColors
+import com.example.finschoolapp.ui.theme.textForSignUp
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 @Composable
@@ -22,14 +23,14 @@ fun RightAnswerSmallButtonForGame(
     modifier: Modifier,
     palette: ThemeColors,
     text: String,
-    navController: NavHostController,
+    onButtonClick: () -> Unit,
     route: String
 ) {
     val dimensions = LocalDimensions.current
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
 
     Button(
-        onClick = {navController.navigate(route)},
+        onClick = {onButtonClick()},
         modifier = modifier
             .height(40.dp)
             .fillMaxWidth(1f),
