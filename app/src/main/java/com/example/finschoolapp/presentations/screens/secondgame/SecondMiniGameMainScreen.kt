@@ -1,44 +1,49 @@
 package com.example.finschoolapp.presentations.screens.secondgame
 
-import com.example.finschoolapp.R
-
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.finschoolapp.R
 import com.example.finschoolapp.ui.components.buttons.PrimaryButton
 import com.example.finschoolapp.ui.components.toolbars.TextToolbar
 import com.example.finschoolapp.ui.theme.LocalDimensions
 import com.example.finschoolapp.ui.theme.ThemeColors
+import com.example.finschoolapp.ui.theme.smallDescription
+import com.example.finschoolapp.ui.theme.smallHeader
+import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 @Composable
-fun QuestionScreen(
+fun SecondMiniGameMainScreen(
     modifier: Modifier = Modifier,
-    questionTitle: String,
-    questionText: String,
-    answers: List<String>,
-    imageResId: Int,
-    onAnswerSelected: (String) -> Unit
+    navController: NavHostController,
+    buttonRoute: String
 ) {
     val palette = ThemeColors.LightTheme
     val dimensions = LocalDimensions.current
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
+
 
     Column(
         modifier = modifier
@@ -47,17 +52,16 @@ fun QuestionScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         TextToolbar(
-            text = questionTitle,
+            text = stringResource(id = R.string.label_second_and_third_mini_game),
             titleColor = palette.secondary,
             backgroundColor = palette.thirdLight
         )
 
-        Spacer(modifier = modifier.height(69.dp))
+        Spacer(modifier = modifier.height(24.dp))
 
         Image(
-            painter = painterResource(id = imageResId),
+            painter = painterResource(id = R.drawable.second_mini_game_main_image),
             contentDescription = null,
-            contentScale = ContentScale.Fit,
             modifier = modifier
                 .fillMaxWidth()
                 .clip(roundedShape)
@@ -65,35 +69,37 @@ fun QuestionScreen(
 
         Spacer(modifier = modifier.height(dimensions.verticalSLarge))
 
-        Text(
-            text = questionText,
-            color = ThemeColors.LightTheme.secondary,
-            fontWeight = FontWeight.Bold
-        )
-
-        answers.forEach { answer ->
-            Spacer(modifier = modifier.height(dimensions.verticalSLarge))
-            PrimaryButton(
-                modifier = modifier.size(height = 40.dp, width = 320.dp),
-                palette = ThemeColors.LightTheme,
-                text = answer,
-                navController = rememberNavController(),
-                route = ""
+        Box (modifier = modifier
+            .fillMaxHeight(0.52f)
+            .fillMaxWidth(0.9f)
+            .clip(roundedShape)
+            .background(color = palette.thirdLight)
+            ) {
+            Text(
+                modifier = modifier.padding(10.dp),
+                text = stringResource(id = R.string.task_second_and_third_mini_game),
+                style = textViewBaseVariant.copy(color = palette.secondary),
+                textAlign = TextAlign.Left
             )
         }
-    }
 
+        Spacer(modifier = modifier.height(dimensions.verticalSLarge))
+
+        PrimaryButton(
+            modifier = modifier.size(height = 40.dp, width = 320.dp),
+            palette = ThemeColors.LightTheme,
+            text = stringResource(id = R.string.button_continue),
+            navController = rememberNavController(),
+            route = ""
+        )
+    }
 }
 
 @Preview
 @Composable
-fun QuestionScreenPreview() {
-    QuestionScreen(
-        questionTitle = "Завтрак",
-        questionText = "Том выбирает, что поесть на завтрак",
-        answers = listOf("Приготовить еду из купленных продуктов", "Поесть в кафе рядом с работой"),
-        imageResId = R.drawable.second_mini_game_answer_image_1
-    ) {
-
-    }
+fun SecondMiniGamePreview() {
+    SecondMiniGameMainScreen(
+        navController = rememberNavController(),
+        buttonRoute = ""
+    )
 }
