@@ -28,8 +28,9 @@ import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.smallHeader
 
 @Composable
-fun WalletScreen(modifier: Modifier = Modifier,
-                 navController: NavHostController
+fun WalletScreen(
+    modifier: Modifier = Modifier,
+    navController: NavHostController
 ) {
 
     val dimensions = LocalDimensions.current

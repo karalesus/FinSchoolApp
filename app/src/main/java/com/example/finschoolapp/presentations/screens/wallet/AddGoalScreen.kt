@@ -41,11 +41,11 @@ import com.example.finschoolapp.ui.theme.smallHeader
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 @Composable
-fun OutlinedField(string: String){
+fun OutlinedField(string: String) {
     val palette = ThemeColors.LightTheme
     var value by remember { mutableStateOf("") }
     val keyboardController = LocalSoftwareKeyboardController.current
-    Box(contentAlignment = Alignment.Center){
+    Box(contentAlignment = Alignment.Center) {
         OutlinedTextField(
             modifier = Modifier
                 .background(palette.thirdLight)
@@ -58,14 +58,14 @@ fun OutlinedField(string: String){
                 ),
             value = value,
             onValueChange = { value = it },
-            textStyle = smallHeader.copy(color = palette.secondary, fontSize = 14.sp ),
+            textStyle = smallHeader.copy(color = palette.secondary, fontSize = 14.sp),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = palette.third,
                 unfocusedBorderColor = palette.secondary
             ),
             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
             keyboardActions = KeyboardActions(
-                onDone = {keyboardController?.hide()})
+                onDone = { keyboardController?.hide() })
 
         )
         AnimatedVisibility(visible = value.isEmpty()) {
@@ -76,8 +76,9 @@ fun OutlinedField(string: String){
 }
 
 @Composable
-fun AddGoalScreen(modifier: Modifier = Modifier,
-                  navController: NavHostController
+fun AddGoalScreen(
+    modifier: Modifier = Modifier,
+    navController: NavHostController
 ) {
 
     val dimensions = LocalDimensions.current
@@ -130,7 +131,7 @@ fun AddGoalScreen(modifier: Modifier = Modifier,
 
         PrimaryButton(
             modifier = modifier.size(
-                height = 40.dp, width = 328.dp
+                height = 40.dp, width = 320.dp
             ),
             palette = ThemeColors.LightTheme,
             text = stringResource(id = R.string.button_create_goal),
