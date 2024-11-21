@@ -1,4 +1,5 @@
-package com.example.finschoolapp.presentations.screens.main
+package com.example.finschoolapp.presentations.screens.games
+
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -42,18 +43,16 @@ import com.example.finschoolapp.ui.theme.thirdLight
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun SuccessfulEndFirstModuleScreen(
+fun RipEndFirstModuleScreen(
     modifier: Modifier = Modifier,
-    navController: NavHostController,
-    TomMoney: Int
+    navController: NavHostController
 ) {
     val palette = ThemeColors.LightTheme
-    var showConfetti by remember { mutableStateOf(false) }
 
     Scaffold(
         topBar = {
             TextToolbar(
-                text = stringResource(id = R.string.label_hooray_lower),
+                text = stringResource(id = R.string.label_rip_game),
                 titleColor = mainHeader.color,
                 backgroundColor = ThemeColors.LightTheme.thirdLight,
             )
@@ -72,18 +71,18 @@ fun SuccessfulEndFirstModuleScreen(
                 .padding(innerPadding)
                 .background(color = palette.background),
         ) {
-            ConfettiAnimation(visible = showConfetti)
-            Spacer(modifier = Modifier.height(15.dp))
+            Spacer(modifier = Modifier.height(40.dp))
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(0.5f)
+                    .weight(0.4f)
             ) {
+                Spacer(modifier = Modifier.height(40.dp))
                 Image(
-                    painter = painterResource(id = R.drawable.image_characrer_end_lvl1),
+                    painter = painterResource(id = R.drawable.image_game_1_rip),
                     contentDescription = null,
                     modifier = Modifier
-                        .size(400.dp)
+//                        .size(400.dp)
                         .align(Alignment.Center)
                 )
             }
@@ -104,14 +103,14 @@ fun SuccessfulEndFirstModuleScreen(
                     ) {
                         Text(
                             modifier = Modifier.align(Alignment.CenterHorizontally).padding(10.dp),
-                            text = stringResource(id = R.string.successful_end_first_level)+"$TomMoney рублей",
+                            text = stringResource(id = R.string.text_rip_game),
                             style = textViewBaseVariant.copy(color = palette.secondary)
                         )
                     }
                     Spacer(modifier = Modifier.height(15.dp))
 
                     Text(
-                        text = stringResource(id = R.string.increase_level),
+                        text = stringResource(id = R.string.text_tom_rip),
                         style = textViewBaseVariant.copy(color = palette.secondary, fontWeight = FontWeight.Bold),
                         modifier = Modifier.padding(vertical = 8.dp).align(Alignment.CenterHorizontally)
                     )
@@ -122,9 +121,9 @@ fun SuccessfulEndFirstModuleScreen(
                         modifier = Modifier
                             .fillMaxWidth(),
                         palette = ThemeColors.LightTheme,
-                        text = stringResource(id = R.string.button_complete_module),
+                        text = stringResource(id = R.string.try_again),
                         navController = navController,
-                        route = ""
+                        route = NeedHelp.StartGame.route
                     )
 
                 }
@@ -135,9 +134,9 @@ fun SuccessfulEndFirstModuleScreen(
 
 @Composable
 @Preview
-fun SuccessfulEndFirstModuleScreenPreview() {
-    SuccessfulEndFirstModuleScreen(
+fun RipEndFirstModuleScreenPreview() {
+    RipEndFirstModuleScreen(
         modifier = Modifier,
-        navController = rememberNavController(),
-        TomMoney = 0)
+        navController = rememberNavController()
+    )
 }
