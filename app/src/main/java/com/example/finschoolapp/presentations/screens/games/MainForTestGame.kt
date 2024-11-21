@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.navigation.RootScreen
-import com.example.finschoolapp.navigation.graphs.gameNavGraph
 
 class MainForTestGame : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

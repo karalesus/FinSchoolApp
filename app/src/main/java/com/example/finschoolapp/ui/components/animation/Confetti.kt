@@ -21,7 +21,7 @@ fun ConfettiAnimation(visible: Boolean) {
                 val y = random.nextFloat() * size.height
                 drawRect(
                     color = confettiColors[random.nextInt(confettiColors.size)],
-                    topLeft = Offset.Infinite,
+                    topLeft = Offset(x, y),
                     size = Size(10f, 10f)
                 )
             }

@@ -18,7 +18,7 @@ val scenarios = listOf(
         options = listOf("Поработать", "Отказаться"),
         money = listOf(50, 0),
         correctOptionIndex = 0,
-        image = R.drawable.image_character_lvl1_1
+        image = R.drawable.image_game_1_screen_1
 
     ),
     GameScenario(
@@ -28,7 +28,7 @@ val scenarios = listOf(
         options = listOf("Сумма небольшая, согласиться!", "Отказаться"),
         money = listOf(-20, 0),
         correctOptionIndex = 0,
-        image = R.drawable.image_character_lvl1_1
+        image = R.drawable.image_game_1_screen_2
     ),
 
     GameScenario(
@@ -38,7 +38,7 @@ val scenarios = listOf(
         options = listOf("Поесть пиццы", "Стандартный обед"),
         money = listOf(-20, 0),
         correctOptionIndex = 1,
-        image = R.drawable.image_character_lvl1_1
+        image = R.drawable.image_game_1_screen_3
     ),
     GameScenario(
         day = "Четверг",
@@ -47,7 +47,7 @@ val scenarios = listOf(
         options = listOf("Отказаться, стыдно носить мусор", "Согласиться","Помогать бесплатно"),
         money = listOf(0, 30, 0),
         correctOptionIndex = 1,
-        image = R.drawable.image_character_lvl1_1
+        image = R.drawable.image_game_1_screen_4
     ),
     GameScenario(
         day = "Пятница",
@@ -56,7 +56,7 @@ val scenarios = listOf(
         options = listOf("Напомнить", "Отдаст потом"),
         money = listOf(20, 0),
         correctOptionIndex = 0,
-        image = R.drawable.image_character_lvl1_1
+        image = R.drawable.image_game_1_screen_5
     ),
     GameScenario(
         day = "Суббота",
@@ -65,7 +65,7 @@ val scenarios = listOf(
         options = listOf("Пойти", "Отказаться"),
         money = listOf(-100, 0),
         correctOptionIndex = 1,
-        image = R.drawable.image_character_lvl1_1
+        image = R.drawable.image_game_1_screen_6
     ),
     GameScenario(
         day = "Воскресенье",
@@ -74,6 +74,6 @@ val scenarios = listOf(
         options = listOf("Не покупать", "Купить один", "Купить два","Купить три","Купить четыре", "Купить пять"),
         money = listOf( 0, -5, -10, -15, -20, -25),
         correctOptionIndex = 0,
-        image = R.drawable.image_character_lvl1_1
+        image = R.drawable.image_game_1_screen_7
     )
 )

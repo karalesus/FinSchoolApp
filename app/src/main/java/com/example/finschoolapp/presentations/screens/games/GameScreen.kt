@@ -30,12 +30,15 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import com.example.finschoolapp.navigation.main.MainScreen
+import com.example.finschoolapp.ui.components.animation.ConfettiAnimation
 import com.example.finschoolapp.ui.components.buttons.RightAnswerSmallButtonForGame
 import com.example.finschoolapp.ui.components.toolbars.TextToolbar
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
@@ -54,6 +57,7 @@ fun GameScreen(
     val focusManager = LocalFocusManager.current
     val palette = ThemeColors.LightTheme
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
+    val confettiVisible = remember { mutableStateOf(false) }
 
 
 
@@ -111,30 +115,31 @@ fun GameScreen(
             )
 
             Spacer(modifier = modifier.height(dimensions.verticalSLarge))
+           Row(
 
-
-
-           Row( modifier = modifier
+               modifier = modifier
                .background(color = palette.background),
                horizontalArrangement =Arrangement.Center,
-               verticalAlignment = Alignment.Top
+               verticalAlignment = Alignment.Bottom,
                ) {
 
                RightAnswerSmallButtonForGame(
                    modifier = modifier
-                       .shadow(elevation = 7.dp, shape = RoundedCornerShape(30))
                        .fillMaxHeight(0.12f)
-                       .fillMaxWidth(0.41f),
+                       .fillMaxWidth(0.41f)
+                       .shadow(elevation = 7.dp, shape = RoundedCornerShape(30)),
 
                    palette = palette,
                    text = scenario.options.get(0),
                    onButtonClick = {
+//                       confettiVisible.value = !confettiVisible.value
                        focusManager.clearFocus()
                        onClick(scenario.money.get(0))
                    },
                    route = MainScreen.AddGoal.route
-
                )
+               
+//               ConfettiAnimation(visible = confettiVisible.value)
 
 
                Spacer(modifier = modifier.width(dimensions.verticalNormal)  )
@@ -289,19 +294,8 @@ fun GameScreen(
                         route = MainScreen.AddGoal.route
 
                     )
-
-
-
-
                 }
             }
-
-
-
-
-
-
-
         }
     }
 }
@@ -313,7 +307,7 @@ fun GameScreen(
 fun MondayFunPreview() {
     GameScreen(
         onClick = {},
-        scenario = scenarios.get(0),
+        scenario = scenarios.get(6),
         TomMoney = 0
     )
 }
