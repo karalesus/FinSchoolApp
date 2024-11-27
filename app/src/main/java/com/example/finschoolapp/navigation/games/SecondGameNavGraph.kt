@@ -7,14 +7,15 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.finschoolapp.presentations.screens.secondgame.FinalScreen
 import com.example.finschoolapp.presentations.screens.secondgame.QuestionScreen
 import com.example.finschoolapp.presentations.screens.secondgame.SecondMiniGameMainScreen
-import com.example.finschoolapp.viewmodel.SecondMiniGameQuestion
 import com.example.finschoolapp.viewmodel.SecondMiniGameViewModel
 
 @Composable
 fun SecondMiniGameGraph(navController: NavHostController) {
     val viewModel: SecondMiniGameViewModel = viewModel()
+
     NavHost(navController = navController, startDestination = "main_screen") {
         composable(route = "main_screen") {
             SecondMiniGameMainScreen(
@@ -22,17 +23,25 @@ fun SecondMiniGameGraph(navController: NavHostController) {
                 buttonRoute = "screen_0"
             )
         }
-        buildGameGraph(navController, viewModel.questions)
+        buildGameGraph(navController, viewModel)
+        composable(route = "game_end") {
+            FinalScreen(
+                viewModel = viewModel,
+                navController = navController,
+                nextRoute = "main_screen"
+            )
+        }
     }
 }
 
+
 fun NavGraphBuilder.buildGameGraph(
     navController: NavController,
-    questions: List<SecondMiniGameQuestion>
+    viewModel: SecondMiniGameViewModel
 ) {
-    questions.forEachIndexed { index, question ->
+    viewModel.questions.forEachIndexed { index, question ->
         val route = "screen_$index"
-        val nextScreen = if (index + 1 < questions.size) "screen_${index + 1}" else "game_end"
+        val nextScreen = if (index + 1 < viewModel.questions.size) "screen_${index + 1}" else "game_end"
 
         composable(route = route) {
             QuestionScreen(
@@ -41,7 +50,8 @@ fun NavGraphBuilder.buildGameGraph(
                 answers = question.answers,
                 imageResId = question.imageResId,
                 navController = navController as NavHostController,
-                nextRoute = nextScreen
+                nextRoute = nextScreen,
+                viewModel = viewModel
             )
         }
     }

@@ -1,6 +1,6 @@
 package com.example.finschoolapp.viewmodel
 
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.finschoolapp.R
 
@@ -91,6 +91,13 @@ class SecondMiniGameViewModel : ViewModel() {
             )
         ),
     )
+
+    var totalSpent = mutableStateOf(0)
+
+    fun addToSpent(cost: Int) {
+        totalSpent.value += cost * 20
+    }
+
 }
 
 data class SecondMiniGameQuestion(
