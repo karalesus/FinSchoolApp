@@ -5,13 +5,15 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -41,10 +43,12 @@ fun SecondMiniGameMainScreen(
     val dimensions = LocalDimensions.current
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
 
+    val scrollState = rememberScrollState()
 
     Column(
         modifier = modifier
             .fillMaxSize()
+            .verticalScroll(scrollState) // Добавляем прокрутку
             .background(color = palette.background),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -57,7 +61,7 @@ fun SecondMiniGameMainScreen(
         Spacer(modifier = modifier.height(24.dp))
 
         Image(
-            painter = painterResource(id = R.drawable.second_mini_game_main_image),
+            painter = painterResource(id = R.drawable.image_character_lvl2),
             contentDescription = null,
             modifier = modifier
                 .fillMaxWidth()
@@ -66,12 +70,13 @@ fun SecondMiniGameMainScreen(
 
         Spacer(modifier = modifier.height(dimensions.verticalSLarge))
 
-        Box (modifier = modifier
-            .fillMaxHeight(0.52f)
-            .fillMaxWidth(0.9f)
-            .clip(roundedShape)
-            .background(color = palette.thirdLight)
-            ) {
+        Box(
+            modifier = modifier
+                .padding(10.dp)
+                .wrapContentSize()
+                .clip(roundedShape)
+                .background(color = palette.thirdLight)
+        ) {
             Text(
                 modifier = modifier.padding(10.dp),
                 text = stringResource(id = R.string.task_second_and_third_mini_game),
@@ -86,8 +91,8 @@ fun SecondMiniGameMainScreen(
             modifier = modifier.size(height = 40.dp, width = 320.dp),
             palette = ThemeColors.LightTheme,
             text = stringResource(id = R.string.button_continue),
-            navController = rememberNavController(),
-            route = ""
+            navController = navController,
+            route = buttonRoute
         )
     }
 }

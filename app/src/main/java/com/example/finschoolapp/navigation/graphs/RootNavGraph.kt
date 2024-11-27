@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.example.finschoolapp.navigation.RootScreen
-import com.example.finschoolapp.navigation.main.mainScreenGraph
+import mainScreenGraph
 
 @Composable
 fun RootNavigationGraph(
@@ -26,7 +26,6 @@ fun RootNavigationGraph(
         mainScreenGraph(navController = navController) {
             isNavigationBarVisible(true)
         }
-
     }
 }
 

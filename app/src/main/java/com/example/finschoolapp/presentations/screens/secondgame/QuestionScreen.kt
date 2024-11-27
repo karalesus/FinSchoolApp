@@ -1,7 +1,5 @@
 package com.example.finschoolapp.presentations.screens.secondgame
 
-import com.example.finschoolapp.R
-
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -19,9 +17,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.compose.rememberNavController
+import androidx.navigation.NavHostController
 import com.example.finschoolapp.ui.components.buttons.PrimaryButton
 import com.example.finschoolapp.ui.components.toolbars.TextToolbar
 import com.example.finschoolapp.ui.theme.LocalDimensions
@@ -34,7 +31,8 @@ fun QuestionScreen(
     questionText: String,
     answers: List<String>,
     imageResId: Int,
-    onAnswerSelected: (String) -> Unit
+    navController: NavHostController,
+    nextRoute: String
 ) {
     val palette = ThemeColors.LightTheme
     val dimensions = LocalDimensions.current
@@ -77,23 +75,9 @@ fun QuestionScreen(
                 modifier = modifier.size(height = 40.dp, width = 320.dp),
                 palette = ThemeColors.LightTheme,
                 text = answer,
-                navController = rememberNavController(),
-                route = ""
+                navController = navController,
+                route = nextRoute
             )
         }
-    }
-
-}
-
-@Preview
-@Composable
-fun QuestionScreenPreview() {
-    QuestionScreen(
-        questionTitle = "Завтрак",
-        questionText = "Том выбирает, что поесть на завтрак",
-        answers = listOf("Приготовить еду из купленных продуктов", "Поесть в кафе рядом с работой"),
-        imageResId = R.drawable.second_mini_game_answer_image_1
-    ) {
-
     }
 }
