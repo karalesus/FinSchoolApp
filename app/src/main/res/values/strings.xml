@@ -69,7 +69,8 @@
     <string name="label_progress">Прогресс</string>
     <string name="label_wallet">Учёт</string>
 
-    <string name="label_fourth_mini_game">У кого занять?</string>
-    <string name="task_fourth_mini_game">В каждом из пяти случаев укажите, какая из альтернатив выгоднее</string>
+    <string name="label_fourth_mini_game">Что выгоднее?</string>
+    <string name="task_fourth_mini_game">В каждом из семи случаев укажите, какая из альтернатив позволит Толику потратить меньше денежных средств</string>
+    <string name="finish_fourth_mini_game">Игра завершена!</string>
 
 </resources>
