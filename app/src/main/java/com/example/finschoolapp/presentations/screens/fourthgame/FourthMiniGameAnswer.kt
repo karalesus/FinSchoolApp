@@ -26,7 +26,7 @@ import com.example.finschoolapp.ui.components.FourthMiniGameAnswerComponent
 import com.example.finschoolapp.ui.components.buttons.NextQuestionButton
 import com.example.finschoolapp.ui.theme.LocalDimensions
 import com.example.finschoolapp.ui.theme.ThemeColors
-import com.example.finschoolapp.ui.theme.smallHeader
+import com.example.finschoolapp.ui.theme.smallDescription
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 @Composable
@@ -74,7 +74,7 @@ fun FourthMiniGameAnswer(
     ) {
         Text(
             text = currentQuestion.questionText,
-            style = smallHeader.copy(color = palette.secondary),
+            style = smallDescription.copy(color = palette.secondary),
             textAlign = TextAlign.Center
         )
 
