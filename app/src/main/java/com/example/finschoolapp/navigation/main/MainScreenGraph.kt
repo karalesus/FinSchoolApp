@@ -7,6 +7,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.finschoolapp.navigation.RootScreen
+import com.example.finschoolapp.navigation.fourthMiniGameNavGraph
+import com.example.finschoolapp.presentations.screens.fourthgame.FourthMiniGameMain
 import com.example.finschoolapp.presentations.screens.main.LearningScreen
 import com.example.finschoolapp.presentations.screens.main.ProgressScreen
 import com.example.finschoolapp.presentations.screens.main.SettingScreen
@@ -15,7 +17,8 @@ import com.example.finschoolapp.presentations.screens.wallet.AddGoalScreen
 
 fun NavGraphBuilder.mainScreenGraph(
     navController: NavHostController,
-    screenName: (String) -> Unit) {
+    screenName: (String) -> Unit
+) {
     navigation(
         startDestination = MainScreen.Progress.route,
         route = RootScreen.MainScreenGraph.route
@@ -55,6 +58,7 @@ fun NavGraphBuilder.mainScreenGraph(
             SettingScreen(navController = navController)
             screenName("Settings")
         }
+
         composable(
             route = MainScreen.AddGoal.route,
             enterTransition = { fadeIn() },
@@ -63,5 +67,13 @@ fun NavGraphBuilder.mainScreenGraph(
             AddGoalScreen(navController = navController)
             screenName("AddGoal")
         }
+
+        composable(MainScreen.FourthMiniGame.route) {
+            FourthMiniGameMain(
+                navController = navController
+            )
+        }
+
+        fourthMiniGameNavGraph(navController = navController)
     }
 }
