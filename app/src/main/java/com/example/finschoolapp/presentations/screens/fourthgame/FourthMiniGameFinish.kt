@@ -16,7 +16,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.R
 import com.example.finschoolapp.navigation.main.MainScreen
-import com.example.finschoolapp.ui.components.buttons.NextQuestionButton
 import com.example.finschoolapp.ui.components.buttons.PrimaryButton
 import com.example.finschoolapp.ui.components.toolbars.TextToolbar
 import com.example.finschoolapp.ui.theme.LocalDimensions
@@ -93,20 +92,14 @@ fun FourthMiniGameFinish(
 
             Spacer(modifier = modifier.height(dimensions.verticalMLarge))
 
-            NextQuestionButton(
+            PrimaryButton(
                 modifier = modifier
                     .width(300.dp)
                     .height(35.dp),
                 palette = palette,
                 text = "Начать заново",
-                onClick = {
-                    navController.navigate(
-                        MainScreen.FourthMiniGameQuestion.createRoute(
-                            0,
-                            0
-                        )
-                    )
-                }
+                navController = navController,
+                route = MainScreen.FourthMiniGame.route
             )
         }
     }
