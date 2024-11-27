@@ -9,7 +9,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -57,10 +59,13 @@ fun FinalScreen(
     val palette = ThemeColors.LightTheme
     val dimensions = LocalDimensions.current
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
+    val scrollState = rememberScrollState()
+
 
     Column(
         modifier = modifier
             .fillMaxSize()
+            .verticalScroll(scrollState)
             .background(color = palette.background),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -112,11 +117,11 @@ fun FinalScreen(
         )
 
         PrimaryButton(
-            modifier = modifier.size(height = 40.dp, width = 320.dp),
+            modifier = modifier.size(height = 40.dp, width = 320.dp).padding(10.dp),
             palette = ThemeColors.LightTheme,
             text = buttonText,
             navController = navController,
-            route = if (totalSpent > 25000) "retry_game" else nextRoute
+            route = if (totalSpent > 25000) "main_screen" else nextRoute
         )
     }
 }

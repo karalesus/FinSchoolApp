@@ -48,7 +48,7 @@ fun SecondMiniGameMainScreen(
     Column(
         modifier = modifier
             .fillMaxSize()
-            .verticalScroll(scrollState) // Добавляем прокрутку
+            .verticalScroll(scrollState)
             .background(color = palette.background),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {

@@ -28,7 +28,7 @@ fun SecondMiniGameGraph(navController: NavHostController) {
             FinalScreen(
                 viewModel = viewModel,
                 navController = navController,
-                nextRoute = "main_screen"
+                nextRoute = "learning"
             )
         }
     }
