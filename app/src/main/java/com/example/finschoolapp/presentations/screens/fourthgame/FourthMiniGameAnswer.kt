@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -20,44 +21,46 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.R
+import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.ui.components.FourthMiniGameAnswerComponent
-import com.example.finschoolapp.ui.components.buttons.PrimaryButton
+import com.example.finschoolapp.ui.components.buttons.NextQuestionButton
 import com.example.finschoolapp.ui.theme.LocalDimensions
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.smallHeader
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 @Composable
-fun AnswerFourthMiniGameScreen(
+fun FourthMiniGameAnswer(
     modifier: Modifier = Modifier,
+    questionIndex: Int,
     selectedButton: Int,
-    isAnswerLeftCorrect: Boolean,
-    questionText: String,
-    answerButtonLeft: String,
-    answerButtonRight: String,
-    resultText: String,
-    explanationText: String,
+    correctAnswers: Int,
     navController: NavHostController,
-    buttonRoute: String
+    questions: List<Question> = questionsList
 ) {
-    val dimensions = LocalDimensions.current
     val palette = ThemeColors.LightTheme
+    val dimensions = LocalDimensions.current
 
+    val currentQuestion = questions[questionIndex]
     val isLeftButtonSelected = selectedButton == 1
     val isRightButtonSelected = selectedButton == 2
+
     val isCorrectAnswer =
-        (isLeftButtonSelected && isAnswerLeftCorrect) || (isRightButtonSelected && !isAnswerLeftCorrect)
+        (isLeftButtonSelected && currentQuestion.isAnswerLeftCorrect) ||
+                (isRightButtonSelected && !currentQuestion.isAnswerLeftCorrect)
+
+    val updatedCorrectAnswers = if (isCorrectAnswer) correctAnswers + 1 else correctAnswers
 
     val textColor = if (isCorrectAnswer) palette.correctBackground else palette.errorBackground
 
     val backgroundColorLeft = if (isLeftButtonSelected) {
-        if (isAnswerLeftCorrect) palette.correctBackground else palette.errorBackground
+        if (currentQuestion.isAnswerLeftCorrect) palette.correctBackground else palette.errorBackground
     } else {
         palette.third
     }
 
     val backgroundColorRight = if (isRightButtonSelected) {
-        if (!isAnswerLeftCorrect) palette.correctBackground else palette.errorBackground
+        if (!currentQuestion.isAnswerLeftCorrect) palette.correctBackground else palette.errorBackground
     } else {
         palette.third
     }
@@ -70,7 +73,7 @@ fun AnswerFourthMiniGameScreen(
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = questionText,
+            text = currentQuestion.questionText,
             style = smallHeader.copy(color = palette.secondary),
             textAlign = TextAlign.Center
         )
@@ -83,47 +86,42 @@ fun AnswerFourthMiniGameScreen(
         ) {
             FourthMiniGameAnswerComponent(
                 backgroundColor = backgroundColorLeft,
-                text = answerButtonLeft
+                text = currentQuestion.answerLeft
             )
 
             FourthMiniGameAnswerComponent(
                 backgroundColor = backgroundColorRight,
-                text = answerButtonRight
+                text = currentQuestion.answerRight
             )
         }
 
         Spacer(modifier = modifier.height(dimensions.verticalSLarge))
 
         Text(
-            text = resultText,
+            modifier = modifier.padding(start = 32.dp, end = 32.dp),
+            text = currentQuestion.explanation,
             style = textViewBaseVariant.copy(
                 color = textColor,
                 fontWeight = FontWeight.Bold
-            ),
-            textAlign = TextAlign.Center
+            )
         )
 
         Spacer(modifier = modifier.height(dimensions.verticalNormal))
 
-        Text(
-            text = explanationText,
-            style = textViewBaseVariant.copy(
-                color = textColor,
-                fontWeight = FontWeight.Bold
-            ),
-            textAlign = TextAlign.Center
-        )
-
-        Spacer(modifier = modifier.height(dimensions.verticalNormal))
-
-        PrimaryButton(
+        NextQuestionButton(
             modifier = modifier
                 .width(300.dp)
                 .height(35.dp),
             palette = palette,
             text = stringResource(id = R.string.button_continue),
-            navController = navController,
-            route = buttonRoute
+            onClick = {
+                val nextRoute = if (questionIndex + 1 < questions.size) {
+                    MainScreen.FourthMiniGameQuestion.createRoute(questionIndex + 1, updatedCorrectAnswers)
+                } else {
+                    MainScreen.FourthMiniGameFinish.createRoute(updatedCorrectAnswers, questions.size)
+                }
+                navController.navigate(nextRoute)
+            }
         )
     }
 }
@@ -131,15 +129,10 @@ fun AnswerFourthMiniGameScreen(
 @Preview
 @Composable
 fun PreviewAnswerFourthMiniGameScreen() {
-    AnswerFourthMiniGameScreen(
-        selectedButton = 2,
-        isAnswerLeftCorrect = true,
-        questionText = "Что выгоднее?",
-        answerButtonLeft = "Вариант 1",
-        answerButtonRight = "Вариант 2",
-        resultText = "Результат",
-        explanationText = "Пояснение",
-        navController = rememberNavController(),
-        buttonRoute = ""
+    FourthMiniGameAnswer(
+        questionIndex = 0,
+        selectedButton = 1,
+        correctAnswers = 0,
+        navController = rememberNavController()
     )
 }
