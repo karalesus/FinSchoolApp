@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.R
+import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.ui.components.buttons.PrimaryButton
 import com.example.finschoolapp.ui.components.toolbars.TextToolbar
 import com.example.finschoolapp.ui.theme.LocalDimensions
@@ -27,10 +28,9 @@ import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.smallHeader
 
 @Composable
-fun FourthMiniGameMainScreen(
+fun FourthMiniGameMain(
     modifier: Modifier = Modifier,
     navController: NavHostController,
-    buttonRoute: String
 ) {
     val dimensions = LocalDimensions.current
     val palette = ThemeColors.LightTheme
@@ -48,7 +48,7 @@ fun FourthMiniGameMainScreen(
 
         )
 
-        Spacer(modifier = modifier.height(dimensions.verticalXLarge))
+        Spacer(modifier = modifier.height(dimensions.verticalSLarge))
 
         Image(
             painter = painterResource(id = R.drawable.fourth_mini_game_main),
@@ -74,7 +74,7 @@ fun FourthMiniGameMainScreen(
             palette = palette,
             text = stringResource(id = R.string.button_continue),
             navController = navController,
-            route = buttonRoute
+            route = MainScreen.FourthMiniGameQuestion.createRoute(0, 0)
         )
     }
 }
@@ -82,8 +82,7 @@ fun FourthMiniGameMainScreen(
 @Preview
 @Composable
 fun FourthMiniGameMainScreenPreview() {
-    FourthMiniGameMainScreen(
-        navController = rememberNavController(),
-        buttonRoute = ""
+    FourthMiniGameMain(
+        navController = rememberNavController()
     )
 }
