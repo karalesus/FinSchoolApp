@@ -1,0 +1,45 @@
+package com.example.finschoolapp.ui.components.buttons
+
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import com.example.finschoolapp.ui.theme.LocalDimensions
+import com.example.finschoolapp.ui.theme.ThemeColors
+import com.example.finschoolapp.ui.theme.textViewBaseVariant
+
+@Composable
+fun PrimaryGameButton(
+    modifier: Modifier,
+    palette: ThemeColors,
+    text: String,
+    navController: NavHostController,
+    route: String,
+    onAnswerSelected: (String) -> Unit
+) {
+    val dimensions = LocalDimensions.current
+    val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
+    Button(
+        onClick = {
+            onAnswerSelected(text)
+            navController.navigate(route)
+        },
+        shape = roundedShape,
+        colors = ButtonDefaults.buttonColors(containerColor = palette.third)
+    ) {
+        Box(contentAlignment = Alignment.Center, modifier = modifier.padding(vertical = 8.dp)) {
+            Text(
+                text = text,
+                style = textViewBaseVariant,
+                color = palette.thirdLight
+            )
+        }
+    }
+}
