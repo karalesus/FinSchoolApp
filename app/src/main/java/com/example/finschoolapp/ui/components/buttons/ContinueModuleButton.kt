@@ -28,7 +28,8 @@ fun ContinueModuleButton(
                 onButtonClick()
         },
         shape = roundedShape,
-        colors = ButtonDefaults.buttonColors(containerColor = palette.thirdLight)
+        colors = ButtonDefaults.buttonColors(containerColor = palette.thirdLight),
+        modifier = modifier
     ) {
         Box(contentAlignment = Alignment.Center, modifier = modifier.padding(vertical = 8.dp)) {
             Text(
