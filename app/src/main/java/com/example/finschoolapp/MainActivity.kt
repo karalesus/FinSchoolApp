@@ -8,17 +8,23 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 
 import com.example.finschoolapp.navigation.graphs.RootNavigationGraph
 import com.example.finschoolapp.navigation.navBars.BottomNavigationBar
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.GlobalContext.startKoin
 
 
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        startKoin {
+            androidContext(this@MainActivity)
+            modules(appModules)
+        }
         setContent {
             val navController = rememberNavController()
             var isNavigationBarVisible by remember { mutableStateOf(false) }
