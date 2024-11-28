@@ -12,10 +12,13 @@ import com.example.finschoolapp.presentations.screens.main.ProgressScreen
 import com.example.finschoolapp.presentations.screens.main.SettingScreen
 import com.example.finschoolapp.presentations.screens.main.WalletScreen
 import com.example.finschoolapp.presentations.screens.wallet.AddGoalScreen
+import com.example.finschoolapp.presentations.viewModels.ModuleViewModel
+import org.koin.androidx.compose.koinViewModel
 
 fun NavGraphBuilder.mainScreenGraph(
     navController: NavHostController,
-    screenName: (String) -> Unit) {
+    screenName: (String) -> Unit
+) {
     navigation(
         startDestination = MainScreen.Progress.route,
         route = RootScreen.MainScreenGraph.route
@@ -30,11 +33,13 @@ fun NavGraphBuilder.mainScreenGraph(
         }
 
         composable(
+
             route = MainScreen.Learning.route,
             enterTransition = { fadeIn() },
             exitTransition = { fadeOut() }
         ) {
-            LearningScreen()
+            val moduleViewModel: ModuleViewModel = koinViewModel()
+            LearningScreen(navController = navController, moduleViewModel = moduleViewModel)
             screenName("Learning")
         }
 
