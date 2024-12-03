@@ -35,7 +35,7 @@ fun ContinueModuleButton(
             Text(
                 text = text,
                 style = textViewBaseVariant,
-                color = palette.moduleBackgroundDark
+                color = palette.secondary
             )
         }
     }
