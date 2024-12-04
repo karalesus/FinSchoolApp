@@ -282,7 +282,7 @@ fun GameScreen(
                     RightAnswerSmallButtonForGame(
                         modifier = modifier
                             .shadow(elevation = 7.dp, shape = RoundedCornerShape(30))
-                            .fillMaxHeight(0.14f)
+                            .fillMaxHeight(0.17f)
                             .fillMaxWidth(0.41f),
 
                         palette = palette,

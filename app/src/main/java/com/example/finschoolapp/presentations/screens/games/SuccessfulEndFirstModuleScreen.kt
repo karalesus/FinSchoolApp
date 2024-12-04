@@ -104,7 +104,7 @@ fun SuccessfulEndFirstModuleScreen(
                     ) {
                         Text(
                             modifier = Modifier.align(Alignment.CenterHorizontally).padding(10.dp),
-                            text = stringResource(id = R.string.successful_end_first_level)+"$TomMoney рублей",
+                            text = stringResource(id = R.string.successful_end_first_level)+" $TomMoney рублей",
                             style = textViewBaseVariant.copy(color = palette.secondary)
                         )
                     }

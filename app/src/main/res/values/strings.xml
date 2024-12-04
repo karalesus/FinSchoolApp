@@ -80,7 +80,7 @@
     <string name="saturday">Суббота</string>
     <string name="sunday">Воскресенье</string>
 
-    <string name="successful_end_first_level">Толик ничего не делал, но зато ничего не потерял. У него в кармане осталось .</string>
+    <string name="successful_end_first_level">Толик ничего не делал, но зато ничего не потерял. У него в кармане осталось</string>
     <string name="increase_level">"Том повышает свой уровень!"</string>
 
     <string name="button_complete_module">Завершить модуль</string>
