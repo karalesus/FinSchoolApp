@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
+    id("kotlinx-serialization")
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -35,7 +37,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.11"
+        kotlinCompilerExtensionVersion = "1.5.12"
     }
 
     packagingOptions { // чтобы избежать конфликтов с библиотекой com.sun.mail
@@ -88,5 +90,31 @@ dependencies {
 
     // Integration with activities
     implementation("androidx.activity:activity-compose:1.8.2")
+
+    //ktor
+    implementation(platform("io.ktor:ktor-bom:3.0.0"))
+    implementation("io.ktor:ktor-client-android")
+    implementation("io.ktor:ktor-client-okhttp:3.0.0")
+    implementation("io.ktor:ktor-client-serialization")
+    implementation("io.ktor:ktor-client-logging")
+    implementation("io.ktor:ktor-client-content-negotiation")
+    implementation("io.ktor:ktor-serialization-kotlinx-json")
+
+    // okhttp
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.12.0"))
+
+    // define any required OkHttp artifacts without version
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+
+    //koin
+    implementation("io.insert-koin:koin-androidx-compose:4.0.0")
+    implementation("io.insert-koin:koin-androidx-compose-navigation:4.0.0")
+
+    implementation("androidx.compose.runtime:runtime-livedata")
+
+    implementation("androidx.compose.ui:ui-graphics-android:1.7.5")
+    implementation(libs.androidx.runtime.livedata)
+
 
 }

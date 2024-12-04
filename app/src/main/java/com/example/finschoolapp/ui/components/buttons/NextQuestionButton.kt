@@ -15,27 +15,24 @@ import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 @Composable
-fun ContinueModuleButton(
+fun NextQuestionButton(
     modifier: Modifier,
     palette: ThemeColors,
     text: String,
-    onButtonClick: () -> Unit
+    onClick: () -> Unit
 ) {
     val dimensions = LocalDimensions.current
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
     Button(
-        onClick = {
-                onButtonClick()
-        },
+        onClick = onClick,
         shape = roundedShape,
-        colors = ButtonDefaults.buttonColors(containerColor = palette.thirdLight),
-        modifier = modifier
+        colors = ButtonDefaults.buttonColors(containerColor = palette.third)
     ) {
         Box(contentAlignment = Alignment.Center, modifier = modifier.padding(vertical = 8.dp)) {
             Text(
                 text = text,
                 style = textViewBaseVariant,
-                color = palette.secondary
+                color = palette.thirdLight
             )
         }
     }
