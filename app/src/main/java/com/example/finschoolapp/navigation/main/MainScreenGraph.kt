@@ -3,12 +3,12 @@ import androidx.compose.animation.fadeOut
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
 import com.example.finschoolapp.navigation.RootScreen
-import com.example.finschoolapp.navigation.games.SecondMiniGameGraph
+import com.example.finschoolapp.navigation.games.secondMiniGameGraph
 import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.presentations.screens.main.ProgressScreen
+import com.example.finschoolapp.viewmodel.SecondMiniGameViewModel
 
 fun NavGraphBuilder.mainScreenGraph(
     navController: NavHostController,
@@ -26,14 +26,9 @@ fun NavGraphBuilder.mainScreenGraph(
             ProgressScreen(navController = navController)
             screenName("Progress")
         }
-        composable(
-            route = "second_mini_game",
-            enterTransition = { fadeIn() },
-            exitTransition = { fadeOut() }
-        ) {
-            val mainNavController = rememberNavController()
-            SecondMiniGameGraph(mainNavController)
-            screenName("SecondMiniGame")
-        }
+        secondMiniGameGraph(
+            navController = navController,
+            viewModel = SecondMiniGameViewModel()
+        )
     }
 }

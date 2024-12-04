@@ -25,6 +25,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.finschoolapp.R
+import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.ui.components.buttons.PrimaryButton
 import com.example.finschoolapp.ui.components.toolbars.TextToolbar
 import com.example.finschoolapp.ui.theme.LocalDimensions
@@ -36,92 +37,143 @@ fun FinalScreen(
     modifier: Modifier = Modifier,
     viewModel: SecondMiniGameViewModel,
     navController: NavHostController,
-    nextRoute: String
 ) {
     val totalSpent = viewModel.totalSpent.value
-
-    val resultText = if (totalSpent > 25000) {
-        "Что ж, кажется Тому не удастся накопить на ноутбук в скором времени...\n" +
-                "\n" +
-                "Стоит бережнее относиться к своим деньгам. Будьте умерены в своих желаниях и учитесь экономить!"
-    } else {
-        "Том приобретает свой ноутбук спустя пару месяцев! \n" +
-                "\n" +
-                "Все благодаря тому, что ты помог ему сэкономить деньги, молодец!"
-    }
-
-    val buttonText = if (totalSpent > 25000) {
-        stringResource(id = R.string.button_restart_level)
-    } else {
-        stringResource(id = R.string.button_finish_module)
-    }
-
     val palette = ThemeColors.LightTheme
     val dimensions = LocalDimensions.current
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
     val scrollState = rememberScrollState()
 
+    if (totalSpent > 25000) {
+        val resultText =
+            "Что ж, кажется Тому не удастся накопить на ноутбук в скором времени...\n" +
+                    "\n" +
+                    "Стоит бережнее относиться к своим деньгам. Будьте умерены в своих желаниях и учитесь экономить!"
 
-    Column(
-        modifier = modifier
-            .fillMaxSize()
-            .verticalScroll(scrollState)
-            .background(color = palette.background),
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        TextToolbar(
-            text = stringResource(id = R.string.label_results),
-            titleColor = palette.secondary,
-            backgroundColor = palette.thirdLight
-        )
+        val buttonText = stringResource(id = R.string.button_restart_level)
 
-        Spacer(modifier = modifier.height(69.dp))
-
-        Image(
-            painter = painterResource(id = R.drawable.image_character_lvl2_final),
-            contentDescription = null,
-            contentScale = ContentScale.Fit,
+        Column(
             modifier = modifier
-                .fillMaxWidth()
-                .clip(roundedShape)
-        )
+                .fillMaxSize()
+                .verticalScroll(scrollState)
+                .background(color = palette.background),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            TextToolbar(
+                text = stringResource(id = R.string.label_results),
+                titleColor = palette.secondary,
+                backgroundColor = palette.thirdLight
+            )
 
-        Spacer(modifier = modifier.height(dimensions.verticalSLarge))
+            Spacer(modifier = modifier.height(69.dp))
 
-        Text(
-            modifier = modifier.padding(20.dp),
-            text = stringResource(id = R.string.spent_text),
-            color = ThemeColors.LightTheme.secondary,
-            fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center
-        )
+            Spacer(modifier = modifier.height(dimensions.verticalSLarge))
 
-        Spacer(modifier = modifier.height(dimensions.verticalSLarge))
+            Text(
+                modifier = modifier.padding(20.dp),
+                text = stringResource(id = R.string.spent_text),
+                color = ThemeColors.LightTheme.secondary,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
+            )
 
-        Text(
-            modifier = modifier.padding(20.dp),
-            text = "$totalSpent р.",
-            color = ThemeColors.LightTheme.secondary,
-            fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center
-        )
+            Spacer(modifier = modifier.height(dimensions.verticalSLarge))
 
-        Spacer(modifier = modifier.height(dimensions.verticalSLarge))
+            Text(
+                modifier = modifier.padding(20.dp),
+                text = "$totalSpent р.",
+                color = ThemeColors.LightTheme.secondary,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
+            )
 
-        Text(
-            modifier = modifier.padding(20.dp),
-            text = resultText,
-            color = ThemeColors.LightTheme.secondary,
-            fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center
-        )
+            Spacer(modifier = modifier.height(dimensions.verticalSLarge))
 
-        PrimaryButton(
-            modifier = modifier.size(height = 40.dp, width = 320.dp).padding(10.dp),
-            palette = ThemeColors.LightTheme,
-            text = buttonText,
-            navController = navController,
-            route = if (totalSpent > 25000) "main_screen" else nextRoute
-        )
+            Text(
+                modifier = modifier.padding(20.dp),
+                text = resultText,
+                color = ThemeColors.LightTheme.secondary,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
+            )
+
+            PrimaryButton(
+                modifier = modifier.size(height = 40.dp, width = 320.dp),
+                palette = ThemeColors.LightTheme,
+                text = buttonText,
+                navController = navController,
+                route = MainScreen.SecondMiniGame.route
+            )
+        }
+    } else {
+        val resultText =
+            "Том приобретает свой ноутбук спустя пару месяцев! \n" +
+                    "\n" +
+                    "Все благодаря тому, что ты помог ему сэкономить деньги, молодец!"
+
+        val buttonText = stringResource(id = R.string.button_finish_module)
+
+        Column(
+            modifier = modifier
+                .fillMaxSize()
+                .verticalScroll(scrollState)
+                .background(color = palette.background),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            TextToolbar(
+                text = stringResource(id = R.string.label_results),
+                titleColor = palette.secondary,
+                backgroundColor = palette.thirdLight
+            )
+
+            Spacer(modifier = modifier.height(69.dp))
+
+            Image(
+                painter = painterResource(id = R.drawable.image_character_lvl2_final),
+                contentDescription = null,
+                contentScale = ContentScale.Fit,
+                modifier = modifier
+                    .fillMaxWidth()
+                    .clip(roundedShape)
+            )
+
+            Spacer(modifier = modifier.height(dimensions.verticalSLarge))
+
+            Text(
+                modifier = modifier.padding(20.dp),
+                text = stringResource(id = R.string.spent_text),
+                color = ThemeColors.LightTheme.secondary,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
+            )
+
+            Spacer(modifier = modifier.height(dimensions.verticalSLarge))
+
+            Text(
+                modifier = modifier.padding(20.dp),
+                text = "$totalSpent р.",
+                color = ThemeColors.LightTheme.secondary,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
+            )
+
+            Spacer(modifier = modifier.height(dimensions.verticalSLarge))
+
+            Text(
+                modifier = modifier.padding(20.dp),
+                text = resultText,
+                color = ThemeColors.LightTheme.secondary,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
+            )
+
+            PrimaryButton(
+                modifier = modifier.size(height = 40.dp, width = 320.dp),
+                palette = ThemeColors.LightTheme,
+                text = buttonText,
+                navController = navController,
+                route = MainScreen.Progress.route
+            )
+        }
     }
 }

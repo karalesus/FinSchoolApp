@@ -1,5 +1,6 @@
 package com.example.finschoolapp.presentations.screens.secondgame
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -44,6 +45,7 @@ fun QuestionScreen(
     val dimensions = LocalDimensions.current
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
     val scrollState = rememberScrollState()
+    Log.d("cost", viewModel.totalSpent.value.toString())
 
     Column(
         modifier = modifier
@@ -83,15 +85,16 @@ fun QuestionScreen(
             Spacer(modifier = modifier.height(dimensions.verticalSLarge))
 
             PrimaryGameButton(
-                modifier = modifier.size(height = 40.dp, width = 320.dp).padding(10.dp),
+                modifier = modifier.size(height = 40.dp, width = 320.dp),
                 palette = ThemeColors.LightTheme,
                 text = answer,
                 navController = navController,
                 route = nextRoute,
                 onAnswerSelected = { selectedAnswer ->
                     val cost = calculateCost(selectedAnswer)
-                    updateSpent(cost, viewModel)
+                    viewModel.addToSpent(cost) // Это должно работать
                 }
+
             )
         }
     }
@@ -107,9 +110,9 @@ fun calculateCost(answer: String): Int {
         answer.contains("Лосось") -> 500
         answer.contains("Автобус") -> 50
         answer.contains("Такси") -> 500
-        answer.contains("Сходить в кафе") -> 250
-        answer.contains("Боулинг") -> 1500
-        answer.contains("Кино") -> 400
+        answer.contains("кафе") -> 250
+        answer.contains("боулинг") -> 1500
+        answer.contains("кино") -> 400
         else -> 0
     }
 }

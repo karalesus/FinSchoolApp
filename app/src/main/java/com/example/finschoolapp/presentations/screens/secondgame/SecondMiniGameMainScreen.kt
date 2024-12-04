@@ -22,28 +22,30 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.R
 import com.example.finschoolapp.ui.components.buttons.PrimaryButton
 import com.example.finschoolapp.ui.components.toolbars.TextToolbar
 import com.example.finschoolapp.ui.theme.LocalDimensions
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
+import com.example.finschoolapp.viewmodel.SecondMiniGameViewModel
 
 @Composable
 fun SecondMiniGameMainScreen(
     modifier: Modifier = Modifier,
     navController: NavHostController,
-    buttonRoute: String
+    buttonRoute: String,
+    viewModel: SecondMiniGameViewModel
 ) {
     val palette = ThemeColors.LightTheme
     val dimensions = LocalDimensions.current
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
 
     val scrollState = rememberScrollState()
+
+    viewModel.resetSpent()
 
     Column(
         modifier = modifier
@@ -95,13 +97,4 @@ fun SecondMiniGameMainScreen(
             route = buttonRoute
         )
     }
-}
-
-@Preview
-@Composable
-fun SecondMiniGamePreview() {
-    SecondMiniGameMainScreen(
-        navController = rememberNavController(),
-        buttonRoute = ""
-    )
 }

@@ -35,7 +35,7 @@ fun ProgressScreen(
             palette = ThemeColors.LightTheme,
             text = "SECOND MINI-GAME",
             navController = navController,
-            route = "second_mini_game"
+            route = MainScreen.SecondMiniGame.route
         )
 
     }

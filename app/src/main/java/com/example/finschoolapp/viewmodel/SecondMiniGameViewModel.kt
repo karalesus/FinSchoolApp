@@ -45,7 +45,7 @@ class SecondMiniGameViewModel : ViewModel() {
         SecondMiniGameQuestion(
             questionTitle = "Работа",
             questionText = "Надеюсь, я не опоздаю, начальник обещал меня уволить, если такое еще раз повторится...",
-            imageResId = R.drawable.second_mini_game_answer_image_late_for_work,
+            imageResId = R.drawable.second_mini_game_answer_image_work_bicycle,
             answers = listOf(
                 "Продолжить"
             )
@@ -66,36 +66,16 @@ class SecondMiniGameViewModel : ViewModel() {
                 "Отправиться домой", "Сходить с коллегами в боулинг (1500 р)", "Сходить в кино (400 р)"
             )
         ),
-        SecondMiniGameQuestion(
-            questionTitle = "Завтрак",
-            questionText = "Толик выбирает, что поесть на завтрак",
-            imageResId = R.drawable.second_mini_game_answer_image_breakfast_cafe,
-            answers = listOf(
-                "Поесть в кафе рядом с работой"
-            )
-        ),
-        SecondMiniGameQuestion(
-            questionTitle = "На работу",
-            questionText = "Как Толик поедет на работу?",
-            imageResId = R.drawable.second_mini_game_answer_image_work_bicycle,
-            answers = listOf(
-                "Автобус (50 р)", "Такси (500 р)"
-            )
-        ),
-        SecondMiniGameQuestion(
-            questionTitle = "Работа",
-            questionText = "На работе всё хорошо, пришло время обеда",
-            imageResId = R.drawable.second_mini_game_answer_image_food,
-            answers = listOf(
-                "Сходить в кафе (250 р)"
-            )
-        ),
     )
 
     var totalSpent = mutableStateOf(0)
 
     fun addToSpent(cost: Int) {
         totalSpent.value += cost * 20
+    }
+
+    fun resetSpent() {
+        totalSpent.value = 0
     }
 
 }
