@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.example.finschoolapp.navigation.RootScreen
+import mainScreenGraph
 import com.example.finschoolapp.navigation.articles.articlesNavGraph
 import com.example.finschoolapp.navigation.main.mainScreenGraph
 

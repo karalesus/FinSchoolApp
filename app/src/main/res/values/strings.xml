@@ -69,6 +69,13 @@
     <string name="label_progress">Прогресс</string>
     <string name="label_wallet">Учёт</string>
 
+    <string name="label_second_and_third_mini_game">Толик планирует бюджет</string>
+    <string name="task_second_and_third_mini_game">Толик устроился на хорошую работу! Теперь ему платят 55 тыс. рублей в месяц, но и расходы заметно выросли: 25 тысяч он тратит на аренду жилья. У него остается 30 тысяч.\n\nНужно чем-то кормить Толика и помогать ему планировать бюджет так, чтобы исполнить его мечту: он хочет купить себе ноутбук за 50 тысяч рублей</string>
+    <string name="button_finish_module">Завершить модуль</string>
+    <string name="button_restart_level">Перепройти уровень</string>
+    <string name="label_results">Итоги</string>
+    <string name="spent_text">Потрачено в этом месяце:</string>
+
     <string name="label_fourth_mini_game">Что выгоднее?</string>
     <string name="task_fourth_mini_game">В каждом из семи случаев укажите, какая из альтернатив позволит Толику потратить меньше денежных средств</string>
     <string name="finish_fourth_mini_game">Игра завершена!</string>

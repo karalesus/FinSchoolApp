@@ -1,5 +1,3 @@
-package com.example.finschoolapp.navigation.main
-
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.navigation.NavGraphBuilder
@@ -7,6 +5,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.finschoolapp.navigation.RootScreen
+import com.example.finschoolapp.navigation.games.secondMiniGameGraph
+import com.example.finschoolapp.navigation.main.MainScreen
+import com.example.finschoolapp.viewmodel.SecondMiniGameViewModel
 import com.example.finschoolapp.navigation.fourthMiniGameNavGraph
 import com.example.finschoolapp.presentations.screens.fourthgame.FourthMiniGameMain
 import com.example.finschoolapp.presentations.screens.main.LearningScreen
@@ -33,9 +34,8 @@ fun NavGraphBuilder.mainScreenGraph(
             ProgressScreen(navController = navController)
             screenName("Progress")
         }
-
+        
         composable(
-
             route = MainScreen.Learning.route,
             enterTransition = { fadeIn() },
             exitTransition = { fadeOut() }
@@ -62,7 +62,7 @@ fun NavGraphBuilder.mainScreenGraph(
             SettingScreen(navController = navController)
             screenName("Settings")
         }
-
+        
         composable(
             route = MainScreen.AddGoal.route,
             enterTransition = { fadeIn() },
@@ -71,6 +71,11 @@ fun NavGraphBuilder.mainScreenGraph(
             AddGoalScreen(navController = navController)
             screenName("AddGoal")
         }
+        
+        secondMiniGameGraph(
+            navController = navController,
+            viewModel = SecondMiniGameViewModel()
+        )
 
         composable(MainScreen.FourthMiniGame.route) {
             FourthMiniGameMain(
@@ -79,5 +84,6 @@ fun NavGraphBuilder.mainScreenGraph(
         }
 
         fourthMiniGameNavGraph(navController = navController)
+
     }
 }
