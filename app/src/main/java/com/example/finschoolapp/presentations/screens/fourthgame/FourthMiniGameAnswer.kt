@@ -28,7 +28,6 @@ import com.example.finschoolapp.ui.theme.LocalDimensions
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.smallDescription
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
-
 @Composable
 fun FourthMiniGameAnswer(
     modifier: Modifier = Modifier,

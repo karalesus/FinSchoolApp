@@ -30,8 +30,6 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.R
 import com.example.finschoolapp.ui.components.buttons.MainButtonOutlined
 import com.example.finschoolapp.ui.theme.ThemeColors
@@ -105,7 +103,8 @@ fun ConfirmationScreen(
                         )
                         .background(
                             color = palette.thirdLight,
-                            shape = RoundedCornerShape(30))
+                            shape = RoundedCornerShape(30)
+                        )
                         .height(40.dp)
                         .fillMaxWidth()
                         .border(
@@ -115,7 +114,7 @@ fun ConfirmationScreen(
                         ),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
-                ){
+                ) {
                     BasicTextField(
                         modifier = modifier
                             .fillMaxWidth()
@@ -124,12 +123,10 @@ fun ConfirmationScreen(
                         onValueChange = { code.value = it },
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
 
-                    )}
+                    )
+                }
 
                 Spacer(modifier = Modifier.height(20.dp))
-
-
-
 
                 MainButtonOutlined(
                     modifier = modifier
@@ -164,7 +161,8 @@ fun ConfirmationScreen(
 
 @Preview
 @Composable
-fun ConfirmationScreenPreview(){
+fun ConfirmationScreenPreview() {
     ConfirmationScreen(
-        onConfirmClick = {})
+        onConfirmClick = {}
+    )
 }

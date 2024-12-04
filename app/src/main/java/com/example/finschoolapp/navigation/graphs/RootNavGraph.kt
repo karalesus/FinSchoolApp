@@ -9,7 +9,6 @@ import androidx.navigation.compose.NavHost
 import com.example.finschoolapp.navigation.RootScreen
 import mainScreenGraph
 import com.example.finschoolapp.navigation.articles.articlesNavGraph
-import com.example.finschoolapp.navigation.main.mainScreenGraph
 
 @Composable
 fun RootNavigationGraph(

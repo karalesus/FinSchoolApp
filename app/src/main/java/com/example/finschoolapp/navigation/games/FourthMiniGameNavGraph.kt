@@ -1,4 +1,4 @@
-package com.example.finschoolapp.navigation
+package com.example.finschoolapp.navigation.games
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController

@@ -28,7 +28,6 @@ import com.example.finschoolapp.R
 import com.example.finschoolapp.data.model.Article
 import com.example.finschoolapp.presentations.viewModels.ArticleViewModel
 import com.example.finschoolapp.ui.theme.ThemeColors
-import com.example.finschoolapp.ui.components.toolbars.TextToolbar
 import com.example.finschoolapp.ui.theme.smallHeader
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
 import org.koin.androidx.compose.koinViewModel
@@ -70,7 +69,7 @@ fun ArticleListScreen(
             )
         }
     ) { padding ->
-        Box (
+        Box(
             modifier = Modifier
                 .fillMaxSize()
                 .background(ThemeColors.LightTheme.background)
@@ -89,21 +88,20 @@ fun ArticleListScreen(
             LazyColumn(
                 modifier = Modifier
                     .padding(padding)
-                    .padding(horizontal =  16.dp, vertical = 8.dp)
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
                     .fillMaxSize()
             ) {
                 items(articles.value) { article ->
                     ArticleItem(article = article,
                         onClick = {
-                        navController.navigate("articleDetail/${article.id}")
-                    }
+                            navController.navigate("articleDetail/${article.id}")
+                        }
                     )
                 }
             }
         }
     }
 }
-
 
 @Composable
 fun ArticleItem(article: Article, onClick: () -> Unit) {
@@ -112,7 +110,8 @@ fun ArticleItem(article: Article, onClick: () -> Unit) {
             .fillMaxWidth()
             .padding(vertical = 12.dp)
             .clickable { onClick() },
-        shape = RoundedCornerShape(8.dp)) {
+        shape = RoundedCornerShape(8.dp)
+    ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -128,4 +127,3 @@ fun ArticleItem(article: Article, onClick: () -> Unit) {
         }
     }
 }
-

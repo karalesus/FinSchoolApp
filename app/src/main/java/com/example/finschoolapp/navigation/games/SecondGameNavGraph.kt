@@ -9,7 +9,6 @@ import com.example.finschoolapp.presentations.screens.secondgame.FinalScreen
 import com.example.finschoolapp.presentations.screens.secondgame.QuestionScreen
 import com.example.finschoolapp.presentations.screens.secondgame.SecondMiniGameMainScreen
 import com.example.finschoolapp.viewmodel.SecondMiniGameViewModel
-import kotlinx.coroutines.MainScope
 
 fun NavGraphBuilder.secondMiniGameGraph(
     navController: NavHostController,
@@ -29,7 +28,8 @@ fun NavGraphBuilder.secondMiniGameGraph(
         composable(route = "screen_{index}") { backStackEntry ->
             val index = backStackEntry.arguments?.getString("index")?.toIntOrNull() ?: 0
             val question = viewModel.questions[index]
-            val nextScreen = if (index + 1 < viewModel.questions.size) "screen_${index + 1}" else "game_end"
+            val nextScreen =
+                if (index + 1 < viewModel.questions.size) "screen_${index + 1}" else "game_end"
 
             QuestionScreen(
                 questionTitle = question.questionTitle,

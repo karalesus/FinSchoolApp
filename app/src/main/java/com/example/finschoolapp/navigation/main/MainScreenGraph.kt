@@ -8,7 +8,7 @@ import com.example.finschoolapp.navigation.RootScreen
 import com.example.finschoolapp.navigation.games.secondMiniGameGraph
 import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.viewmodel.SecondMiniGameViewModel
-import com.example.finschoolapp.navigation.fourthMiniGameNavGraph
+import com.example.finschoolapp.navigation.games.fourthMiniGameNavGraph
 import com.example.finschoolapp.presentations.screens.fourthgame.FourthMiniGameMain
 import com.example.finschoolapp.presentations.screens.main.LearningScreen
 import com.example.finschoolapp.presentations.screens.main.ProgressScreen
@@ -34,7 +34,7 @@ fun NavGraphBuilder.mainScreenGraph(
             ProgressScreen(navController = navController)
             screenName("Progress")
         }
-        
+
         composable(
             route = MainScreen.Learning.route,
             enterTransition = { fadeIn() },
@@ -62,7 +62,7 @@ fun NavGraphBuilder.mainScreenGraph(
             SettingScreen(navController = navController)
             screenName("Settings")
         }
-        
+
         composable(
             route = MainScreen.AddGoal.route,
             enterTransition = { fadeIn() },
@@ -71,7 +71,7 @@ fun NavGraphBuilder.mainScreenGraph(
             AddGoalScreen(navController = navController)
             screenName("AddGoal")
         }
-        
+
         secondMiniGameGraph(
             navController = navController,
             viewModel = SecondMiniGameViewModel()

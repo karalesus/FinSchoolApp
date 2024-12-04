@@ -16,7 +16,6 @@ import com.example.finschoolapp.ui.theme.ThemeColors
 import androidx.compose.ui.Modifier
 import com.example.finschoolapp.ui.theme.secondary
 
-
 @Composable
 fun BottomNavigationBar(
     modifier: Modifier = Modifier,

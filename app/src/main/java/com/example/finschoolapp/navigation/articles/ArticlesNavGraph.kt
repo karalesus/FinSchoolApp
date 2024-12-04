@@ -12,7 +12,6 @@ import com.example.finschoolapp.presentations.screens.articles.ArticleListScreen
 import com.example.finschoolapp.presentations.viewModels.ArticleViewModel
 import org.koin.androidx.compose.koinViewModel
 
-
 fun NavGraphBuilder.articlesNavGraph(
     navController: NavHostController,
     screenName: (String) -> Unit
@@ -23,11 +22,10 @@ fun NavGraphBuilder.articlesNavGraph(
         route = RootScreen.ArticlesNavGraph.route
     ) {
         composable(
-            route = ArticleScreen.ArticleList.route+"/{moduleId}",
+            route = ArticleScreen.ArticleList.route + "/{moduleId}",
             enterTransition = { fadeIn() },
             exitTransition = { fadeOut() }
-        ) {
-            backStackEntry ->
+        ) { backStackEntry ->
             val moduleId = backStackEntry.arguments?.getString("moduleId") ?: ""
             val articleViewModel: ArticleViewModel = koinViewModel()
             ArticleListScreen(navController = navController, moduleId = moduleId)
@@ -38,13 +36,18 @@ fun NavGraphBuilder.articlesNavGraph(
             enterTransition = { fadeIn() },
             exitTransition = { fadeOut() }
         ) { backStackEntry ->
-            val moduleId = backStackEntry.arguments?.getString("moduleId") ?.toIntOrNull()?:0
-            val articleId = backStackEntry.arguments?.getString("articleId")?.toIntOrNull()?:0
+            val moduleId = backStackEntry.arguments?.getString("moduleId")?.toIntOrNull() ?: 0
+            val articleId = backStackEntry.arguments?.getString("articleId")?.toIntOrNull() ?: 0
             val articleViewModel: ArticleViewModel = koinViewModel()
 
             articleViewModel.loadArticle(articleId)
 
-            ArticleDetailScreen(articleId = articleId, moduleId = moduleId, viewModel = articleViewModel, navController = navController)
+            ArticleDetailScreen(
+                articleId = articleId,
+                moduleId = moduleId,
+                viewModel = articleViewModel,
+                navController = navController
+            )
             screenName("ArticleDetail")
         }
     }

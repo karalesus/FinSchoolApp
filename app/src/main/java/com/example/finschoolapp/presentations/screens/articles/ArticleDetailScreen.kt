@@ -108,7 +108,6 @@ fun ArticleDetailScreen(
                         }
                         Spacer(modifier = Modifier.height(16.dp))
 
-
                         if (isLastArticle) {
                             ContinueModuleButton(
                                 modifier = Modifier.fillMaxWidth(),
@@ -141,4 +140,3 @@ fun ArticleDetailScreen(
         }
     )
 }
-
