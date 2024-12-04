@@ -8,8 +8,12 @@ data class Dimensions(
     val verticalSmall: Dp = 10.dp,
     val verticalNormal: Dp = 12.dp,
     val verticalSLarge: Dp = 16.dp,
+    val verticalMLarge: Dp = 32.dp,
     val verticalXLarge: Dp = 82.dp,
     val verticalXXLarge: Dp = 134.dp,
+
+    val horizontalSmall: Dp = 16.dp,
+    val horizontalNormal: Dp = 32.dp,
 
     val verticalNormalPadding: Dp = 16.dp,
 
