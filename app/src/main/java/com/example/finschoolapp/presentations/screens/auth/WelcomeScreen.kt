@@ -30,8 +30,6 @@ import com.example.finschoolapp.ui.components.buttons.MainButtonOutlined
 import com.example.finschoolapp.ui.theme.LocalDimensions
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.smallHeader
-
-
 @Composable
 fun Welcome(
     onIHelpYouClick:() ->Unit,

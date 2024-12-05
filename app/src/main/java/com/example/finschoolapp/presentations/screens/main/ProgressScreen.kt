@@ -15,6 +15,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Scaffold
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -33,13 +36,17 @@ import com.example.finschoolapp.navigation.navBars.BottomNavigationBar
 import com.example.finschoolapp.ui.components.ProgressLine.ProgressLine
 import com.example.finschoolapp.ui.components.buttons.SaveThemeButton
 import com.example.finschoolapp.ui.components.toolbars.SettingToolbar
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import com.example.finschoolapp.navigation.main.MainScreen
+import com.example.finschoolapp.ui.components.buttons.PrimaryButton
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.mainBackground
 import com.example.finschoolapp.ui.theme.moduleBackground
 import com.example.finschoolapp.ui.theme.smallHeader
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun ProgressScreen(
     modifier: Modifier = Modifier,

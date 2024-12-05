@@ -1,5 +1,6 @@
 package com.example.finschoolapp.presentations.screens.slider
 
+import android.util.Log
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -7,25 +8,23 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
+import com.example.finschoolapp.navigation.articles.ArticleScreen
 import com.example.finschoolapp.ui.components.buttons.ContinueModuleButton
 import com.example.finschoolapp.ui.theme.ThemeColors
-import com.example.finschoolapp.ui.theme.smallDescription
-import com.example.finschoolapp.ui.theme.smallHeader
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ThemeSliderScreen(
-    navController: NavHostController
+    navController: NavHostController,
+    onContinueModuleButton: () -> Unit,
+    modules: List<Module>
 ) {
     val pagerState = rememberPagerState(pageCount = { modules.size })
     Column(
@@ -38,7 +37,6 @@ fun ThemeSliderScreen(
         HorizontalPager(state = pagerState) { moduleIndex: Int ->
             SingleModule(module = modules[moduleIndex])
         }
-        // TODO: add progress indicator
 
         Spacer(
             modifier = Modifier.size(16.dp)
@@ -48,14 +46,18 @@ fun ThemeSliderScreen(
             palette = ThemeColors.LightTheme,
             text = "Продолжить",
             onButtonClick = {
-                //TODO:  navHostController.navigate()
+                val currentIndex = pagerState.currentPage
+                if (modules.isNotEmpty() && currentIndex in modules.indices) {
+                    val moduleId = modules[currentIndex].id
+                    println("Navigating to Articles/articles_screen with moduleId: $moduleId") // Лог для проверки
+                    println("Navigating to ArticlesList")
+                    Log.d("NavController", "Graph: ${navController.graph}")
+                    navController.navigate("${ArticleScreen.ArticleList.route}/$moduleId")
+                } else {
+                    println("Invalid module index or empty modules list")
+                }
             }
         )
     }
 }
 
-@Preview
-@Composable
-fun ThemeSliderScreenPreview() {
-    ThemeSliderScreen(navController = rememberNavController())
-}
