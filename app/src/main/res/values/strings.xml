@@ -124,6 +124,7 @@
     <string name="label_results">Итоги</string>
     <string name="spent_text">Потрачено в этом месяце:</string>
 
+    <string name="saved_module">Модуль 1. Тема 1.1</string>
     <string name="label_fourth_mini_game">Что выгоднее?</string>
     <string name="task_fourth_mini_game">В каждом из семи случаев укажите, какая из альтернатив позволит Толику потратить меньше денежных средств</string>
     <string name="finish_fourth_mini_game">Игра завершена!</string>
