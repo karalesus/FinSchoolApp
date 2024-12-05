@@ -49,7 +49,7 @@
 
     <string name="label_successfully">Успешно!</string>
     <string name="label_lets_study">Теперь можно приступить к учебе</string>
-    <string name="button_okey_lets_stduy">Поехали</string>
+    <string name="button_okay_lets_study">Поехали</string>
 
     <string name="label_profile_settings">Настройки профиля</string>
     <string name="label_old_password">Старый пароль</string>
@@ -68,7 +68,6 @@
     <string name="label_learning">Обучение</string>
     <string name="label_progress">Прогресс</string>
     <string name="label_wallet">Учёт</string>
-
 
     <string name="first_game_start">У Толика получается заработать за день 50 рублей. Обед в столовой обходится в 30 рублей, он ест каждый день. Оставшиеся 20 рублей он использует на свое усмотрение.\n\nЧасто получается так, что Том бездумно тратит все и остается без еды и денег.\n\nПокажи ему, как надо!</string>
     <string name="tom_need_help">Толику нужна помощь</string>
@@ -113,5 +112,18 @@
     <string name="yes_add_to_vsr">Да (5000 рублей)</string>
     <string name="no_add_to_vsr">Нет</string>
 
+    <string name="label_username">Бомж Толик</string>
+    <string name="label_level">Уровень:</string>
+  
+    <string name="label_second_and_third_mini_game">Толик планирует бюджет</string>
+    <string name="task_second_and_third_mini_game">Толик устроился на хорошую работу! Теперь ему платят 55 тыс. рублей в месяц, но и расходы заметно выросли: 25 тысяч он тратит на аренду жилья. У него остается 30 тысяч.\n\nНужно чем-то кормить Толика и помогать ему планировать бюджет так, чтобы исполнить его мечту: он хочет купить себе ноутбук за 50 тысяч рублей</string>
+    <string name="button_finish_module">Завершить модуль</string>
+    <string name="button_restart_level">Перепройти уровень</string>
+    <string name="label_results">Итоги</string>
+    <string name="spent_text">Потрачено в этом месяце:</string>
+
+    <string name="label_fourth_mini_game">Что выгоднее?</string>
+    <string name="task_fourth_mini_game">В каждом из семи случаев укажите, какая из альтернатив позволит Толику потратить меньше денежных средств</string>
+    <string name="finish_fourth_mini_game">Игра завершена!</string>
 
 </resources>
