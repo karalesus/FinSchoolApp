@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
-import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -30,8 +29,6 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.R
 import com.example.finschoolapp.ui.components.buttons.MainButtonOutlined
 import com.example.finschoolapp.ui.theme.ThemeColors
@@ -107,7 +104,8 @@ fun ForgotPasswordScreen(
                         )
                         .background(
                             color = palette.thirdLight,
-                            shape = RoundedCornerShape(30.dp))
+                            shape = RoundedCornerShape(30.dp)
+                        )
                         .height(40.dp)
                         .fillMaxWidth()
                         .border(
@@ -124,7 +122,7 @@ fun ForgotPasswordScreen(
                             .padding(10.dp),
                         value = email.value,
                         onValueChange = { email.value = it },
-                        )
+                    )
                 }
 
                 Spacer(modifier = Modifier.height(10.dp))
@@ -176,7 +174,7 @@ fun ForgotPasswordScreen(
 
 @Preview
 @Composable
-fun ForgotPasswordScreenPreview(){
+fun ForgotPasswordScreenPreview() {
     ForgotPasswordScreen(
         onEnterClick = {},
         onSignUpClick = {},

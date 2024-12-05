@@ -93,7 +93,7 @@ fun SuccessfulRegistrationScreen(
                         shape = RoundedCornerShape(30)
                     ),
                 palette = palette,
-                text = stringResource(id = R.string.button_okey_lets_stduy),
+                text = stringResource(id = R.string.button_okay_lets_study),
                 onButtonClick = {
                     focusManager.clearFocus()
                     keyboardController?.hide()
