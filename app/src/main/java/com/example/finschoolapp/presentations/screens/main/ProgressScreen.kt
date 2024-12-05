@@ -1,6 +1,5 @@
 package com.example.finschoolapp.presentations.screens.main
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -26,20 +25,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.R
-import com.example.finschoolapp.navigation.navBars.BottomNavigationBar
 import com.example.finschoolapp.ui.components.ProgressLine.ProgressLine
 import com.example.finschoolapp.ui.components.buttons.SaveThemeButton
 import com.example.finschoolapp.ui.components.toolbars.SettingToolbar
+import androidx.navigation.NavHostController
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.mainBackground
 import com.example.finschoolapp.ui.theme.moduleBackground
 import com.example.finschoolapp.ui.theme.smallHeader
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun ProgressScreen(
     modifier: Modifier = Modifier,
@@ -53,41 +50,31 @@ fun ProgressScreen(
                 palette = ThemeColors.LightTheme,
                 navController = navController
             )
-        },
-        bottomBar = {
-            BottomNavigationBar(
-                modifier = Modifier,
-                navController = navController,
-                palette = ThemeColors.LightTheme
-            )
         }
     ) { innerPadding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(innerPadding) // Учитываем отступы, чтобы избежать наложения
+                .padding(innerPadding) // отступы, чтобы избежать наложения
                 .background(color = palette.background),
         ) {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(0.2f) // Занимает оставшееся пространство
+                    .weight(0.2f) // оставшееся пространство
             ) {
                 Column(
-                    verticalArrangement = Arrangement.spacedBy(5.dp), // Устанавливаем расстояние между элементами
+                    verticalArrangement = Arrangement.spacedBy(5.dp), // расстояние между элементами
                     modifier = Modifier
                         .align(Alignment.CenterStart)
                         .padding(20.dp)
                 )
                 {
-
                     Text(
-                        //modifier = Modifier.padding(10.dp),
                         text = stringResource(id = R.string.label_username),
                         style = textViewBaseVariant.copy(color = palette.secondary)
                     )
                     Text(
-                        // modifier = Modifier.padding(10.dp),
                         text = stringResource(id = R.string.label_level),
                         style = smallHeader.copy(color = palette.secondary, fontSize = 16.sp)
                     )
@@ -98,7 +85,6 @@ fun ProgressScreen(
                     modifier = Modifier
                         .size(100.dp)
                         .align(Alignment.CenterEnd)
-
                 )
 
                 Image(
@@ -182,9 +168,6 @@ fun ProgressScreen(
         }
     }
 }
-
-
-
 
 @Composable
 @Preview

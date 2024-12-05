@@ -44,35 +44,34 @@ fun ProgressLine(title: String, progress: Float, image: Int) {
         Row(
             modifier = Modifier
                 .padding(10.dp)
-                .height(25.dp), // Увеличена высота строки
+                .height(25.dp),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween // Размещаем элементы по краям
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Icon(
-                painter = painterResource(id = image), // Замените на нужную иконку
+                painter = painterResource(id = image),
                 contentDescription = "Achievement Icon",
-                //modifier = Modifier.size(40.dp), // Увеличен размер иконки
-                tint = moduleBackground // Замените на нужный цвет иконки
+                tint = moduleBackground
             )
             Spacer(modifier = Modifier.width(10.dp))
 
             Column(
                 modifier = Modifier.fillMaxHeight(),
-                verticalArrangement = Arrangement.Top // Размещаем элементы в верхней части
+                verticalArrangement = Arrangement.Top
             ) {
                 Text(
                     text = title,
                     color = thirdLight,
                     style = smallDescription.copy(),
-                    modifier = Modifier.padding(bottom = 4.dp) // Отступ снизу для текста
+                    modifier = Modifier.padding(bottom = 4.dp)
                 )
                 LinearProgressIndicator(
                     progress = progress,
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(5.dp)
-                        .clip(RoundedCornerShape(2.dp)), // Высота линии прогресса
-                    color = thirdLight, // Цвет индикатора прогресса
+                        .clip(RoundedCornerShape(2.dp)),
+                    color = thirdLight,
                     trackColor = mainBackground
                 )
             }
