@@ -1,5 +1,6 @@
 package com.example.finschoolapp.presentations.viewModels
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.finschoolapp.data.model.Article
@@ -20,6 +21,8 @@ class ArticleViewModel(private val apiService: ApiService) : ViewModel() {
         viewModelScope.launch {
             try {
                 _articles.value = apiService.fetchArticlesForModule(moduleId)
+                Log.d("ArticleRepository", "Fetching articles for moduleId = $moduleId")
+                Log.d("ArticleRepository", "Response: ${_articles.value}")
             } catch (e: Exception) {
                 _articles.value = emptyList()
             }
@@ -35,5 +38,4 @@ class ArticleViewModel(private val apiService: ApiService) : ViewModel() {
             }
         }
     }
-
 }
