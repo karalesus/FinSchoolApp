@@ -80,7 +80,7 @@ fun ArticleDetailScreen(
                         )
                     }
                 },
-                colors = TopAppBarDefaults.smallTopAppBarColors(
+                colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = ThemeColors.LightTheme.thirdLight
                 )
             )
