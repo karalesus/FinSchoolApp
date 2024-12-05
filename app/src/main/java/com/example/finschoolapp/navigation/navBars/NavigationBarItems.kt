@@ -4,7 +4,6 @@ import androidx.annotation.DrawableRes
 import com.example.finschoolapp.R
 import com.example.finschoolapp.navigation.main.MainScreen
 
-
 sealed class NavigationBarItem(
     val title: String,
     val route: String,

@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -16,28 +15,23 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.finschoolapp.R
 import com.example.finschoolapp.ui.components.buttons.MainButtonOutlined
 import com.example.finschoolapp.ui.theme.ThemeColors
@@ -62,7 +56,6 @@ fun LoginScreen(
             .background(color = palette.background)
     ) {
         Spacer(modifier = modifier.height(150.dp))
-
 
         Column(
             modifier = modifier
@@ -90,7 +83,6 @@ fun LoginScreen(
                 val username = remember { mutableStateOf(TextFieldValue()) }
                 val password = remember { mutableStateOf(TextFieldValue()) }
 
-
                 Text(
                     text = stringResource(id = R.string.label_login),
                     style = textViewBaseVariant.copy(color = palette.secondary),
@@ -104,7 +96,8 @@ fun LoginScreen(
                         )
                         .background(
                             color = palette.thirdLight,
-                            shape = RoundedCornerShape(30))
+                            shape = RoundedCornerShape(30)
+                        )
                         .height(40.dp)
                         .fillMaxWidth()
                         .border(
@@ -114,16 +107,16 @@ fun LoginScreen(
                         ),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
-                ){
-                BasicTextField(
-                    modifier = modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    value = username.value,
-                    onValueChange = { username.value = it }
+                ) {
+                    BasicTextField(
+                        modifier = modifier
+                            .fillMaxWidth()
+                            .padding(10.dp),
+                        value = username.value,
+                        onValueChange = { username.value = it }
 
-                    )}
-
+                    )
+                }
 
                 Spacer(modifier = modifier.height(25.dp))
 
@@ -140,7 +133,8 @@ fun LoginScreen(
                         )
                         .background(
                             color = palette.thirdLight,
-                            shape = RoundedCornerShape(30.dp))
+                            shape = RoundedCornerShape(30.dp)
+                        )
                         .height(40.dp)
                         .fillMaxWidth()
                         .border(
@@ -161,17 +155,16 @@ fun LoginScreen(
                         onValueChange = { password.value = it })
                 }
 
-
                 Spacer(modifier = modifier.height(20.dp))
                 Text(
-                    modifier = modifier.align(Alignment.End)
-                        .clickable {onForgotClick() },
+                    modifier = modifier
+                        .align(Alignment.End)
+                        .clickable { onForgotClick() },
                     text = AnnotatedString("Забыли пароль?"),
                     style = textForSignUp.copy(
                         textAlign = TextAlign.Start,
                         color = palette.secondary,
                     )
-
                 )
 
                 Spacer(modifier = modifier.height(20.dp))
@@ -188,8 +181,8 @@ fun LoginScreen(
                         focusManager.clearFocus()
                         keyboardController?.hide()
                         onClick()
-                    })
-
+                    }
+                )
             }
 
             Box(modifier = modifier.fillMaxWidth())

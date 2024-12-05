@@ -1,28 +1,49 @@
 package com.example.finschoolapp.presentations.screens.main
 
-import android.annotation.SuppressLint
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavHostController
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.R
+import com.example.finschoolapp.ui.components.ProgressLine.ProgressLine
+import com.example.finschoolapp.ui.components.buttons.SaveThemeButton
 import com.example.finschoolapp.ui.components.toolbars.SettingToolbar
+import androidx.navigation.NavHostController
 import com.example.finschoolapp.ui.theme.ThemeColors
+import com.example.finschoolapp.ui.theme.mainBackground
+import com.example.finschoolapp.ui.theme.moduleBackground
+import com.example.finschoolapp.ui.theme.smallHeader
+import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun ProgressScreen(
+    modifier: Modifier = Modifier,
     navController: NavHostController
 ) {
-    Scaffold (
+    val palette = ThemeColors.LightTheme
+    Scaffold(
         topBar = {
             SettingToolbar(
                 text = stringResource(id = R.string.label_progress),
@@ -30,16 +51,120 @@ fun ProgressScreen(
                 navController = navController
             )
         }
-    ) {
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
+    ) { innerPadding ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding) // отступы, чтобы избежать наложения
+                .background(color = palette.background),
         ) {
-            Text(
-                text = "Прогресс",
-                color = ThemeColors.LightTheme.secondary,
-                fontWeight = FontWeight.Bold
-            )
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(0.2f) // оставшееся пространство
+            ) {
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(5.dp), // расстояние между элементами
+                    modifier = Modifier
+                        .align(Alignment.CenterStart)
+                        .padding(20.dp)
+                )
+                {
+                    Text(
+                        text = stringResource(id = R.string.label_username),
+                        style = textViewBaseVariant.copy(color = palette.secondary)
+                    )
+                    Text(
+                        text = stringResource(id = R.string.label_level),
+                        style = smallHeader.copy(color = palette.secondary, fontSize = 16.sp)
+                    )
+                }
+                Image(
+                    painter = painterResource(id = R.drawable.image_character_lvl1_1),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(100.dp)
+                        .align(Alignment.CenterEnd)
+                )
+
+                Image(
+                    painter = painterResource(id = R.drawable.line_green),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .align(Alignment.BottomCenter)
+
+                )
+            }
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f)
+            ) {
+                Column {
+
+                    Card(
+                        colors = CardDefaults.cardColors(
+                            containerColor = mainBackground,
+                        ),
+                        border = BorderStroke(3.dp, moduleBackground.copy(0.6f)),
+                        shape = RoundedCornerShape(16.dp),
+                        elevation = CardDefaults.cardElevation(
+                            defaultElevation = 60.dp,
+                        ),
+                        modifier = Modifier.padding(16.dp)
+                    ) {
+                        Column(
+                            modifier = Modifier.padding(16.dp) // Отступы внутри колонки
+                        ) {
+                            Text(
+                                text = stringResource(id = R.string.progress),
+                                style = textViewBaseVariant.copy(
+                                    color = moduleBackground,
+                                    fontSize = 18.sp,
+                                ),
+
+                                modifier = Modifier
+                                    .padding(bottom = 16.dp)
+                                    .graphicsLayer(alpha = 0.5f)
+                            )
+
+                            // Линии прогресса
+                            ProgressLine(
+                                stringResource(id = R.string.achievement_1),
+                                0.7f,
+                                R.drawable.achievement_icon_1
+                            )
+                            ProgressLine(
+                                stringResource(id = R.string.achievement_2),
+                                0.5f,
+                                R.drawable.achievement_icon_2
+                            )
+                            ProgressLine(
+                                stringResource(id = R.string.achievement_3),
+                                0.3f,
+                                R.drawable.achievement_icon_3
+                            )
+                            ProgressLine(
+                                stringResource(id = R.string.achievement_4),
+                                0.9f,
+                                R.drawable.achievement_icon_4
+                            )
+                        }
+                    }
+
+                    SaveThemeButton(
+                        modifier = modifier
+                            .padding(10.dp)
+                            .shadow(
+                                elevation = 4.dp,
+                                shape = RoundedCornerShape(30)
+                            ),
+                        palette = palette,
+                        text = stringResource(id = R.string.saved_topics),
+                        onButtonClick = {
+                        })
+                }
+            }
         }
     }
 }

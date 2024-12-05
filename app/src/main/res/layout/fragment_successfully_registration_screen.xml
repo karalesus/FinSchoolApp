@@ -53,13 +53,13 @@
                 android:visibility="gone" />
 
             <android.widget.Button
-                android:id="@+id/button_okey_lets_stdudy"
+                android:id="@+id/button_okay_lets_study"
                 style="@style/TextViewBaseVariant"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/shape_rounded_field"
-                android:text="@string/button_okey_lets_stduy"
+                android:text="@string/button_okay_lets_study"
                 android:textAllCaps="false">
 
             </android.widget.Button>

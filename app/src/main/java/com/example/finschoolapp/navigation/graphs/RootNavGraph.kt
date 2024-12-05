@@ -7,17 +7,19 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.example.finschoolapp.navigation.RootScreen
-import com.example.finschoolapp.navigation.main.mainScreenGraph
+import mainScreenGraph
+import com.example.finschoolapp.navigation.articles.articlesNavGraph
 
 @Composable
 fun RootNavigationGraph(
     paddingValues: PaddingValues,
     navController: NavHostController,
     isNavigationBarVisible: (Boolean) -> Unit,
-){
+) {
+
     NavHost(
         modifier = Modifier.padding(paddingValues = paddingValues),
-        navController  = navController,
+        navController = navController,
         startDestination = RootScreen.AuthNavGraph.route
     ) {
         authNavGraph(navController = navController) {
@@ -26,13 +28,8 @@ fun RootNavigationGraph(
         mainScreenGraph(navController = navController) {
             isNavigationBarVisible(true)
         }
-
+        articlesNavGraph(navController = navController) {
+            isNavigationBarVisible(true)
+        }
     }
-}
-
-object Graph {
-    const val ROOT = "root_graph"
-    const val AUTHENTICATION = "auth_graph"
-    const val PROGRESS = "progress_auth"
-    // TODO: дальнейшие переходы на экраны
 }
