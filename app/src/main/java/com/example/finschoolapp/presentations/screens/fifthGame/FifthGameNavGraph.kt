@@ -26,8 +26,13 @@ fun NavGraphBuilder.fifthGameNavGraph(
 ) {
     navigation(
         route = RootScreen.FifthGameNavGraph.route,
-        startDestination = QuestionGameScreen.GameScreen1.route
+        startDestination = FirstScreenFifthGame.StartGame.route
     ){
+
+        composable(route = FirstScreenFifthGame.StartGame.route){
+            FirstScreenFifthGame(navController = navController)
+            screenName("StartGame")
+        }
 
         composable(route = QuestionGameScreen.GameScreen1.route){
             QuestionGameScreen(

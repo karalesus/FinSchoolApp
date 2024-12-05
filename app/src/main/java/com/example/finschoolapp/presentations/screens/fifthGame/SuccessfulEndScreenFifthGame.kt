@@ -96,7 +96,7 @@ fun SuccessfulEndScreenFifthGame(
                 palette = palette,
                 text = stringResource(id = R.string.button_complete_module),
                 navController = navController,
-                route = QuestionGameScreen.GameScreen1.route
+                route = ""
             )
         }
     }
