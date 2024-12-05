@@ -11,29 +11,27 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
 import com.example.finschoolapp.R
 import com.example.finschoolapp.ui.theme.LocalDimensions
 import com.example.finschoolapp.ui.theme.ThemeColors
+import com.example.finschoolapp.ui.theme.textForSignUp
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
 @Composable
-fun PrimaryButton(
+fun GameButton(
     modifier: Modifier = Modifier, // Убедитесь, что у вас есть значение по умолчанию
     palette: ThemeColors,
     text: String,
-    navController: NavHostController,
-    route: String
+    onClick: () -> Unit = {}
 ) {
     val dimensions = LocalDimensions.current
     val roundedShape = RoundedCornerShape(dimensions.shapeNormal)
 
     Button(
-        onClick = { navController.navigate(route) },
+        onClick = onClick,
         shape = roundedShape,
         colors = ButtonDefaults.buttonColors(containerColor = palette.third),
         modifier = modifier // Добавляем модификатор сюда
@@ -42,7 +40,7 @@ fun PrimaryButton(
         Box(contentAlignment = Alignment.Center, modifier = Modifier.padding(vertical = 5.dp)) {
             Text(
                 text = text,
-                style = textViewBaseVariant,
+                style = textForSignUp,
                 color = palette.thirdLight
             )
         }
@@ -51,15 +49,14 @@ fun PrimaryButton(
 
 @Preview
 @Composable
-fun PrimaryButtonPreview(
+fun GameButtonPreview(
     modifier : Modifier = Modifier,
 ) {
-    PrimaryButton(
+    GameButton(
         modifier = modifier
             .size(width = 296.dp,height = 30.dp),
         palette = ThemeColors.LightTheme,
         text = stringResource(id = R.string.button_complete_module),
-        navController = NavHostController(LocalContext.current),
-        route = "Hello"
+        onClick = {}
     )
 }
