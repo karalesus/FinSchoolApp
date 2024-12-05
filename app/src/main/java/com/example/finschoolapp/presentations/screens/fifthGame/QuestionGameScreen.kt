@@ -87,59 +87,61 @@ fun QuestionGameScreen(
 
 
 
-
-
             Spacer(modifier = modifier.height(dimensions.verticalSLarge))
 
-
-
-
-
-            PrimaryButton(
+            RightAnswerSmallButtonForGame(
                 modifier = modifier
+                    .shadow(elevation = 7.dp, shape = RoundedCornerShape(LocalDimensions.current.shapeNormal))
                     .fillMaxHeight(0.08f)
                     .fillMaxWidth(0.85f),
-
                 palette = palette,
                 text = scenario.options.get(0),
-
-                navController = navController,
-                route = GameScreen.Game1Screen1.route
+                onButtonClick = {
+                    focusManager.clearFocus()
+                    onClick(0) },
+                route = ""
             )
             Spacer(modifier = modifier.height(dimensions.verticalSLarge))
-            PrimaryButton(
+
+            RightAnswerSmallButtonForGame(
                 modifier = modifier
+                    .shadow(elevation = 7.dp, shape = RoundedCornerShape(LocalDimensions.current.shapeNormal))
                     .fillMaxHeight(0.09f)
                     .fillMaxWidth(0.85f),
-
                 palette = palette,
                 text = scenario.options.get(1),
-
-                navController = navController,
-                route = GameScreen.Game1Screen1.route
+                onButtonClick = {
+                    focusManager.clearFocus()
+                    onClick(1) },
+                route = ""
             )
+
             Spacer(modifier = modifier.height(dimensions.verticalSLarge))
-            PrimaryButton(
+            RightAnswerSmallButtonForGame(
                 modifier = modifier
+                    .shadow(elevation = 7.dp, shape = RoundedCornerShape(LocalDimensions.current.shapeNormal))
                     .fillMaxHeight(0.10f)
                     .fillMaxWidth(0.85f),
-
                 palette = palette,
                 text = scenario.options.get(2),
-
-                navController = navController,
-                route = GameScreen.Game1Screen1.route
+                onButtonClick = {
+                    focusManager.clearFocus()
+                    onClick(2) },
+                route = ""
             )
+
             Spacer(modifier = modifier.height(dimensions.verticalSLarge))
-            PrimaryButton(
+
+            RightAnswerSmallButtonForGame(
                 modifier = modifier
+                    .shadow(elevation = 7.dp, shape = RoundedCornerShape(LocalDimensions.current.shapeNormal))
                     .fillMaxHeight(0.12f)
                     .fillMaxWidth(0.85f),
-
                 palette = palette,
                 text = scenario.options.get(3),
-
-                navController = navController,
+                onButtonClick = {
+                    focusManager.clearFocus()
+                    onClick(3) },
                 route = ""
             )
 

@@ -105,4 +105,11 @@
         Том хочет вложить 10000 рублей.</string>
     <string name="fifth_game_1_text_question">Куда Том вложит деньги?</string>
 
+    <string name="fifth_game_end">Том научился правильно инвестировать свои финансы!</string>
+    <string name="label_results">Итоги</string>
+    <string name="chosen_right_strategy">Вы верно выбрали стратегию</string>
+    <string name="bed_fifth_game_end">Тому не удалось научиться вкладывать свои средства грамотно. Вам нужно пройти уровень заново.</string>
+    <string name="not_increase_level">Том не повышает свой уровень</string>
+    <string name="try_again_level">Перепройти уровень</string>
+
 </resources>
