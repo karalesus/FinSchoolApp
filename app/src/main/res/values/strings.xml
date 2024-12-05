@@ -79,11 +79,16 @@
     <string name="saturday">Суббота</string>
     <string name="sunday">Воскресенье</string>
 
-    <string name="successful_end_first_level">Толик ничего не делал, но зато ничего не потерял. У него в кармане осталось 140 рублей.</string>
+    <string name="successful_end_first_level">Толик ничего не делал, но зато ничего не потерял. У него в кармане осталось</string>
     <string name="increase_level">"Том повышает свой уровень!"</string>
 
     <string name="button_complete_module">Завершить модуль</string>
     <string name="label_hooray_lower">Ура!</string>
+
+    <string name="label_rip_game">Неудача</string>
+    <string name="text_rip_game">У Тома совсем не осталось денег. Тебе придется перепройти уровень заново, чтобы спасти Тома</string>
+    <string name="text_tom_rip">Том находится на грани смерти :(</string>
+    <string name="try_again">Перепройти</string>
 
     <string name="task_text">Друг Тома предлагает: «Пойдем, поработаем на автозаправке,  принадлежащей моему дяде,  будем стекла мыть машинам. Я там вчера 50 рублей заработал за 2 часа».</string>
     <string name="to_work">Поработать</string>

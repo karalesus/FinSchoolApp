@@ -9,4 +9,5 @@ sealed class RootScreen
     object MainScreenGraph : RootScreen("MainScreenGraph")
     object ArticlesNavGraph : RootScreen("ArticlesNavGraph")
     object SixGameNavGraph: RootScreen("SixGame")
+    object GameNavGraph: RootScreen("Game")
 }
