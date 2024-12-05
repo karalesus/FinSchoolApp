@@ -17,6 +17,7 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.finschoolapp.R
+import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.presentations.viewModels.ArticleViewModel
 import com.example.finschoolapp.ui.components.buttons.ContinueModuleButton
 import com.example.finschoolapp.ui.theme.ThemeColors
@@ -28,17 +29,30 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun ArticleDetailScreen(
     articleId: Int,
-    moduleId: Int,
     viewModel: ArticleViewModel = koinViewModel(),
     navController: NavHostController,
 ) {
-    LaunchedEffect(moduleId) {
-        viewModel.loadArticlesForModule(moduleId)
+
+    LaunchedEffect(articleId) {
         viewModel.loadArticle(articleId)
     }
+
     val article = viewModel.article.collectAsState().value
-    val articlesInModule = viewModel.articles.collectAsState().value
+
+        val moduleId = article?.moduleId
+        LaunchedEffect(moduleId) {
+            if (moduleId != null) {
+                viewModel.loadArticlesForModule(moduleId)
+            }
+        }
+
+    val articlesInModule = viewModel.articles.collectAsState()
     Log.d("ArticleDetailScreen", "Article: $article")
+    Log.d("ArticleDetailScreen", "Article in module: ${articlesInModule.value}")
+
+
+    val isLastArticle = article != null && articlesInModule.value.isNotEmpty() &&
+            articlesInModule.value.lastOrNull()?.id == article.id
 
     Scaffold(
         topBar = {
@@ -77,8 +91,7 @@ fun ArticleDetailScreen(
                     .fillMaxSize()
                     .background(ThemeColors.LightTheme.background)
             ) {
-                if (article != null) {
-                    val isLastArticle = articlesInModule.lastOrNull()?.id == article.id
+                if (article != null && articlesInModule.value.isNotEmpty()) {
 
                     Column(
                         modifier = Modifier
@@ -109,13 +122,21 @@ fun ArticleDetailScreen(
                         Spacer(modifier = Modifier.height(16.dp))
 
                         if (isLastArticle) {
+                            val routeToMiniGame = when (moduleId) {
+                                2 -> MainScreen.SecondMiniGame.route
+                                4 -> MainScreen.FourthMiniGame.route
+                                else -> null
+                            }
                             ContinueModuleButton(
                                 modifier = Modifier.fillMaxWidth(),
                                 palette = ThemeColors.LightTheme,
                                 text = "Перейти к мини-игре",
                                 onButtonClick = {
-                                    // TODO: переход к мини-игре
+                                    if (routeToMiniGame != null) {
+                                        navController.navigate(routeToMiniGame)
+                                    }
                                 }
+
                             )
                         } else {
                             ContinueModuleButton(
