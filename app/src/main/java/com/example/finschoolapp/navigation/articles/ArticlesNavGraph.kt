@@ -27,7 +27,6 @@ fun NavGraphBuilder.articlesNavGraph(
             exitTransition = { fadeOut() }
         ) { backStackEntry ->
             val moduleId = backStackEntry.arguments?.getString("moduleId") ?: ""
-            val articleViewModel: ArticleViewModel = koinViewModel()
             ArticleListScreen(navController = navController, moduleId = moduleId)
             screenName("ArticleList")
         }
@@ -36,7 +35,6 @@ fun NavGraphBuilder.articlesNavGraph(
             enterTransition = { fadeIn() },
             exitTransition = { fadeOut() }
         ) { backStackEntry ->
-            val moduleId = backStackEntry.arguments?.getString("moduleId")?.toIntOrNull() ?: 0
             val articleId = backStackEntry.arguments?.getString("articleId")?.toIntOrNull() ?: 0
             val articleViewModel: ArticleViewModel = koinViewModel()
 
@@ -44,7 +42,6 @@ fun NavGraphBuilder.articlesNavGraph(
 
             ArticleDetailScreen(
                 articleId = articleId,
-                moduleId = moduleId,
                 viewModel = articleViewModel,
                 navController = navController
             )
