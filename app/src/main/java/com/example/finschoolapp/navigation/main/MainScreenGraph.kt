@@ -5,12 +5,14 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.finschoolapp.navigation.RootScreen
+import com.example.finschoolapp.navigation.games.fifthGameNavGraph
 import com.example.finschoolapp.navigation.games.firstGameNavGraph
 import com.example.finschoolapp.navigation.games.secondMiniGameGraph
 import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.viewmodel.SecondMiniGameViewModel
 import com.example.finschoolapp.navigation.games.fourthMiniGameNavGraph
 import com.example.finschoolapp.navigation.games.sixGameNavGraph
+import com.example.finschoolapp.presentations.screens.games.fifthGame.FirstScreenFifthGame
 import com.example.finschoolapp.presentations.screens.games.firstGame.NeedHelp
 import com.example.finschoolapp.presentations.screens.games.fourthGame.FourthMiniGameMain
 import com.example.finschoolapp.presentations.screens.games.seventhGame.EndSeventhModuleScreen
@@ -119,5 +121,16 @@ fun NavGraphBuilder.mainScreenGraph(
         ) {
             EndSeventhModuleScreen(navController = navController)
         }
+
+        composable(
+            MainScreen.FifthMiniGame.route
+        ) {
+            FirstScreenFifthGame(
+                navController = navController
+            )
+            screenName("FifthGame")
+        }
+        fifthGameNavGraph(navController = navController){}
+
     }
 }
