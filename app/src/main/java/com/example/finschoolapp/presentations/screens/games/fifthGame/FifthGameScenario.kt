@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentations.screens.fifthGame
+package com.example.finschoolapp.presentations.screens.games.fifthGame
 import com.example.finschoolapp.R
 
 data class FifthGameScenario(

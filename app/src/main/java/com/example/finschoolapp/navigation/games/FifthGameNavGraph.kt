@@ -1,19 +1,18 @@
-package com.example.finschoolapp.presentations.screens.fifthGame
+package com.example.finschoolapp.navigation.games
 
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.finschoolapp.navigation.RootScreen
-import com.example.finschoolapp.presentations.screens.games.GameScreen
-import com.example.finschoolapp.presentations.screens.games.NeedHelp
-import com.example.finschoolapp.presentations.screens.games.RipEndFirstModuleScreen
-import com.example.finschoolapp.presentations.screens.main.SuccessfulEndFirstModuleScreen
-import com.example.finschoolapp.ui.components.animation.ConfettiAnimation
+import com.example.finschoolapp.navigation.main.MainScreen
+import com.example.finschoolapp.presentations.screens.games.fifthGame.AnswerGameScreen
+import com.example.finschoolapp.presentations.screens.games.fifthGame.FirstScreenFifthGame
+import com.example.finschoolapp.presentations.screens.games.fifthGame.QuestionGameScreen
+import com.example.finschoolapp.presentations.screens.games.fifthGame.RepeatEndScreenFifthGame
+import com.example.finschoolapp.presentations.screens.games.fifthGame.SuccessfulEndScreenFifthGame
+import com.example.finschoolapp.presentations.screens.games.fifthGame.scenarios
 
 
 var answerCount: Int = 0
@@ -25,7 +24,7 @@ fun NavGraphBuilder.fifthGameNavGraph(
     screenName: (String) -> Unit
 ) {
     navigation(
-        route = RootScreen.FifthGameNavGraph.route,
+        route = MainScreen.FifthMiniGame.route,
         startDestination = FirstScreenFifthGame.StartGame.route
     ){
 
@@ -279,7 +278,7 @@ fun NavGraphBuilder.fifthGameNavGraph(
                 scenario = scenarios.get(4),
                 fromButton =0,
                 btnRoute =
-                    if( answerCount>3){
+                    if( answerCount >3){
                         SuccessfulEndScreenFifthGame.SuccessfulEndGame.route
                     }else{
                         RepeatEndScreenFifthGame.RepeatEndGame.route
@@ -293,7 +292,7 @@ fun NavGraphBuilder.fifthGameNavGraph(
                 scenario = scenarios.get(4),
                 fromButton =1,
                 btnRoute =
-                    if( answerCount>3){
+                    if( answerCount >3){
                         SuccessfulEndScreenFifthGame.SuccessfulEndGame.route
                     }else{
                         RepeatEndScreenFifthGame.RepeatEndGame.route
@@ -307,7 +306,7 @@ fun NavGraphBuilder.fifthGameNavGraph(
                 scenario = scenarios.get(4),
                 fromButton =2,
                 btnRoute =
-                    if( answerCount>3){
+                    if( answerCount >3){
                         SuccessfulEndScreenFifthGame.SuccessfulEndGame.route
                     }else{
                         RepeatEndScreenFifthGame.RepeatEndGame.route
@@ -321,7 +320,7 @@ fun NavGraphBuilder.fifthGameNavGraph(
                 scenario = scenarios.get(4),
                 fromButton =3,
                 btnRoute =
-                    if( answerCount>3){
+                    if( answerCount >3){
                         SuccessfulEndScreenFifthGame.SuccessfulEndGame.route
                     }else{
                         RepeatEndScreenFifthGame.RepeatEndGame.route
@@ -337,14 +336,16 @@ fun NavGraphBuilder.fifthGameNavGraph(
         composable(route = SuccessfulEndScreenFifthGame.SuccessfulEndGame.route){
             SuccessfulEndScreenFifthGame(
                 navController = navController,
-                answerCount = answerCount)
+                answerCount = answerCount
+            )
             screenName("SuccessfulEndGame")
         }
 
         composable(route = RepeatEndScreenFifthGame.RepeatEndGame.route){
             RepeatEndScreenFifthGame(
                 navController = navController,
-                answerCount = answerCount)
+                answerCount = answerCount
+            )
             screenName("RepeatEndGame")
         }
 

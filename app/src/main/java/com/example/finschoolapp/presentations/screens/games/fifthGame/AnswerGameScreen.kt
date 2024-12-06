@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentations.screens.fifthGame
+package com.example.finschoolapp.presentations.screens.games.fifthGame
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -28,7 +28,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.finschoolapp.R
-import com.example.finschoolapp.presentations.screens.games.GameScreen
 import com.example.finschoolapp.ui.components.buttons.PrimaryButton
 import com.example.finschoolapp.ui.components.toolbars.TextToolbar
 import com.example.finschoolapp.ui.theme.LocalDimensions

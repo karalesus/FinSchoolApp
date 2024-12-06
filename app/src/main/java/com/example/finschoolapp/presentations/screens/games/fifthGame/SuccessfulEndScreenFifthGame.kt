@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentations.screens.fifthGame
+package com.example.finschoolapp.presentations.screens.games.fifthGame
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -32,9 +32,10 @@ import com.example.finschoolapp.ui.theme.LocalDimensions
 import com.example.finschoolapp.ui.theme.ThemeColors
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
+
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun RepeatEndScreenFifthGame(
+fun SuccessfulEndScreenFifthGame(
     modifier: Modifier = Modifier,
     navController: NavHostController,
     answerCount:Int
@@ -58,51 +59,52 @@ fun RepeatEndScreenFifthGame(
             verticalArrangement = Arrangement.Center
         ) {
 
+            Image(
+                imageVector = ImageVector.vectorResource(R.drawable.image_character_lvl5_1),
+
+                contentDescription = "Character_lvl_5"
+            )
             Spacer(modifier = modifier.height(20.dp))
 
+
             Text(
                 modifier = modifier.padding(10.dp),
-                text = stringResource(id = R.string.chosen_right_strategy )+ " $answerCount раза!",
+                text = stringResource(id = R.string.chosen_right_strategy)+" $answerCount раза!",
+                textAlign = TextAlign.Center,
+                style = textViewBaseVariant.copy(color = palette.secondary)
+            )
+            Spacer(modifier = modifier.height(dimensions.verticalSLarge))
+            Text(
+                modifier = modifier.padding(10.dp),
+                text = stringResource(id = R.string.fifth_game_end),
                 textAlign = TextAlign.Center,
                 style = textViewBaseVariant.copy(color = palette.secondary)
             )
             Spacer(modifier = modifier.height(dimensions.verticalSLarge))
 
             Text(
-                modifier = modifier.padding(10.dp),
-                text = stringResource(id = R.string.bed_fifth_game_end),
-                textAlign = TextAlign.Center,
-                style = textViewBaseVariant.copy(color = palette.secondary)
-            )
-            Spacer(modifier = modifier.height(dimensions.verticalSLarge))
-
-            Text(
-                text = stringResource(id = R.string.not_increase_level),
+                text = stringResource(id = R.string.increase_level),
                 style = textViewBaseVariant.copy(color = palette.secondary, fontWeight = FontWeight.Bold),
                 modifier = Modifier.padding(vertical = 8.dp).align(Alignment.CenterHorizontally)
             )
             Spacer(modifier = modifier.height(dimensions.verticalSLarge))
 
 
-
             PrimaryButton(
                 modifier = modifier
                     .fillMaxWidth(0.85f),
-
                 palette = palette,
-                text = stringResource(id = R.string.try_again_level),
-
+                text = stringResource(id = R.string.button_complete_module),
                 navController = navController,
-                route = QuestionGameScreen.GameScreen1.route
+                route = ""
             )
-
         }
     }
 }
 
 @Preview
 @Composable
-fun RepeatEndScreenFifthGamePreview() {
-    RepeatEndScreenFifthGame(navController = rememberNavController(),
+fun SuccessfulEndScreenFifthGamePreview() {
+    SuccessfulEndScreenFifthGame(navController = rememberNavController(),
         answerCount = 0)
 }
