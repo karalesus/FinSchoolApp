@@ -7,7 +7,6 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.example.finschoolapp.navigation.RootScreen
 import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.presentations.screens.games.firstGame.GameScreen
 import com.example.finschoolapp.presentations.screens.games.firstGame.NeedHelp
