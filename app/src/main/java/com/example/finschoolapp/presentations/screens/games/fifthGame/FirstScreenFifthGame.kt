@@ -86,11 +86,6 @@ fun FirstScreenFifthGame(
 
             PrimaryButton(
                 modifier = modifier
-//                    .shadow(
-//                        elevation = 7.dp,
-//                        shape = RoundedCornerShape(dimensions.shapeNormal)
-//                    )
-                    .fillMaxHeight(0.17f)
                     .fillMaxWidth(0.85f),
 
                 palette = palette,

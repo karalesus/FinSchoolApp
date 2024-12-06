@@ -147,7 +147,7 @@ fun FinalScreen(
                 textAlign = TextAlign.Center
             )
 
-            Spacer(modifier = modifier.height(dimensions.verticalSLarge))
+            Spacer(modifier = modifier.height(dimensions.verticalNormal))
 
             Text(
                 modifier = modifier.padding(20.dp),
@@ -157,7 +157,7 @@ fun FinalScreen(
                 textAlign = TextAlign.Center
             )
 
-            Spacer(modifier = modifier.height(dimensions.verticalSLarge))
+            Spacer(modifier = modifier.height(dimensions.verticalNormal))
 
             Text(
                 modifier = modifier.padding(20.dp),
@@ -174,6 +174,8 @@ fun FinalScreen(
                 navController = navController,
                 route = MainScreen.Progress.route
             )
+
+            Spacer(modifier = modifier.height(dimensions.verticalNormal))
         }
     }
 }

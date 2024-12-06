@@ -73,8 +73,11 @@ fun GameScreen(
             verticalArrangement = Arrangement.Center
         ) {
 
-            Text(text = "У Тома $TomMoney рублей")
-            Spacer(modifier = modifier.height(20.dp))
+            Text(
+                text = "У Тома $TomMoney рублей",
+                style = textViewBaseVariant.copy(color = palette.secondary)
+            )
+            Spacer(modifier = modifier.height(15.dp))
 
             Image(
                 imageVector = ImageVector.vectorResource(scenario.image),
@@ -85,13 +88,12 @@ fun GameScreen(
             Spacer(modifier = modifier.height(20.dp))
 
             Box(
-
                 contentAlignment = Alignment.Center,
                 modifier = modifier
                     .fillMaxWidth(0.85f)
                     .clip(roundedShape)
                     .background(color = palette.thirdLight)
-                    .padding(vertical = dimensions.verticalNormalPadding)
+                    .padding(vertical = dimensions.borderNormal)
             ) {
 
                 Text(
@@ -121,9 +123,7 @@ fun GameScreen(
 
                RightAnswerSmallButtonForGame(
                    modifier = modifier
-                       .fillMaxHeight(0.12f)
-                       .fillMaxWidth(0.41f)
-                       .shadow(elevation = 7.dp, shape = RoundedCornerShape(30)),
+                       .fillMaxWidth(0.41f),
 
                    palette = palette,
                    text = scenario.options.get(0),
@@ -142,12 +142,6 @@ fun GameScreen(
 
                RightAnswerSmallButtonForGame(
                    modifier = modifier
-                       .shadow(
-                           elevation = 7.dp,
-                           shape = RoundedCornerShape(30)
-                       )
-                       .wrapContentSize()
-                       .fillMaxHeight(0.12f)
                        .fillMaxWidth(0.74f),
 
                    palette = palette,
@@ -175,8 +169,6 @@ fun GameScreen(
 
                     RightAnswerSmallButtonForGame(
                         modifier = modifier
-                            .shadow(elevation = 7.dp, shape = RoundedCornerShape(30))
-                            .fillMaxHeight(0.14f)
                             .fillMaxWidth(0.41f),
 
                         palette = palette,
@@ -195,11 +187,6 @@ fun GameScreen(
 
                     RightAnswerSmallButtonForGame(
                         modifier = modifier
-                            .shadow(
-                                elevation = 7.dp,
-                                shape = RoundedCornerShape(30)
-                            )
-                            .fillMaxHeight(0.14f)
                             .fillMaxWidth(0.74f),
 
                         palette = palette,
@@ -225,8 +212,6 @@ fun GameScreen(
 
                     RightAnswerSmallButtonForGame(
                         modifier = modifier
-                            .shadow(elevation = 7.dp, shape = RoundedCornerShape(30))
-                            .fillMaxHeight(0.18f)
                             .fillMaxWidth(0.41f),
 
                         palette = palette,
@@ -245,11 +230,6 @@ fun GameScreen(
 
                     RightAnswerSmallButtonForGame(
                         modifier = modifier
-                            .shadow(
-                                elevation = 7.dp,
-                                shape = RoundedCornerShape(30)
-                            )
-                            .fillMaxHeight(0.18f)
                             .fillMaxWidth(0.74f),
 
                         palette = palette,
@@ -277,8 +257,6 @@ fun GameScreen(
 
                     RightAnswerSmallButtonForGame(
                         modifier = modifier
-                            .shadow(elevation = 7.dp, shape = RoundedCornerShape(30))
-                            .fillMaxHeight(0.17f)
                             .fillMaxWidth(0.41f),
 
                         palette = palette,

@@ -12,6 +12,7 @@ import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.viewmodel.SecondMiniGameViewModel
 import com.example.finschoolapp.navigation.games.fourthMiniGameNavGraph
 import com.example.finschoolapp.navigation.games.sixGameNavGraph
+import com.example.finschoolapp.presentations.screens.games.eightGame.EndEightModuleScreen
 import com.example.finschoolapp.presentations.screens.games.fifthGame.FirstScreenFifthGame
 import com.example.finschoolapp.presentations.screens.games.firstGame.NeedHelp
 import com.example.finschoolapp.presentations.screens.games.fourthGame.FourthMiniGameMain
@@ -120,6 +121,12 @@ fun NavGraphBuilder.mainScreenGraph(
             MainScreen.SeventhMiniGame.route
         ) {
             EndSeventhModuleScreen(navController = navController)
+        }
+
+        composable(
+            MainScreen.EightMiniGame.route
+        ) {
+            EndEightModuleScreen(navController = navController)
         }
 
         composable(

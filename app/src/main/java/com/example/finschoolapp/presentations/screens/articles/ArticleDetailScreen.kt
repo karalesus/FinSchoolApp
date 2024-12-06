@@ -129,6 +129,7 @@ fun ArticleDetailScreen(
                                 5 -> MainScreen.FifthMiniGame.route
                                 6 -> MainScreen.SixthMiniGame.route
                                 7 -> MainScreen.SeventhMiniGame.route
+                                8 -> MainScreen.EightMiniGame.route
                                 else -> null
                             }
                             ContinueModuleButton(

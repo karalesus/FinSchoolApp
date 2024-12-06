@@ -87,8 +87,6 @@ fun QuestionGameScreen(
 
             RightAnswerSmallButtonForGame(
                 modifier = modifier
-                    .shadow(elevation = 7.dp, shape = RoundedCornerShape(LocalDimensions.current.shapeNormal))
-                    .fillMaxHeight(0.08f)
                     .fillMaxWidth(0.85f),
                 palette = palette,
                 text = scenario.options.get(0),
@@ -101,8 +99,6 @@ fun QuestionGameScreen(
 
             RightAnswerSmallButtonForGame(
                 modifier = modifier
-                    .shadow(elevation = 7.dp, shape = RoundedCornerShape(LocalDimensions.current.shapeNormal))
-                    .fillMaxHeight(0.09f)
                     .fillMaxWidth(0.85f),
                 palette = palette,
                 text = scenario.options.get(1),
@@ -115,8 +111,6 @@ fun QuestionGameScreen(
             Spacer(modifier = modifier.height(dimensions.verticalSLarge))
             RightAnswerSmallButtonForGame(
                 modifier = modifier
-                    .shadow(elevation = 7.dp, shape = RoundedCornerShape(LocalDimensions.current.shapeNormal))
-                    .fillMaxHeight(0.10f)
                     .fillMaxWidth(0.85f),
                 palette = palette,
                 text = scenario.options.get(2),
@@ -130,8 +124,6 @@ fun QuestionGameScreen(
 
             RightAnswerSmallButtonForGame(
                 modifier = modifier
-                    .shadow(elevation = 7.dp, shape = RoundedCornerShape(LocalDimensions.current.shapeNormal))
-                    .fillMaxHeight(0.12f)
                     .fillMaxWidth(0.85f),
                 palette = palette,
                 text = scenario.options.get(3),

@@ -36,10 +36,9 @@ fun PrimaryButton(
         onClick = { navController.navigate(route) },
         shape = roundedShape,
         colors = ButtonDefaults.buttonColors(containerColor = palette.third),
-        modifier = modifier // Добавляем модификатор сюда
-            .shadow(8.dp, roundedShape) // Добавляем тень к кнопке
+        modifier = modifier
     ) {
-        Box(contentAlignment = Alignment.Center, modifier = Modifier.padding(vertical = 5.dp)) {
+        Box(contentAlignment = Alignment.Center) {
             Text(
                 text = text,
                 style = textViewBaseVariant,

@@ -75,14 +75,14 @@ fun NavGraphBuilder.sixGameNavGraph(
                 cashAmount = tomMoney,
                 buttonActions = listOf(
                     {
-                        updateMoneyInFirstGame(-30000)
+                        updateMoneyInSixthGame(-30000)
                         isDms = true
                         navController.navigate(SixthGameScreen.SixthGame6Screen1.route)
                     },
-                    { updateMoneyInFirstGame(-50000)
+                    { updateMoneyInSixthGame(-50000)
                         isElse = true
                         navController.navigate(SixthGameScreen.SixthGame6Screen1.route)},
-                    { updateMoneyInFirstGame(-30000)
+                    { updateMoneyInSixthGame(-30000)
                         isVsr = true
                         navController.navigate(AddToVsrScreen.SecondScreen.route)
                     }
@@ -96,7 +96,7 @@ fun NavGraphBuilder.sixGameNavGraph(
                 cashAmount = tomMoney,
                 buttonActions = listOf(
                     {
-                        updateMoneyInFirstGame(-5000)
+                        updateMoneyInSixthGame(-5000)
                         isVsrDop = true
                         navController.navigate(SixthGameScreen.SixthGame6Screen1.route)
                     },
@@ -123,7 +123,7 @@ fun NavGraphBuilder.sixGameNavGraph(
                 navController = navController,
                 buttonActions = listOf(
                     {
-                        updateMoneyInFirstGame(-8000)
+                        updateMoneyInSixthGame(-8000)
                         navController.navigate(SixthGameScreen.SixthGame6Screen3.route) },
                     {navController.navigate(SixthGameScreen.SixthGame6Screen8.route)  }
                 ),
@@ -150,7 +150,7 @@ fun NavGraphBuilder.sixGameNavGraph(
                 navController = navController,
                 buttonActions = listOf(
                     {
-                        updateMoneyInFirstGame(-10000)
+                        updateMoneyInSixthGame(-10000)
                         navController.navigate(SixthGameScreen.SixthGame6Screen5.route) },
                     {navController.navigate(SixthGameScreen.SixthGame6Screen8.route)  }
                 ),
@@ -167,9 +167,9 @@ fun NavGraphBuilder.sixGameNavGraph(
                     CoroutineScope(Dispatchers.Main).launch {
                         delay(200)
                         when {
-                            isVsrDop -> updateMoneyInFirstGame(50000)
-                            isDms -> updateMoneyInFirstGame(0)
-                            else -> updateMoneyInFirstGame(-30000)
+                            isVsrDop -> updateMoneyInSixthGame(50000)
+                            isDms -> updateMoneyInSixthGame(0)
+                            else -> updateMoneyInSixthGame(-30000)
                         }
                     }},
                 scenario = sixGameScenarios[4],
@@ -231,13 +231,13 @@ fun NavGraphBuilder.sixGameNavGraph(
             BaseGameScreen(
                 navController = navController,
                 buttonActions = listOf (
-                    { updateMoneyInFirstGame(-50000)
+                    { updateMoneyInSixthGame(-50000)
                         navController.navigate(SixthGameScreen.SixthGame6Screen10.route) },
                     {
-                        updateMoneyInFirstGame(-20000)
+                        updateMoneyInSixthGame(-20000)
                         navController.navigate(SixthGameScreen.SixthGame6Screen11.route) },
                     {
-                        updateMoneyInFirstGame(-30000)
+                        updateMoneyInSixthGame(-30000)
                         navController.navigate(SixthGameScreen.SixthGame6Screen12.route) },
                     {navController.navigate(SixthGameScreen.SixthGame6Screen13.route)}),
                 scenario = sixGameScenarios[11],
@@ -254,8 +254,8 @@ fun NavGraphBuilder.sixGameNavGraph(
                     CoroutineScope(Dispatchers.Main).launch {
                         delay(200)
                         when {
-                            isVsr -> updateMoneyInFirstGame(0)
-                            else -> updateMoneyInFirstGame(-60000)
+                            isVsr -> updateMoneyInSixthGame(0)
+                            else -> updateMoneyInSixthGame(-60000)
                         }
                     }},
                 scenario = sixGameScenarios[15],
@@ -273,9 +273,9 @@ fun NavGraphBuilder.sixGameNavGraph(
                     CoroutineScope(Dispatchers.Main).launch {
                         delay(200)
                         when {
-                            isVsr -> updateMoneyInFirstGame(0)
+                            isVsr -> updateMoneyInSixthGame(0)
 //
-                            else -> updateMoneyInFirstGame(-50000)
+                            else -> updateMoneyInSixthGame(-50000)
                         }
                     }},
                 scenario = sixGameScenarios[12],
@@ -308,8 +308,8 @@ fun NavGraphBuilder.sixGameNavGraph(
                     CoroutineScope(Dispatchers.Main).launch {
                         delay(200)
                         when {
-                            isVsr -> updateMoneyInFirstGame(0)
-                            else -> updateMoneyInFirstGame(-50000)
+                            isVsr -> updateMoneyInSixthGame(0)
+                            else -> updateMoneyInSixthGame(-50000)
                         }
                     }},
                 scenario = sixGameScenarios[19],
@@ -343,9 +343,9 @@ fun NavGraphBuilder.sixGameNavGraph(
                     CoroutineScope(Dispatchers.Main).launch {
                         delay(200)
                         when {
-                            isVsr -> updateMoneyInFirstGame(0)
-                            isUseDms -> updateMoneyInFirstGame(-45000)
-                            else -> updateMoneyInFirstGame(-60000)
+                            isVsr -> updateMoneyInSixthGame(0)
+                            isUseDms -> updateMoneyInSixthGame(-45000)
+                            else -> updateMoneyInSixthGame(-60000)
                         }
                     }},
                 scenario = sixGameScenarios[16],

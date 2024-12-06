@@ -60,8 +60,6 @@ fun SecondMiniGameMainScreen(
             backgroundColor = palette.thirdLight
         )
 
-        Spacer(modifier = modifier.height(24.dp))
-
         Image(
             painter = painterResource(id = R.drawable.image_character_lvl2),
             contentDescription = null,
@@ -69,8 +67,6 @@ fun SecondMiniGameMainScreen(
                 .fillMaxWidth()
                 .clip(roundedShape)
         )
-
-        Spacer(modifier = modifier.height(dimensions.verticalSLarge))
 
         Box(
             modifier = modifier
@@ -96,5 +92,7 @@ fun SecondMiniGameMainScreen(
             navController = navController,
             route = buttonRoute
         )
+
+        Spacer(modifier = modifier.height(dimensions.verticalNormal))
     }
 }

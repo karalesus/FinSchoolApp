@@ -70,7 +70,7 @@ fun FourthMiniGameMain(
         PrimaryButton(
             modifier = modifier
                 .width(300.dp)
-                .height(35.dp),
+                .height(40.dp),
             palette = palette,
             text = stringResource(id = R.string.button_continue),
             navController = navController,

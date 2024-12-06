@@ -32,4 +32,5 @@ sealed class MainScreen(val route: String) {
     object FifthMiniGame: MainScreen("FifthMiniGame")
     object SixthMiniGame: MainScreen("SixthMiniGame")
     object SeventhMiniGame: MainScreen("SeventhMiniGame")
+    object EightMiniGame: MainScreen("EightMiniGame")
 }

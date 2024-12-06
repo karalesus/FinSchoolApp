@@ -91,17 +91,9 @@ fun NeedHelp(
 
 
             PrimaryButton(
-                modifier = modifier
-//                    .shadow(
-//                        elevation = 7.dp,
-//                        shape = RoundedCornerShape(dimensions.shapeNormal)
-//                    )
-                    .fillMaxHeight(0.13f)
-                    .fillMaxWidth(0.85f),
-
+                modifier = Modifier.fillMaxWidth(0.85f),
                 palette = palette,
                 text = stringResource(id = R.string.button_continue),
-
                 navController = navController,
                 route = com.example.finschoolapp.navigation.games.FirstGameScreen.Game1Screen1.route
             )

@@ -57,13 +57,6 @@ fun EndSeventhModuleScreen(
                 backgroundColor = ThemeColors.LightTheme.thirdLight,
             )
         },
-        bottomBar = {
-            BottomNavigationBar(
-                modifier = Modifier,
-                navController = navController,
-                palette = ThemeColors.LightTheme
-            )
-        }
     ) { innerPadding ->
         Column(
             modifier = Modifier

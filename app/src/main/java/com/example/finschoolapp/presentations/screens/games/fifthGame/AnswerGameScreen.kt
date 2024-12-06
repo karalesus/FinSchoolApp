@@ -76,8 +76,6 @@ fun AnswerGameScreen(
             )
             Spacer(modifier = modifier.height(20.dp))
 
-
-
             Text(
                 modifier = modifier.padding(10.dp),
                 text = scenario.result.get(fromButton),
@@ -109,7 +107,6 @@ fun AnswerGameScreen(
             Spacer(modifier = modifier.height(dimensions.verticalSLarge))
             PrimaryButton(
                 modifier = modifier
-                    .fillMaxHeight(0.12f)
                     .fillMaxWidth(0.85f),
 
                 palette = palette,

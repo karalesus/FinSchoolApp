@@ -95,7 +95,7 @@ fun FourthMiniGameFinish(
             PrimaryButton(
                 modifier = modifier
                     .width(300.dp)
-                    .height(35.dp),
+                    .height(40.dp),
                 palette = palette,
                 text = "Начать заново",
                 navController = navController,
