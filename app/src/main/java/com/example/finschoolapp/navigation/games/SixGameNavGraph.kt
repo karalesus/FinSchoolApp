@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentations.screens.games.six_game.navigation
+package com.example.finschoolapp.navigation.games
 
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -16,9 +16,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
 import com.example.finschoolapp.navigation.RootScreen
-import com.example.finschoolapp.presentations.screens.games.six_game.AddToVsrScreen
-import com.example.finschoolapp.presentations.screens.games.six_game.BaseGameScreen
-import com.example.finschoolapp.presentations.screens.games.six_game.ChoosingInsuranceScreen
+import com.example.finschoolapp.navigation.main.MainScreen
+import com.example.finschoolapp.presentations.screens.games.sixthGame.AddToVsrScreen
+import com.example.finschoolapp.presentations.screens.games.sixthGame.BaseGameScreen
+import com.example.finschoolapp.presentations.screens.games.sixthGame.ChoosingInsuranceScreen
+import com.example.finschoolapp.presentations.screens.games.sixthGame.sixGameScenarios
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -36,7 +38,7 @@ var isDms: Boolean = false
 var isUseDms: Boolean = false
 
 var tomMoney:Int = 120000
-fun updateMoney(amount: Int) {
+fun updateMoneyInSixthGame(amount: Int) {
     tomMoney += amount
 }
 
@@ -59,7 +61,7 @@ fun NavGraphBuilder.sixGameNavGraph(
 )
 {
 
-    navigation(route = RootScreen.SixGameNavGraph.route, startDestination = ChoosingInsurance.StartGame.route,){
+    navigation(route = MainScreen.SixthMiniGame.route, startDestination = ChoosingInsurance.StartGame.route,){
         composable(
             route = ChoosingInsurance.StartGame.route,
             enterTransition = { fadeIn() },
@@ -73,14 +75,14 @@ fun NavGraphBuilder.sixGameNavGraph(
                 cashAmount = tomMoney,
                 buttonActions = listOf(
                     {
-                        updateMoney(-30000)
+                        updateMoneyInFirstGame(-30000)
                         isDms = true
-                        navController.navigate(GameScreen.Game6Screen1.route)
+                        navController.navigate(SixthGameScreen.SixthGame6Screen1.route)
                     },
-                    { updateMoney(-50000)
+                    { updateMoneyInFirstGame(-50000)
                         isElse = true
-                        navController.navigate(GameScreen.Game6Screen1.route)},
-                    { updateMoney(-30000)
+                        navController.navigate(SixthGameScreen.SixthGame6Screen1.route)},
+                    { updateMoneyInFirstGame(-30000)
                         isVsr = true
                         navController.navigate(AddToVsrScreen.SecondScreen.route)
                     }
@@ -94,78 +96,80 @@ fun NavGraphBuilder.sixGameNavGraph(
                 cashAmount = tomMoney,
                 buttonActions = listOf(
                     {
-                        updateMoney(-5000)
+                        updateMoneyInFirstGame(-5000)
                         isVsrDop = true
-                        navController.navigate(GameScreen.Game6Screen1.route)
+                        navController.navigate(SixthGameScreen.SixthGame6Screen1.route)
                     },
-                    { navController.navigate(GameScreen.Game6Screen1.route)}
+                    { navController.navigate(SixthGameScreen.SixthGame6Screen1.route)}
                 )
             )
             screenName("AddToVsr")
         }
 
-        composable(route = GameScreen.Game6Screen1.route){
+        composable(route = SixthGameScreen.SixthGame6Screen1.route){
             BaseGameScreen(
                 navController = navController,
                 buttonActions = listOf(
-                    {navController.navigate(GameScreen.Game6Screen2.route) },
-                    {navController.navigate(GameScreen.Game6Screen8.route)  }//заменить
+                    {navController.navigate(SixthGameScreen.SixthGame6Screen2.route) },
+                    {navController.navigate(SixthGameScreen.SixthGame6Screen8.route)  }//заменить
                 ),
                 scenario = sixGameScenarios[0],
                 cashAmount = tomMoney
             )
             screenName("RoadOrBar")
         }
-        composable(route = GameScreen.Game6Screen2.route){
+        composable(route = SixthGameScreen.SixthGame6Screen2.route){
             BaseGameScreen(
                 navController = navController,
                 buttonActions = listOf(
-                    {updateMoney(-8000)
-                        navController.navigate(GameScreen.Game6Screen3.route) },
-                    {navController.navigate(GameScreen.Game6Screen8.route)  }
+                    {
+                        updateMoneyInFirstGame(-8000)
+                        navController.navigate(SixthGameScreen.SixthGame6Screen3.route) },
+                    {navController.navigate(SixthGameScreen.SixthGame6Screen8.route)  }
                 ),
                 scenario = sixGameScenarios[1],
                 cashAmount = tomMoney
             )
             screenName("Bar")
         }
-        composable(route = GameScreen.Game6Screen3.route){
+        composable(route = SixthGameScreen.SixthGame6Screen3.route){
             BaseGameScreen(
                 navController = navController,
                 buttonActions = listOf {
                     if (isVsrDop || isDms || isElse) {
-                        navController.navigate(GameScreen.Game6Screen4.route)
-                    } else navController.navigate(GameScreen.Game6Screen8.route)
+                        navController.navigate(SixthGameScreen.SixthGame6Screen4.route)
+                    } else navController.navigate(SixthGameScreen.SixthGame6Screen8.route)
                 },
                 scenario = sixGameScenarios[2],
                 cashAmount = tomMoney
             )
             screenName("Bar2")
         }
-        composable(route = GameScreen.Game6Screen4.route){
+        composable(route = SixthGameScreen.SixthGame6Screen4.route){
             BaseGameScreen(
                 navController = navController,
                 buttonActions = listOf(
-                    {updateMoney(-10000)
-                        navController.navigate(GameScreen.Game6Screen5.route) },
-                    {navController.navigate(GameScreen.Game6Screen8.route)  }
+                    {
+                        updateMoneyInFirstGame(-10000)
+                        navController.navigate(SixthGameScreen.SixthGame6Screen5.route) },
+                    {navController.navigate(SixthGameScreen.SixthGame6Screen8.route)  }
                 ),
                 scenario = sixGameScenarios[3],
                 cashAmount = tomMoney
             )
             screenName("Bar3")
         }
-        composable(route = GameScreen.Game6Screen5.route){
+        composable(route = SixthGameScreen.SixthGame6Screen5.route){
             BaseGameScreen(
                 navController = navController,
                 buttonActions = listOf {
-                    navController.navigate(GameScreen.Game6Screen6.route)
+                    navController.navigate(SixthGameScreen.SixthGame6Screen6.route)
                     CoroutineScope(Dispatchers.Main).launch {
                         delay(200)
                         when {
-                            isVsrDop -> updateMoney(50000)
-                            isDms -> updateMoney(0)
-                            else -> updateMoney(-30000)
+                            isVsrDop -> updateMoneyInFirstGame(50000)
+                            isDms -> updateMoneyInFirstGame(0)
+                            else -> updateMoneyInFirstGame(-30000)
                         }
                     }},
                 scenario = sixGameScenarios[4],
@@ -174,11 +178,11 @@ fun NavGraphBuilder.sixGameNavGraph(
             screenName("Bar3")
         }
 
-        composable(route = GameScreen.Game6Screen6.route){
+        composable(route = SixthGameScreen.SixthGame6Screen6.route){
             BaseGameScreen(
                 navController = navController,
                 buttonActions = listOf {if(isElse) navController.navigate(BadEndSixModule.BadEndGame1.route)
-                else  navController.navigate(GameScreen.Game6Screen7.route) },
+                else  navController.navigate(SixthGameScreen.SixthGame6Screen7.route) },
                 scenario = if (isDms) {
                     updateUseDms()
                     sixGameScenarios[5]
@@ -194,27 +198,27 @@ fun NavGraphBuilder.sixGameNavGraph(
         composable(route = BadEndSixModule.BadEndGame1.route){
             BaseGameScreen(
                 navController = navController,
-                buttonActions = listOf {navController.navigate(RootScreen.SixGameNavGraph.route)},
+                buttonActions = listOf {navController.navigate(MainScreen.SixthMiniGame.route)},
                 scenario = sixGameScenarios[8],
                 cashAmount = tomMoney
             )
             screenName("BadEnd1")
         }
 
-        composable(route = GameScreen.Game6Screen7.route){
+        composable(route = SixthGameScreen.SixthGame6Screen7.route){
             BaseGameScreen(
                 navController = navController,
-                buttonActions = listOf {navController.navigate(GameScreen.Game6Screen8.route)},
+                buttonActions = listOf {navController.navigate(SixthGameScreen.SixthGame6Screen8.route)},
                 scenario = sixGameScenarios[9],
                 cashAmount = tomMoney
             )
             screenName("ArmIsHealthy")
         }
 
-        composable(route = GameScreen.Game6Screen8.route){
+        composable(route = SixthGameScreen.SixthGame6Screen8.route){
             BaseGameScreen(
                 navController = navController,
-                buttonActions = listOf {navController.navigate(GameScreen.Game6Screen9.route)},
+                buttonActions = listOf {navController.navigate(SixthGameScreen.SixthGame6Screen9.route)},
 
 
                 scenario = sixGameScenarios[10],
@@ -223,33 +227,35 @@ fun NavGraphBuilder.sixGameNavGraph(
             screenName("City")
         }
 
-        composable(route = GameScreen.Game6Screen9.route){
+        composable(route = SixthGameScreen.SixthGame6Screen9.route){
             BaseGameScreen(
                 navController = navController,
                 buttonActions = listOf (
-                    { updateMoney(-50000)
-                        navController.navigate(GameScreen.Game6Screen10.route) },
-                    {updateMoney(-20000)
-                        navController.navigate(GameScreen.Game6Screen11.route) },
-                    {updateMoney(-30000)
-                        navController.navigate(GameScreen.Game6Screen12.route) },
-                    {navController.navigate(GameScreen.Game6Screen13.route)}),
+                    { updateMoneyInFirstGame(-50000)
+                        navController.navigate(SixthGameScreen.SixthGame6Screen10.route) },
+                    {
+                        updateMoneyInFirstGame(-20000)
+                        navController.navigate(SixthGameScreen.SixthGame6Screen11.route) },
+                    {
+                        updateMoneyInFirstGame(-30000)
+                        navController.navigate(SixthGameScreen.SixthGame6Screen12.route) },
+                    {navController.navigate(SixthGameScreen.SixthGame6Screen13.route)}),
                 scenario = sixGameScenarios[11],
                 cashAmount = tomMoney
             )
             screenName("Morning")
         }
 //гид
-        composable(route = GameScreen.Game6Screen10.route){
+        composable(route = SixthGameScreen.SixthGame6Screen10.route){
             BaseGameScreen(
                 navController = navController,
                 buttonActions = listOf {
-                    navController.navigate(GameScreen.Game6Screen10_2.route)
+                    navController.navigate(SixthGameScreen.SixthGame6Screen10_2.route)
                     CoroutineScope(Dispatchers.Main).launch {
                         delay(200)
                         when {
-                            isVsr -> updateMoney(0)
-                            else -> updateMoney(-60000)
+                            isVsr -> updateMoneyInFirstGame(0)
+                            else -> updateMoneyInFirstGame(-60000)
                         }
                     }},
                 scenario = sixGameScenarios[15],
@@ -259,17 +265,17 @@ fun NavGraphBuilder.sixGameNavGraph(
         }
 
         //клуб
-        composable(route = GameScreen.Game6Screen11.route){
+        composable(route = SixthGameScreen.SixthGame6Screen11.route){
             BaseGameScreen(
                 navController = navController,
                 buttonActions = listOf {
-                    navController.navigate(GameScreen.Game6Screen11_2.route)
+                    navController.navigate(SixthGameScreen.SixthGame6Screen11_2.route)
                     CoroutineScope(Dispatchers.Main).launch {
                         delay(200)
                         when {
-                            isVsr -> updateMoney(0)
+                            isVsr -> updateMoneyInFirstGame(0)
 //
-                            else -> updateMoney(-50000)
+                            else -> updateMoneyInFirstGame(-50000)
                         }
                     }},
                 scenario = sixGameScenarios[12],
@@ -279,10 +285,10 @@ fun NavGraphBuilder.sixGameNavGraph(
         }
 
         //клуб
-        composable(route = GameScreen.Game6Screen11_2.route){
+        composable(route = SixthGameScreen.SixthGame6Screen11_2.route){
             BaseGameScreen(
                 navController = navController,
-                buttonActions = listOf {if(tomMoney<27000) navController.navigate(BadEndSixModule.BadEndGame2.route)
+                buttonActions = listOf {if(tomMoney <27000) navController.navigate(BadEndSixModule.BadEndGame2.route)
                 else navController.navigate(SuccessfulEndSixModule.SuccessfulEndGame.route) },
                 scenario = if (isVsr) {
                     sixGameScenarios[13]
@@ -294,16 +300,16 @@ fun NavGraphBuilder.sixGameNavGraph(
             screenName("ClubIll")
         }
 
-        composable(route = GameScreen.Game6Screen12.route){
+        composable(route = SixthGameScreen.SixthGame6Screen12.route){
             BaseGameScreen(
                 navController = navController,
                 buttonActions = listOf {
-                    navController.navigate(GameScreen.Game6Screen12_2.route)
+                    navController.navigate(SixthGameScreen.SixthGame6Screen12_2.route)
                     CoroutineScope(Dispatchers.Main).launch {
                         delay(200)
                         when {
-                            isVsr -> updateMoney(0)
-                            else -> updateMoney(-50000)
+                            isVsr -> updateMoneyInFirstGame(0)
+                            else -> updateMoneyInFirstGame(-50000)
                         }
                     }},
                 scenario = sixGameScenarios[19],
@@ -313,10 +319,10 @@ fun NavGraphBuilder.sixGameNavGraph(
         }
 
         //дайвинг
-        composable(route = GameScreen.Game6Screen12_2.route){
+        composable(route = SixthGameScreen.SixthGame6Screen12_2.route){
             BaseGameScreen(
                 navController = navController,
-                buttonActions = listOf {if(tomMoney<27000) navController.navigate(BadEndSixModule.BadEndGame2.route)
+                buttonActions = listOf {if(tomMoney <27000) navController.navigate(BadEndSixModule.BadEndGame2.route)
                 else navController.navigate(SuccessfulEndSixModule.SuccessfulEndGame.route) },
                 scenario = if (isVsr) {
                     sixGameScenarios[20]
@@ -329,17 +335,17 @@ fun NavGraphBuilder.sixGameNavGraph(
         }
 
 //прогулка
-        composable(route = GameScreen.Game6Screen13.route) {
+        composable(route = SixthGameScreen.SixthGame6Screen13.route) {
             BaseGameScreen(
                 navController = navController,
                 buttonActions = listOf {
-                    navController.navigate(GameScreen.Game6Screen10_2.route)
+                    navController.navigate(SixthGameScreen.SixthGame6Screen10_2.route)
                     CoroutineScope(Dispatchers.Main).launch {
                         delay(200)
                         when {
-                            isVsr -> updateMoney(0)
-                            isUseDms -> updateMoney(-45000)
-                            else -> updateMoney(-60000)
+                            isVsr -> updateMoneyInFirstGame(0)
+                            isUseDms -> updateMoneyInFirstGame(-45000)
+                            else -> updateMoneyInFirstGame(-60000)
                         }
                     }},
                 scenario = sixGameScenarios[16],
@@ -348,10 +354,10 @@ fun NavGraphBuilder.sixGameNavGraph(
             screenName("Walking")
         }
 
-        composable(route = GameScreen.Game6Screen10_2.route){
+        composable(route = SixthGameScreen.SixthGame6Screen10_2.route){
             BaseGameScreen(
                 navController = navController,
-                buttonActions = listOf {if(tomMoney<27000) navController.navigate(BadEndSixModule.BadEndGame2.route)
+                buttonActions = listOf {if(tomMoney <27000) navController.navigate(BadEndSixModule.BadEndGame2.route)
                 else navController.navigate(SuccessfulEndSixModule.SuccessfulEndGame.route) },
                 scenario = if (isVsr) {
                     sixGameScenarios[17]
@@ -369,7 +375,7 @@ fun NavGraphBuilder.sixGameNavGraph(
                 buttonActions = listOf {RootScreen.MainScreenGraph.route},
                 scenario = if (tomMoney >=65000) {
                     sixGameScenarios[23]
-                } else if (tomMoney>=40000){
+                } else if (tomMoney >=40000){
                     sixGameScenarios[24]
                 }else sixGameScenarios[25],
                 cashAmount = tomMoney
@@ -394,30 +400,30 @@ fun NavGraphBuilder.sixGameNavGraph(
 }
 
 @Immutable
-sealed class GameScreen(val route: String) {
-    object Game6Screen1 : GameScreen(route = "Game6Screen1")
-    object Game6Screen2 : GameScreen(route = "Game6Screen2")
-    object Game6Screen3 : GameScreen(route = "Game6Screen3")
-    object Game6Screen4 : GameScreen(route = "Game6Screen4")
-    object Game6Screen5 : GameScreen(route = "Game6Screen5")
-    object Game6Screen6 : GameScreen(route = "Game6Screen6")
-    object Game6Screen7 : GameScreen(route = "Game6Screen7")
-    object Game6Screen8 : GameScreen(route = "Game6Screen8")
+sealed class SixthGameScreen(val route: String) {
+    object SixthGame6Screen1 : SixthGameScreen(route = "SixthGame6Screen1")
+    object SixthGame6Screen2 : SixthGameScreen(route = "SixthGame6Screen2")
+    object SixthGame6Screen3 : SixthGameScreen(route = "SixthGame6Screen3")
+    object SixthGame6Screen4 : SixthGameScreen(route = "SixthGame6Screen4")
+    object SixthGame6Screen5 : SixthGameScreen(route = "SixthGame6Screen5")
+    object SixthGame6Screen6 : SixthGameScreen(route = "SixthGame6Screen6")
+    object SixthGame6Screen7 : SixthGameScreen(route = "SixthGame6Screen7")
+    object SixthGame6Screen8 : SixthGameScreen(route = "SixthGame6Screen8")
 
-    object Game6Screen9 : GameScreen(route = "Game6Screen9")
+    object SixthGame6Screen9 : SixthGameScreen(route = "SixthGame6Screen9")
 
-    object Game6Screen10 : GameScreen(route = "Game6Screen10")
-    object Game6Screen10_2 : GameScreen(route = "Game6Screen10_2")
+    object SixthGame6Screen10 : SixthGameScreen(route = "SixthGame6Screen10")
+    object SixthGame6Screen10_2 : SixthGameScreen(route = "SixthGame6Screen10_2")
 
-    object Game6Screen11 : GameScreen(route = "Game6Screen11")
+    object SixthGame6Screen11 : SixthGameScreen(route = "SixthGame6Screen11")
 
-    object Game6Screen11_2 : GameScreen(route = "Game6Screen11_2")
+    object SixthGame6Screen11_2 : SixthGameScreen(route = "SixthGame6Screen11_2")
 
-    object Game6Screen12 : GameScreen(route = "Game6Screen12")
+    object SixthGame6Screen12 : SixthGameScreen(route = "SixthGame6Screen12")
 
-    object Game6Screen12_2 : GameScreen(route = "Game6Screen12_2")
+    object SixthGame6Screen12_2 : SixthGameScreen(route = "SixthGame6Screen12_2")
 
-    object Game6Screen13 : GameScreen(route = "Game6Screen13")
+    object SixthGame6Screen13 : SixthGameScreen(route = "SixthGame6Screen13")
 
 
 }
@@ -445,7 +451,7 @@ fun TestMain() {
     val navController = rememberNavController()
     var tomMoney by remember { mutableStateOf(100000) }
 
-    NavHost(navController, startDestination = RootScreen.SixGameNavGraph.route) {
+    NavHost(navController, startDestination = MainScreen.SixthMiniGame.route) {
         sixGameNavGraph(navController = navController) {
         }
     }

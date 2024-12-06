@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentations.screens.fourthgame
+package com.example.finschoolapp.presentations.screens.games.fourthGame
 
 data class Question(
     val questionText : String,

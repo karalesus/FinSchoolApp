@@ -1,8 +1,6 @@
-package com.example.finschoolapp.presentations.screens.games.six_game.navigation
+package com.example.finschoolapp.presentations.screens.games.sixthGame
 
-import androidx.compose.ui.res.stringResource
 import com.example.finschoolapp.R
-import com.example.finschoolapp.presentations.screens.games.GameScenario
 
 data class ScenarioSixGame(
     val titleText: String? = null,

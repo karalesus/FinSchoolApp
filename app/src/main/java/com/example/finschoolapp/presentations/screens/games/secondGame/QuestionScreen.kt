@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentations.screens.secondgame
+package com.example.finschoolapp.presentations.screens.games.secondGame
 
 import android.util.Log
 import androidx.compose.foundation.Image
