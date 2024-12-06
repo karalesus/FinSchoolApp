@@ -123,8 +123,11 @@ fun ArticleDetailScreen(
 
                         if (isLastArticle) {
                             val routeToMiniGame = when (moduleId) {
+                                1 -> MainScreen.FirstMiniGame.route
                                 2 -> MainScreen.SecondMiniGame.route
                                 4 -> MainScreen.FourthMiniGame.route
+                                6 -> MainScreen.SixthMiniGame.route
+                                7 -> MainScreen.SeventhMiniGame.route
                                 else -> null
                             }
                             ContinueModuleButton(
