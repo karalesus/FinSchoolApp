@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentations.screens.games
+package com.example.finschoolapp.presentations.screens.games.seventhGame
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
