@@ -325,9 +325,9 @@ fun NavGraphBuilder.sixGameNavGraph(
                 buttonActions = listOf {if(tomMoney <27000) navController.navigate(BadEndSixModule.BadEndGame2.route)
                 else navController.navigate(SuccessfulEndSixModule.SuccessfulEndGame.route) },
                 scenario = if (isVsr) {
-                    sixGameScenarios[20]
-                } else{
                     sixGameScenarios[21]
+                } else{
+                    sixGameScenarios[20]
                 },
                 cashAmount = tomMoney
             )
