@@ -1,0 +1,11 @@
+[versions]
+kotlin = "2.0.0"
+runtime-livedata = "1.7.5"
+
+[libraries]
+# Koin
+androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtime-livedata" }
+
+[plugins]
+# Core
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentations.screens.main
+package com.example.finschoolapp.presentations.screens.games.seventhGame
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -42,10 +42,9 @@ import com.example.finschoolapp.ui.theme.thirdLight
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun SuccessfulEndFirstModuleScreen(
+fun EndSeventhModuleScreen(
     modifier: Modifier = Modifier,
-    navController: NavHostController,
-    TomMoney: Int
+    navController: NavHostController
 ) {
     val palette = ThemeColors.LightTheme
     var showConfetti by remember { mutableStateOf(false) }
@@ -80,7 +79,7 @@ fun SuccessfulEndFirstModuleScreen(
                     .weight(0.5f)
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.image_characrer_end_lvl1),
+                    painter = painterResource(id = R.drawable.image_character_end_lvl7),
                     contentDescription = null,
                     modifier = Modifier
                         .size(400.dp)
@@ -100,11 +99,11 @@ fun SuccessfulEndFirstModuleScreen(
                             containerColor = thirdLight,
                         ),
                         shape = RoundedCornerShape(16.dp),
-                        modifier = Modifier.fillMaxWidth().height(100.dp)
+                        modifier = Modifier.fillMaxWidth().height(110.dp)
                     ) {
                         Text(
                             modifier = Modifier.align(Alignment.CenterHorizontally).padding(10.dp),
-                            text = stringResource(id = R.string.successful_end_first_level)+"$TomMoney рублей",
+                            text = stringResource(id = R.string.end_seventh_module),
                             style = textViewBaseVariant.copy(color = palette.secondary)
                         )
                     }
@@ -135,9 +134,8 @@ fun SuccessfulEndFirstModuleScreen(
 
 @Composable
 @Preview
-fun SuccessfulEndFirstModuleScreenPreview() {
-    SuccessfulEndFirstModuleScreen(
+fun EndSeventhModuleScreenPreview() {
+    EndSeventhModuleScreen(
         modifier = Modifier,
-        navController = rememberNavController(),
-        TomMoney = 0)
+        navController = rememberNavController())
 }

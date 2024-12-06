@@ -23,7 +23,7 @@ fun NavGraphBuilder.authNavGraph(
     navigation(
         route = RootScreen.AuthNavGraph.route,
         startDestination = AuthScreen.Login.route
-    ){
+    ) {
         composable(route = AuthScreen.Login.route) {
             LoginScreen(
                 onClick = {
@@ -42,20 +42,20 @@ fun NavGraphBuilder.authNavGraph(
         composable(route = AuthScreen.SignUp.route) {
             SignUpScreen(
                 onNextClick = {
-                navController.navigate(AuthScreen.Confirm.route)
-            },
-                onLoginClick =  {
+                    navController.navigate(AuthScreen.Confirm.route)
+                },
+                onLoginClick = {
                     navController.navigate(AuthScreen.Login.route)
                 }
             )
             screenName("Sign Up")
         }
-        composable(route = AuthScreen.Confirm.route){
+        composable(route = AuthScreen.Confirm.route) {
             ConfirmationScreen(onConfirmClick = { navController.navigate(AuthScreen.LetsStudy.route) })
             screenName("Confirm")
         }
 
-        composable(route = AuthScreen.LetsStudy.route){
+        composable(route = AuthScreen.LetsStudy.route) {
             SuccessfulRegistrationScreen(onLetsStudy = {
                 navController.navigate(AuthScreen.Hello.route)
             })
@@ -65,10 +65,10 @@ fun NavGraphBuilder.authNavGraph(
             ForgotPasswordScreen(
                 onEnterClick = {
                     navController.navigate(AuthScreen.EnterCode.route)
-                               },
+                },
                 onSignUpClick = {
                     navController.navigate(AuthScreen.SignUp.route)
-                                },
+                },
                 onReturnToMainClick = {
                     navController.navigate(AuthScreen.Login.route)
                 }
@@ -79,7 +79,7 @@ fun NavGraphBuilder.authNavGraph(
             ForgotPasswordEnterCodeScreen(
                 onConfirmClick = {
                     navController.navigate(AuthScreen.NewPassword.route)
-                                 },
+                },
                 onSignUpClick = {
                     navController.navigate(AuthScreen.SignUp.route)
                 })
@@ -88,23 +88,25 @@ fun NavGraphBuilder.authNavGraph(
         composable(route = AuthScreen.NewPassword.route) {
             NewPasswordScreen(
                 onSaveAndEnterOn = {
-                navController.popBackStack()
-                navController.navigate(RootScreen.MainScreenGraph.route)},
-                onReturnToMainClick ={navController.navigate(AuthScreen.Login.route)})
+                    navController.popBackStack()
+                    navController.navigate(RootScreen.MainScreenGraph.route)
+                },
+                onReturnToMainClick = { navController.navigate(AuthScreen.Login.route) })
             screenName("New password")
         }
-        composable(route = AuthScreen.Hello.route){
+        composable(route = AuthScreen.Hello.route) {
             Hello(
                 onWhatToDoClick = {
-                navController.navigate(AuthScreen.Welcome.route)
-            })
+                    navController.navigate(AuthScreen.Welcome.route)
+                })
             screenName("Hello")
         }
-        composable(route = AuthScreen.Welcome.route){
+        composable(route = AuthScreen.Welcome.route) {
             Welcome(
                 onIHelpYouClick = {
                     navController.popBackStack()
-                    navController.navigate(RootScreen.MainScreenGraph.route)}
+                    navController.navigate(RootScreen.MainScreenGraph.route)
+                }
             )
             screenName("Welcome")
         }
@@ -113,14 +115,14 @@ fun NavGraphBuilder.authNavGraph(
 
 @Immutable
 sealed class AuthScreen(val route: String) {
-    object Login: AuthScreen(route = "Login")
-    object SignUp: AuthScreen(route = "SignUp")
-    object Forgot: AuthScreen(route = "ForgotPassword")
-    object EnterCode: AuthScreen(route = "EnterCode")
-    object NewPassword: AuthScreen(route = "NewPassword")
-    object Confirm: AuthScreen(route = "Confirm")
-    object LetsStudy: AuthScreen(route = "LetsStudy")
-    object Hello: AuthScreen(route = "Hello")
-    object Welcome: AuthScreen(route = "Welcome")
+    object Login : AuthScreen(route = "Login")
+    object SignUp : AuthScreen(route = "SignUp")
+    object Forgot : AuthScreen(route = "ForgotPassword")
+    object EnterCode : AuthScreen(route = "EnterCode")
+    object NewPassword : AuthScreen(route = "NewPassword")
+    object Confirm : AuthScreen(route = "Confirm")
+    object LetsStudy : AuthScreen(route = "LetsStudy")
+    object Hello : AuthScreen(route = "Hello")
+    object Welcome : AuthScreen(route = "Welcome")
 
 }

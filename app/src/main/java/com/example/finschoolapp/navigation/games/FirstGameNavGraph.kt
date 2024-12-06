@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentations.screens.games
+package com.example.finschoolapp.navigation.games
 
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -7,43 +7,47 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.example.finschoolapp.navigation.RootScreen
-import com.example.finschoolapp.presentations.screens.main.SuccessfulEndFirstModuleScreen
+import com.example.finschoolapp.navigation.main.MainScreen
+import com.example.finschoolapp.presentations.screens.games.firstGame.GameScreen
+import com.example.finschoolapp.presentations.screens.games.firstGame.NeedHelp
+import com.example.finschoolapp.presentations.screens.games.firstGame.RipEndFirstModuleScreen
+import com.example.finschoolapp.presentations.screens.games.firstGame.SuccessfulEndFirstModuleScreen
+import com.example.finschoolapp.presentations.screens.games.firstGame.scenarios
 
 import com.example.finschoolapp.ui.components.animation.ConfettiAnimation
 
 var tomMmoney: Int = 50
-fun updateMoney(amount: Int) {
+fun updateMoneyInFirstGame(amount: Int) {
     tomMmoney += amount
 }
 
-fun NavGraphBuilder.gameNavGraph(
+fun NavGraphBuilder.firstGameNavGraph(
     navController: NavHostController,
     screenName: (String) -> Unit
 ) {
     navigation(
-        route = RootScreen.GameNavGraph.route,
-        startDestination = NeedHelp.StartGame.route
+        route = MainScreen.FirstMiniGame.route,
+        startDestination = NeedHelpScreen.StartGame.route
     ){
         composable(
-            route = NeedHelp.StartGame.route,
+            route = NeedHelpScreen.StartGame.route,
             enterTransition = { fadeIn() },
             exitTransition = { fadeOut() }
         ){
 
             NeedHelp(navController = navController)
-//            navController.navigate(GameScreen.Game1Screen1.route)
+//            navController.navigate(SixthGameScreen.Game1Screen1.route)
 
             screenName("StartGame")
         }
 
 
-        composable(route = GameScreen.Game1Screen1.route){
+        composable(route = FirstGameScreen.Game1Screen1.route){
 
             GameScreen(
                 onClick = {
-                    updateMoney(it)
-                    navController.navigate(GameScreen.Game1Screen2.route)
+                    updateMoneyInFirstGame(it)
+                    navController.navigate(FirstGameScreen.Game1Screen2.route)
                     println("Кнопка: $tomMmoney")
                           },
                 scenario = scenarios.get(0),
@@ -52,11 +56,11 @@ fun NavGraphBuilder.gameNavGraph(
             )
             screenName("Monday")
         }
-        composable(route = GameScreen.Game1Screen2.route){
+        composable(route = FirstGameScreen.Game1Screen2.route){
             GameScreen(
                 onClick = {
-                    updateMoney(it)
-                    navController.navigate(GameScreen.Game1Screen3.route)
+                    updateMoneyInFirstGame(it)
+                    navController.navigate(FirstGameScreen.Game1Screen3.route)
                     println("Кнопка: $tomMmoney")
                 },
                 scenario = scenarios.get(1),
@@ -64,11 +68,11 @@ fun NavGraphBuilder.gameNavGraph(
             )
             screenName("Tuesday")
         }
-        composable(route = GameScreen.Game1Screen3.route){
+        composable(route = FirstGameScreen.Game1Screen3.route){
             GameScreen(
                 onClick = {
-                    updateMoney(it)
-                    navController.navigate(GameScreen.Game1Screen4.route)
+                    updateMoneyInFirstGame(it)
+                    navController.navigate(FirstGameScreen.Game1Screen4.route)
                     println("Кнопка: $tomMmoney")
                 },
                 scenario = scenarios.get(2),
@@ -76,11 +80,11 @@ fun NavGraphBuilder.gameNavGraph(
             )
             screenName("Wednesday")
         }
-        composable(route = GameScreen.Game1Screen4.route){
+        composable(route = FirstGameScreen.Game1Screen4.route){
             GameScreen(
                 onClick = {
-                    updateMoney(it)
-                    navController.navigate(GameScreen.Game1Screen5.route)
+                    updateMoneyInFirstGame(it)
+                    navController.navigate(FirstGameScreen.Game1Screen5.route)
                     println("Кнопка: $tomMmoney")
                 },
                 scenario = scenarios.get(3),
@@ -88,11 +92,11 @@ fun NavGraphBuilder.gameNavGraph(
             )
             screenName("Thursday")
         }
-        composable(route = GameScreen.Game1Screen5.route){
+        composable(route = FirstGameScreen.Game1Screen5.route){
             GameScreen(
                 onClick = {
-                    updateMoney(it)
-                    navController.navigate(GameScreen.Game1Screen6.route)
+                    updateMoneyInFirstGame(it)
+                    navController.navigate(FirstGameScreen.Game1Screen6.route)
                     println("Кнопка: $tomMmoney")
                 },
                 scenario = scenarios.get(4),
@@ -100,11 +104,11 @@ fun NavGraphBuilder.gameNavGraph(
             )
             screenName("Friday")
         }
-        composable(route = GameScreen.Game1Screen6.route){
+        composable(route = FirstGameScreen.Game1Screen6.route){
             GameScreen(
                 onClick = {
-                    updateMoney(it)
-                    navController.navigate(GameScreen.Game1Screen7.route)
+                    updateMoneyInFirstGame(it)
+                    navController.navigate(FirstGameScreen.Game1Screen7.route)
                     println("Кнопка: $tomMmoney")
                 },
                 scenario = scenarios.get(5),
@@ -112,10 +116,10 @@ fun NavGraphBuilder.gameNavGraph(
             )
             screenName("Saturday")
         }
-        composable(route = GameScreen.Game1Screen7.route){
+        composable(route = FirstGameScreen.Game1Screen7.route){
             GameScreen(
                 onClick = {
-                    updateMoney(it)
+                    updateMoneyInFirstGame(it)
                     if(tomMmoney >0) {
                         navController.navigate(SuccessfulEndFirstModuleScreen.SuccessfulEndGame.route)
                     }else{
@@ -137,29 +141,23 @@ fun NavGraphBuilder.gameNavGraph(
             RipEndFirstModuleScreen(navController = navController)
             screenName("RipEnd")
         }
-
-
-
-
     }
-
-
 }
 
 @Immutable
-sealed class GameScreen(val route: String) {
-    object Game1Screen1 : GameScreen(route = "Game1Screen1")
-    object Game1Screen2 : GameScreen(route = "Game1Screen2")
-    object Game1Screen3 : GameScreen(route = "Game1Screen3")
-    object Game1Screen4 : GameScreen(route = "Game1Screen4")
-    object Game1Screen5 : GameScreen(route = "Game1Screen5")
-    object Game1Screen6 : GameScreen(route = "Game1Screen6")
-    object Game1Screen7 : GameScreen(route = "Game1Screen7")
+sealed class FirstGameScreen(val route: String) {
+    object Game1Screen1 : SixthGameScreen(route = "Game1Screen1")
+    object Game1Screen2 : SixthGameScreen(route = "Game1Screen2")
+    object Game1Screen3 : SixthGameScreen(route = "Game1Screen3")
+    object Game1Screen4 : SixthGameScreen(route = "Game1Screen4")
+    object Game1Screen5 : SixthGameScreen(route = "Game1Screen5")
+    object Game1Screen6 : SixthGameScreen(route = "Game1Screen6")
+    object Game1Screen7 : SixthGameScreen(route = "Game1Screen7")
 
 }
 @Immutable
-sealed class NeedHelp(val route: String) {
-    object StartGame: NeedHelp(route = "StartGame")
+sealed class NeedHelpScreen(val route: String) {
+    object StartGame: NeedHelpScreen(route = "StartGame")
 }
 @Immutable
 sealed class SuccessfulEndFirstModuleScreen(val route: String) {

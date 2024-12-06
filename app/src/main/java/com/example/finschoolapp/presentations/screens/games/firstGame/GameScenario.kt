@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentations.screens.games
+package com.example.finschoolapp.presentations.screens.games.firstGame
 import com.example.finschoolapp.R
 
 data class GameScenario(
@@ -25,7 +25,7 @@ val scenarios = listOf(
         day = "Вторник",
         situation = "Друг сообщает Тому, что играет на форексе: вкладываешь 20 рублей, получаешь через неделю 60 рублей. Гарантирует, что вернет деньги, многие уже заработали!",
         question = "Что сделать с оставшимися деньгами?",
-        options = listOf("Сумма небольшая, согласиться!", "Отказаться"),
+        options = listOf("Согласиться", "Отказаться"),
         money = listOf(-20, 0),
         correctOptionIndex = 0,
         image = R.drawable.image_game_1_screen_2
@@ -35,8 +35,8 @@ val scenarios = listOf(
         day = "Среда",
         situation = "Том заметил очень ароматную пиццу на прилавке. Пицца стоит 50 рублей. На самом деле ему хочется разнообразия, хоть раз в неделю можно же себе позволить.",
         question = "Как поступить Тому?",
-        options = listOf("Поесть пиццы", "Стандартный обед"),
-        money = listOf(-20, 0),
+        options = listOf("Поесть пиццы", "Обычный обед"),
+        money = listOf(-50, 0),
         correctOptionIndex = 1,
         image = R.drawable.image_game_1_screen_3
     ),
@@ -44,7 +44,7 @@ val scenarios = listOf(
         day = "Четверг",
         situation = "В подъезде Тому встретилась соседка. Она заговорила с ним и сообщила, что недавно родила ребенка и ей сейчас неудобно самой выносить мусор. Она предлагает ему ежедневно помогать ей с выносом мусора, обещает давать 10 рублей в день.",
         question = "Как поступить Тому?",
-        options = listOf("Отказаться, стыдно носить мусор", "Согласиться","Помогать бесплатно"),
+        options = listOf("Отказаться", "Согласиться","Помочь бесплатно"),
         money = listOf(0, 30, 0),
         correctOptionIndex = 1,
         image = R.drawable.image_game_1_screen_4

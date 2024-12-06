@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentations.screens.games
+package com.example.finschoolapp.presentations.screens.games.firstGame
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -103,7 +103,7 @@ fun NeedHelp(
                 text = stringResource(id = R.string.button_continue),
 
                 navController = navController,
-                route = GameScreen.Game1Screen1.route
+                route = com.example.finschoolapp.navigation.games.FirstGameScreen.Game1Screen1.route
             )
 
         }
