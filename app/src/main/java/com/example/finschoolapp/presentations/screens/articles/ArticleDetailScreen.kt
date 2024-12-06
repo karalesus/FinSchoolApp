@@ -126,6 +126,7 @@ fun ArticleDetailScreen(
                                 1 -> MainScreen.FirstMiniGame.route
                                 2 -> MainScreen.SecondMiniGame.route
                                 4 -> MainScreen.FourthMiniGame.route
+                                5 -> MainScreen.FifthMiniGame.route
                                 6 -> MainScreen.SixthMiniGame.route
                                 7 -> MainScreen.SeventhMiniGame.route
                                 else -> null
