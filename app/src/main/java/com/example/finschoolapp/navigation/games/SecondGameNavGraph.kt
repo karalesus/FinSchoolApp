@@ -5,9 +5,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.finschoolapp.navigation.main.MainScreen
-import com.example.finschoolapp.presentations.screens.secondgame.FinalScreen
-import com.example.finschoolapp.presentations.screens.secondgame.QuestionScreen
-import com.example.finschoolapp.presentations.screens.secondgame.SecondMiniGameMainScreen
+import com.example.finschoolapp.presentations.screens.games.secondGame.FinalScreen
+import com.example.finschoolapp.presentations.screens.games.secondGame.QuestionScreen
+import com.example.finschoolapp.presentations.screens.games.secondGame.SecondMiniGameMainScreen
 import com.example.finschoolapp.viewmodel.SecondMiniGameViewModel
 
 fun NavGraphBuilder.secondMiniGameGraph(
