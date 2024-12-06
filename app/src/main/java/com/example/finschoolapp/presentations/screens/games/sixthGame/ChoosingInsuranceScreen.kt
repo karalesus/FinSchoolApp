@@ -1,4 +1,4 @@
-package com.example.finschoolapp.presentations.screens.games.six_game
+package com.example.finschoolapp.presentations.screens.games.sixthGame
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -42,11 +42,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.window.Dialog
-import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.navigation.navBars.BottomNavigationBar
 import com.example.finschoolapp.ui.components.buttons.GameButton
 import com.example.finschoolapp.ui.components.buttons.HelpButton
-import com.example.finschoolapp.ui.components.buttons.PrimaryButton
 import com.example.finschoolapp.ui.components.toolbars.TextToolbar
 import com.example.finschoolapp.ui.theme.textViewBaseVariant
 
