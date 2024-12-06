@@ -6,10 +6,10 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.finschoolapp.navigation.main.MainScreen
-import com.example.finschoolapp.presentations.screens.fourthgame.FourthMiniGameAnswer
-import com.example.finschoolapp.presentations.screens.fourthgame.FourthMiniGameFinish
-import com.example.finschoolapp.presentations.screens.fourthgame.FourthMiniGameMain
-import com.example.finschoolapp.presentations.screens.fourthgame.FourthMiniGameQuestion
+import com.example.finschoolapp.presentations.screens.games.fourthGame.FourthMiniGameAnswer
+import com.example.finschoolapp.presentations.screens.games.fourthGame.FourthMiniGameFinish
+import com.example.finschoolapp.presentations.screens.games.fourthGame.FourthMiniGameMain
+import com.example.finschoolapp.presentations.screens.games.fourthGame.FourthMiniGameQuestion
 
 fun NavGraphBuilder.fourthMiniGameNavGraph(navController: NavHostController) {
 
