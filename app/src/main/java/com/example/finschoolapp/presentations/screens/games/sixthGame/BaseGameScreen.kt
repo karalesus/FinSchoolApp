@@ -54,13 +54,6 @@ fun BaseGameScreen(
     require(scenario.buttonTexts.size == buttonActions.size) { "Button texts and actions must have the same size." }
 
     Scaffold(
-        bottomBar = {
-            BottomNavigationBar(
-                modifier = Modifier,
-                navController = navController,
-                palette = ThemeColors.LightTheme
-            )
-        }
     ) { innerPadding ->
         Column(
             modifier = modifier

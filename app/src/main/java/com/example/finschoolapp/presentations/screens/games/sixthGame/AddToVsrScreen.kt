@@ -57,13 +57,6 @@ fun AddToVsrScreen(modifier: Modifier = Modifier, navController: NavHostControll
                 backgroundColor = palette.thirdLight
             )
         },
-        bottomBar = {
-            BottomNavigationBar(
-                modifier = Modifier,
-                navController = navController,
-                palette = ThemeColors.LightTheme
-            )
-        }
     ){ innerPadding ->
         Column(
             modifier = modifier

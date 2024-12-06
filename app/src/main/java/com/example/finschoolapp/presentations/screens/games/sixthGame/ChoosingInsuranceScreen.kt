@@ -73,13 +73,6 @@ fun ChoosingInsuranceScreen(
                 titleColor = palette.secondary,
                 backgroundColor = palette.thirdLight
             )
-        },
-        bottomBar = {
-            BottomNavigationBar(
-                modifier = Modifier,
-                navController = navController,
-                palette = ThemeColors.LightTheme
-            )
         }
     ){ innerPadding ->
         Column(
