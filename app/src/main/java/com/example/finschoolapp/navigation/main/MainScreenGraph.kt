@@ -5,11 +5,16 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.finschoolapp.navigation.RootScreen
+import com.example.finschoolapp.navigation.games.firstGameNavGraph
 import com.example.finschoolapp.navigation.games.secondMiniGameGraph
 import com.example.finschoolapp.navigation.main.MainScreen
 import com.example.finschoolapp.viewmodel.SecondMiniGameViewModel
 import com.example.finschoolapp.navigation.games.fourthMiniGameNavGraph
-import com.example.finschoolapp.presentations.screens.fourthgame.FourthMiniGameMain
+import com.example.finschoolapp.navigation.games.sixGameNavGraph
+import com.example.finschoolapp.presentations.screens.games.firstGame.NeedHelp
+import com.example.finschoolapp.presentations.screens.games.fourthGame.FourthMiniGameMain
+import com.example.finschoolapp.presentations.screens.games.seventhGame.EndSeventhModuleScreen
+import com.example.finschoolapp.presentations.screens.games.sixthGame.ChoosingInsuranceScreen
 import com.example.finschoolapp.presentations.screens.main.LearningScreen
 import com.example.finschoolapp.presentations.screens.main.ProgressScreen
 import com.example.finschoolapp.presentations.screens.main.SettingScreen
@@ -85,5 +90,34 @@ fun NavGraphBuilder.mainScreenGraph(
 
         fourthMiniGameNavGraph(navController = navController)
 
+        composable(
+            MainScreen.SixthMiniGame.route
+        ) {
+            ChoosingInsuranceScreen(
+                navController = navController, buttonActions = listOf(),
+                cashAmount = 1000
+            )
+            screenName("SixthGame")
+        }
+        sixGameNavGraph(navController = navController) {
+        }
+
+        composable(
+            MainScreen.FirstMiniGame.route
+        ) {
+            NeedHelp(
+                navController = navController
+
+            )
+            screenName("FirstGame")
+        }
+        firstGameNavGraph(navController = navController) {
+        }
+
+        composable(
+            MainScreen.SeventhMiniGame.route
+        ) {
+            EndSeventhModuleScreen(navController = navController)
+        }
     }
 }

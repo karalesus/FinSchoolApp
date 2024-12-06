@@ -9,6 +9,7 @@ sealed class MainScreen(val route: String) {
     object Wallet : MainScreen("Wallet")
     object Settings : MainScreen("Settings")
     object AddGoal : MainScreen("AddGoal")
+    object FirstMiniGame: MainScreen("FirstMiniGame")
     object SecondMiniGame : MainScreen("SecondMiniGame")
     object FourthMiniGame : MainScreen("FourthMiniGame")
     object FourthMiniGameQuestion :
@@ -28,4 +29,6 @@ sealed class MainScreen(val route: String) {
         fun createRoute(correctAnswers: Int, totalQuestions: Int): String =
             "fourthMiniGameFinish/$correctAnswers/$totalQuestions"
     }
+    object SixthMiniGame: MainScreen("SixthMiniGame")
+    object SeventhMiniGame: MainScreen("SeventhMiniGame")
 }
