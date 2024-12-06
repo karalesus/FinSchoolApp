@@ -29,6 +29,7 @@ sealed class MainScreen(val route: String) {
         fun createRoute(correctAnswers: Int, totalQuestions: Int): String =
             "fourthMiniGameFinish/$correctAnswers/$totalQuestions"
     }
+    object FifthMiniGame: MainScreen("FifthMiniGame")
     object SixthMiniGame: MainScreen("SixthMiniGame")
     object SeventhMiniGame: MainScreen("SeventhMiniGame")
 }
